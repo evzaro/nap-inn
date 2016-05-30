@@ -38,11 +38,11 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 * [API endpoints][api-endpoints]
 * [DB schema][schema]
 
-[views]: ./docs/views.md
-[components]: ./docs/components.md
-[flux-cycles]: ./docs/flux-cycles.md
-[api-endpoints]: ./docs/api-endpoints.md
-[schema]: ./docs/schema.md
+[views]: .project-proposal/docs/views.md
+[components]: .project-proposal/docs/components.md
+[flux-cycles]: .project-proposal/docs/flux-cycles.md
+[api-endpoints]: .project-proposal/docs/api-endpoints.md
+[schema]: .project-proposal/docs/schema.md
 
 ## Implementation Timeline
 
@@ -148,8 +148,8 @@ user interface.
 - [ ] Mini Guidebooks
 - [ ] Nap/rental history
 
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
+<!-- [phase-one]: .project-proposal/docs/phases/phase1.md
+[phase-two]: .project-proposal/docs/phases/phase2.md
+[phase-three]: .project-proposal/docs/phases/phase3.md
+[phase-four]: .project-proposal/docs/phases/phase4.md
+[phase-five]: .project-proposal/docs/phases/phase5.md -->
