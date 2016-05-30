@@ -12,118 +12,183 @@ because once you start implementing your flux loops, that's precisely
 what you'll need to do.
 
 
-## Note Cycles
+## NapSpot Cycles
 
-### Notes API Request Actions
+### NapSpots API Request Actions
 
-* `fetchAllNotes`
-  0. invoked from `NotesIndex` `didMount`/`willReceiveProps`
-  0. `GET /api/notes` is called.
-  0. `receiveAllNotes` is set as the callback.
+* `fetchAllNapSpots`
+  0. invoked from `NapSpotsIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/napspots` is called.
+  0. `receiveAllNapSpots` is set as the callback.
 
-* `createNote`
-  0. invoked from new note button `onClick`
-  0. `POST /api/notes` is called.
-  0. `receiveSingleNote` is set as the callback.
+* `createNapSpot`
+  0. invoked from `NapSpotForm` submit button `onClick`
+  0. `POST /api/napspots` is called.
+  0. `receiveSingleNapSpot` is set as the callback.
 
-* `fetchSingleNote`
-  0. invoked from `NoteDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/notes/:id` is called.
-  0. `receiveSingleNote` is set as the callback.
+* `fetchSingleNapSpot`
+  0. invoked from `NapSpotDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/napspot/:napspot_id` is called.
+  0. `receiveSingleNapSpot` is set as the callback.
 
-* `updateNote`
-  0. invoked from `NoteForm` `onSubmit`
-  0. `POST /api/notes` is called.
-  0. `receiveSingleNote` is set as the callback.
+* `updateNapSpot`
+  0. invoked from `NapSpotForm`
+  0. `PATCH /api/napspot/:napspot_id` is called.
+  0. `receiveSingleNapSpot` is set as the callback.
 
-* `destroyNote`
-  0. invoked from delete note button `onClick`
-  0. `DELETE /api/notes/:id` is called.
-  0. `removeNote` is set as the callback.
+* `destroyNapSpot`
+  0. invoked from remove listed napspot button `onClick`
+  0. `DELETE /api/napspot/:napspot_id` is called.
+  0. `removeNapSpot` is set as the callback.
 
-### Notes API Response Actions
+### NapSpots API Response Actions
 
-* `receiveAllNotes`
+* `receiveAllNapSpots`
   0. invoked from an API callback.
-  0. `Note` store updates `_notes` and emits change.
+  0. `NapSpot` store updates `_napspots` and emits change.
 
-* `receiveSingleNote`
+* `receiveSingleNapSpot`
   0. invoked from an API callback.
-  0. `Note` store updates `_notes[id]` and emits change.
+  0. `NapSpot` store updates `_napspots[id]` and emits change.
 
-* `removeNote`
+* `removeNapSpot`
   0. invoked from an API callback.
-  0. `Note` store removes `_notes[id]` and emits change.
+  0. `NapSpot` store removes `_napspots[id]` and emits change.
 
 ### Store Listeners
 
-* `NotesIndex` component listens to `Note` store.
-* `NoteDetail` component listens to `Note` store.
+* `NapSpotIndex` component listens to `NapSpot` store (as does child component `map`).
+* `NapSpotDetail` component listens to `NapSpot` store.
 
 
-## Notebook Cycles
+## Review Cycles
 
-### Notebooks API Request Actions
+### Reviews API Request Actions
 
-* `fetchAllNotebooks`
-  0. invoked from `NotebooksIndex` `didMount`/`willReceiveProps`
-  0. `GET /api/notebooks` is called.
-  0. `receiveAllNotebooks` is set as the callback.
+* `fetchAllReviews`
+  0. invoked from `ReviewsIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/napspot/:napspot_id/reviews` is called.
+  0. `receiveAllReviews` is set as the callback.
 
-* `createNotebook`
-  0. invoked from new notebook button `onClick`
-  0. `POST /api/notebooks` is called.
-  0. `receiveSingleNotebook` is set as the callback.
+* `createReview`
+  0. invoked from `ReviewForm`
+  0. `POST /api/napspot/:napspot_id/reviews` is called.
+  0. `receiveSingleReview` is set as the callback.
 
-* `fetchSingleNotebook`
-  0. invoked from `NotebookDetail` `didMount`/`willReceiveProps`
-  0. `GET /api/notebooks/:id` is called.
-  0. `receiveSingleNotebook` is set as the callback.
+* `fetchSingleReview`
+  0. invoked from `ReviewDetail` (optional) `didMount`/`willReceiveProps`
+  0. `GET /api/review/:review_id/` is called.
+  0. `receiveSingleReview` is set as the callback.
 
-* `updateNotebook`
-  0. invoked from `NotebookForm` `onSubmit`
-  0. `POST /api/notebooks` is called.
-  0. `receiveSingleNotebook` is set as the callback.
+* `updateReview`
+  0. invoked from `ReviewForm`
+  0. `PATCH /api/review/:review_id` is called.
+  0. `receiveSingleReview` is set as the callback.
 
-* `destroyNotebook`
-  0. invoked from delete notebook button `onClick`
-  0. `DELETE /api/notebooks/:id` is called.
-  0. `removeNotebook` is set as the callback.
+* `destroyReview`
+  0. invoked from delete review button `onClick`
+  0. `DELETE /api/review/:review_id` is called.
+  0. `removeReview` is set as the callback.
 
-### Notebooks API Response Actions
+### Reviews API Response Actions
 
-* `receiveAllNotebooks`
+* `receiveAllReviews`
   0. invoked from an API callback.
-  0. `Notebook` store updates `_notebooks` and emits change.
+  0. `Review` store updates `_reviews` and emits change.
 
-* `receiveSingleNotebook`
+* `receiveSingleReview`
   0. invoked from an API callback.
-  0. `Notebook` store updates `_notebooks[id]` and emits change.
+  0. `Review` store updates `_reviews[id]` and emits change.
 
-* `removeNotebook`
+* `removeReview`
   0. invoked from an API callback.
-  0. `Notebook` store removes `_notebooks[id]` and emits change.
+  0. `Review` store removes `_reviews[id]` and emits change.
 
 ### Store Listeners
 
-* `NotebooksIndex` component listens to `Notebook` store.
+* `ReviewsIndex` component listens to `Review` store.
 
 
-## SearchSuggestion Cycles
+## Booking Cycles
 
-* `fetchSearchSuggestions`
-  0. invoked from `NoteSearchBar` `onChange` when there is text
-  0. `GET /api/notes` is called with `text` param.
-  0. `receiveSearchSuggestions` is set as the callback.
+### Bookings API Request Actions
 
-* `receiveSearchSuggestions`
+* `fetchAllBookings`
+  0. invoked from `BookingsIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/napspot/:napspot_id/bookings` is called.
+  0. `receiveAllBookings` is set as the callback.
+
+* `createBooking`
+  0. invoked from `BookingForm`
+  0. `POST /api/napspot/:napspot_id/bookings` is called.
+  0. `receiveSingleBooking` is set as the callback.
+
+<!-- * `fetchSingleBooking`
+  0. invoked from `BookingDetail` `didMount`/`willReceiveProps`
+  0. `GET /api/booking/:booking_id/` is called.
+  0. `receiveSingleBooking` is set as the callback. -->
+
+* `updateBooking`
+  0. invoked from `BookingForm`
+  0. `PATCH /api/booking/:booking_id` is called.
+  0. `receiveSingleBooking` is set as the callback.
+
+* `destroyBooking`
+  0. invoked from delete booking button `onClick`
+  0. `DELETE /api/booking/:booking_id` is called.
+  0. `removeBooking` is set as the callback.
+
+### Bookings API Response Actions
+
+* `receiveAllBookings`
   0. invoked from an API callback.
-  0. `SearchSuggestion` store updates `_suggestions` and emits change.
+  0. `Booking` store updates `_bookings` and emits change.
 
-* `removeSearchSuggestions`
-  0. invoked from `NoteSearchBar` `onChange` when empty
-  0. `SearchSuggestion` store resets `_suggestions` and emits change.
+* `receiveSingleBooking`
+  0. invoked from an API callback.
+  0. `Booking` store updates `_bookings[id]` and emits change.
+
+* `removeBooking`
+  0. invoked from an API callback.
+  0. `Booking` store removes `_bookings[id]` and emits change.
 
 ### Store Listeners
 
-* `SearchBarSuggestions` component listens to `SearchSuggestion` store.
+* `BookingsIndex` `BookingsForm` and `NapSpotFilter` components listen to `Booking` store.
+
+## Availability Cycles
+
+### Availabilities API Request Actions
+
+* `fetchAllAvailabilities`
+  0. invoked from `AvailabilitiesIndex` `didMount`/`willReceiveProps`
+  0. `GET /api/napspot/:napspot_id/availabilities` is called.
+  0. `receiveAllAvailabilities` is set as the callback.
+
+* `createAvailability`
+  0. invoked from `NapSpotForm`
+  0. `POST /api/napspot/:napspot_id/availabilities` is called.
+  0. `receiveSingleAvailability` is set as the callback.
+
+* `destroyAvailability`
+  0. invoked from delete booking button `onClick`
+  0. `DELETE /api/booking/:booking_id` is called.
+  0. `removeAvailability` is set as the callback.
+
+### Availabilities API Response Actions
+
+* `receiveAllAvailabilities`
+  0. invoked from an API callback.
+  0. `Availability` store updates `_availabilities` and emits change.
+
+* `receiveSingleAvailability`
+  0. invoked from an API callback.
+  0. `Availability` store updates `_availabilities[id]` and emits change.
+
+* `removeAvailability`
+  0. invoked from an API callback.
+  0. `Availability` store removes `_availabilities[id]` and emits change.
+
+### Store Listeners
+
+* `BookingsForm` and `NapSpotFilter` components listen to `Availability` store.

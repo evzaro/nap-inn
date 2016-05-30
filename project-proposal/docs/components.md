@@ -10,8 +10,9 @@
 
   * `NapSpotDetail`
     * `BookingsForm`
-    * `ReviewItem`
     * `Map`
+    * `ReviewsIndex`
+      * `ReviewItem`
 
   * `UserNav`
     * `BookingsIndex`
