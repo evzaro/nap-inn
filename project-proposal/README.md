@@ -1,6 +1,6 @@
 # NapInn
 
-[Heroku link]: http://napinn.herokuapp.com
+[napinn.herokuapp.com](http://napinn.herokuapp.com)
 
 ## Minimum Viable Product
 
