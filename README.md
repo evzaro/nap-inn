@@ -38,11 +38,11 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 * [API endpoints][api-endpoints]
 * [DB schema][schema]
 
-[views]: .project-proposal/docs/views.md
-[components]: .project-proposal/docs/components.md
-[flux-cycles]: .project-proposal/docs/flux-cycles.md
-[api-endpoints]: .project-proposal/docs/api-endpoints.md
-[schema]: .project-proposal/docs/schema.md
+[views]: ./project-proposal/docs/views.md
+[components]: ./project-proposal/docs/components.md
+[flux-cycles]: ./project-proposal/docs/flux-cycles.md
+[api-endpoints]: ./project-proposal/docs/api-endpoints.md
+[schema]: ./project-proposal/docs/schema.md
 
 ## Implementation Timeline
 
