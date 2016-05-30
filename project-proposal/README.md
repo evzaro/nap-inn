@@ -129,6 +129,7 @@ user interface.
 - [ ] CRUD API for `Reviews` (`ReviewsController`)
 - [ ] update `APIUtil` to work with Reviews
 - [ ] test out API interaction in the console.
+- [ ] build out `ReviewsIndex` component.
 - [ ] build out `ReviewItem` component.
 - [ ] Style new elements
 
