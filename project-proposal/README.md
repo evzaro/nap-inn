@@ -1,6 +1,6 @@
 # NapInn
 
-[Heroku link][napinn.herokuapp.com]
+[Heroku link]: [napinn.herokuapp.com]
 
 ## Minimum Viable Product
 
@@ -100,7 +100,7 @@ user interface.
   - [ ] filtering by type
 - [ ] enable Google Maps integration in `NapSpotIndex`
 
-### Phase 5: Start Styling (0.5 days)
+### Phase 6: Start Styling (0.5 days)
 
 **Objective:** Existing pages will look good.
 
@@ -108,7 +108,7 @@ user interface.
 - [ ] position elements on the page
 - [ ] add basic colors & styles
 
-### Phase 6: Bookings (1.5 days)
+### Phase 7: Bookings (1.5 days)
 
 **Objective:** Users can request bookings, owners can accept/deny bookings.
 
@@ -121,7 +121,7 @@ user interface.
 - [ ] build out `BookingsForm` component, which should allow users to see current availability and make bookings.
 - [ ] Style new elements
 
-### Phase 6: Reviews (1.5 days)
+### Phase 8: Reviews (1.5 days)
 
 **Objective:** Users can review Nap-Spots.
 
@@ -132,7 +132,7 @@ user interface.
 - [ ] build out `ReviewItem` component.
 - [ ] Style new elements
 
-### Phase 7: Styling Cleanup and Seeding (1 day)
+### Phase 9: Styling Cleanup and Seeding (1 day)
 
 **objective:** Make the site feel more cohesive and awesome.
 
