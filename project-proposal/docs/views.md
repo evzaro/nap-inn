@@ -3,20 +3,24 @@
 ## New User
 ![new-user]
 
-## New Session
-![new-session]
+## NapSpotIndex(pre-query) / NapSpotItem / NapSpotSampler / Search
+![root]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## NapSpotIndex(post-query) / NapSpotFilter / NapSpotItem
+![nap-spot-index]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## NapSpotDetail / ReviewItem / BookingsForm
+![nap-spot-detail]
 
-## NotebookForm
-![notebook-form]
+## UserNav / NavSpotForm / BookingsIndex
+![user-nav]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+## UserNav / ReviewForm
+![user-review]
+
+[new-user]: ./wireframes/new-user-form.png
+[root]: ./wireframes/nap-spot-root.png
+[nap-spot-index]: ./wireframes/nap-spot-index.png
+[nap-spot-detail]: ./wireframes/nap-spot-detail.png
+[user-nav]: ./wireframes/user-nav.png
+[user-review]: ./wireframes/review.png
