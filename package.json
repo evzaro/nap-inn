@@ -1,0 +1,23 @@
+{
+  "name": "nap-inn",
+  "version": "1.0.0",
+  "description": "NapInn",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evzaro/nap-inn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evzaro/nap-inn/issues"
+  },
+  "homepage": "https://github.com/evzaro/nap-inn#readme"
+}
