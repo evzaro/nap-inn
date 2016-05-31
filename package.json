@@ -15,8 +15,8 @@
     "url": "git+https://github.com/evzaro/nap-inn.git"
   },
   "engines": {
-   "node": "5.1.0",
-   "npm": "3.3.12"
+    "node": "5.1.0",
+    "npm": "3.3.12"
   },
   "keywords": [],
   "author": "",
@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/evzaro/nap-inn/issues"
   },
-  "homepage": "https://github.com/evzaro/nap-inn#readme"
+  "homepage": "https://github.com/evzaro/nap-inn#readme",
+  "dependencies": {
+    "webpack": "^1.13.1"
+  }
 }
