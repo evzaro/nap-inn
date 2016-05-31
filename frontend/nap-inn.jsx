@@ -19,15 +19,16 @@ var SessionApiUtil = require('./util/session_api_util');
 //temp
 
 
-// var Router = (
-//
-//   <Router history={ hashHistory }>
-//     <Route path="/login" component={ LoginForm }></Route>
-//   </Router>
-// );
+var Router = (
+
+  <Router history={ hashHistory }>
+    <Route path="/"><div>'STUFF WILL GO HERE'</div></Route>
+    <Route path="/login"><div>'STUFF WILL GO HERE'</div></Route>
+  </Router>
+);
 
 
 document.addEventListener('DOMContentLoaded', function(){
   var root = document.getElementById('content');
-  ReactDOM.render(<div>'STUFF WILL GO HERE'</div>, root);
+  ReactDOM.render(Router, root);
 });
