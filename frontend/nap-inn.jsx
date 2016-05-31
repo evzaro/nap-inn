@@ -22,13 +22,11 @@ var SessionApiUtil = require('./util/session_api_util');
 var Router = (
 
   <Router history={ hashHistory }>
-    <Route path="/"><div>'STUFF WILL GO HERE'</div></Route>
-    <Route path="/login"><div>'STUFF WILL GO HERE'</div></Route>
   </Router>
 );
 
 
 document.addEventListener('DOMContentLoaded', function(){
   var root = document.getElementById('content');
-  ReactDOM.render(Router, root);
+  ReactDOM.render(<div>"hello"</div>, root);
 });
