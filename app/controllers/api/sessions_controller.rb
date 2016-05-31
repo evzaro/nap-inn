@@ -1,4 +1,5 @@
-class Api:SessionsController < ApplicationController
+require 'byebug'
+class Api::SessionsController < ApplicationController
 
   def create
     @user = User.find_by_credentials(
@@ -7,7 +8,7 @@ class Api:SessionsController < ApplicationController
     )
 
     if @user
-      login(user)
+      login(@user)
       render "api/users/show"
     else
       render(
@@ -23,7 +24,7 @@ class Api:SessionsController < ApplicationController
 		@user = current_user
 		if @user
 			logout
-			# render @user
+		  render "api/users/show"
 		else
 			render(
         json: {

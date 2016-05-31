@@ -10,6 +10,10 @@ class Api::UsersController < ApplicationController
 		end
 	end
 
+  def show
+    render "api/users/show"
+  end
+
 	private
 
 	def user_params

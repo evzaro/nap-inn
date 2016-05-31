@@ -10,11 +10,24 @@ var IndexRoute = ReactRouter.IndexRoute;
 var hashHistory = ReactRouter.hashHistory;
 
 //Components
+//var LoginForm = require('./components/LoginForm');
+
+//Authentication
+var SessionStore = require('./stores/session_store');
+var SessionApiUtil = require('./util/session_api_util');
+
+//temp
 
 
+// var Router = (
+//
+//   <Router history={ hashHistory }>
+//     <Route path="/login" component={ LoginForm }></Route>
+//   </Router>
+// );
 
 
 document.addEventListener('DOMContentLoaded', function(){
   var root = document.getElementById('content');
-  ReactDOM.render(Router, root);
+  ReactDOM.render(<div>'STUFF WILL GO HERE'</div>, root);
 });
