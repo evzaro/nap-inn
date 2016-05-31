@@ -47,5 +47,5 @@ var SessionApiUtil = {
 		});
 	}
 };
-window.API = SessionApiUtil;
+
 module.exports = SessionApiUtil;

@@ -38,5 +38,4 @@ SessionStore.__onDispatch = function (payload) {
       break;
   }
 };
-window.Store = SessionStore;
 module.exports = SessionStore;
