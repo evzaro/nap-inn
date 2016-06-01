@@ -11,6 +11,8 @@ var hashHistory = ReactRouter.hashHistory;
 
 //Components
 var LoginForm = require('./components/login_form');
+var SignupForm = require('./components/signup_form');
+//var SignUp = require('./components/signup_form');
 
 //Authentication
 var SessionStore = require('./stores/session_store');
@@ -33,8 +35,8 @@ var App = React.createClass({
 var Router = (
   <Router history={ hashHistory }>
     <Route path="/" component={App}>
-      <Route path="/login" component={LoginForm}>
-      </Route>
+      <Route path="/login" component={LoginForm}></Route>
+        <Route path="/signup" component={SignupForm}></Route>
     </Route>
   </Router>
 );
