@@ -10,17 +10,21 @@ var IndexRoute = ReactRouter.IndexRoute;
 var hashHistory = ReactRouter.hashHistory;
 
 //Components
-//var LoginForm = require('./components/LoginForm');
+var LoginForm = require('./components/login_form');
 
 //Authentication
 var SessionStore = require('./stores/session_store');
 var SessionApiUtil = require('./util/session_api_util');
 
 //temp
+
 var App = React.createClass({
   render: function(){
     return(
-      <div>"HEROKU BALLS"</div>
+      <div>
+        NapInn
+        {this.props.children}
+      </div>
     );
   }
 });
@@ -28,7 +32,10 @@ var App = React.createClass({
 
 var Router = (
   <Router history={ hashHistory }>
-    <Route path="/" component={App}></Route>
+    <Route path="/" component={App}>
+      <Route path="/login" component={LoginForm}>
+      </Route>
+    </Route>
   </Router>
 );
 
