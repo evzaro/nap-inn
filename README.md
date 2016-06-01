@@ -23,7 +23,7 @@ NapInn will allow users to do the following:
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
 
-- [ ] Create an account (MVP)
+- [x] Create an account (MVP)
 - [ ] Log in / Log out, including as a Guest/Demo User (MVP)
 - [ ] Post, view, edit, and remove nap-spot listings (MVP)
 - [ ] Search for nap spots via various criteria (MVP)
@@ -50,10 +50,10 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Functioning rails project with Authentication
 
-- [ ] create new project
-- [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
+- [x] create new project
+- [x] create `User` model
+- [x] authentication
+- [x] user signup/signin pages
 
 ### Phase 2: Nap-Spots Model, API, and basic APIUtil (1.5 days)
 
@@ -68,7 +68,8 @@ the API.
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
 
-### Phase 3: Flux Architecture and Router (1 day)
+
+### Phase 3: Flux Architecture and Router (1.5 days)
 
 **Objective:** Nap-Spots can be created, read, edited and destroyed with the
 user interface.
@@ -80,6 +81,7 @@ user interface.
   - [ ] `NapSpotItem`
   - [ ] `NapSpotForm`
   - [ ] `NapSpotDetail`
+- [ ] merge auth with creation/viewing of nap-spots
 
 ### Phase 4: Availability (0.5 days)
 

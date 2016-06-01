@@ -2,6 +2,9 @@ var React = require('react');
 var SessionActions = require('../actions/session_actions');
 var SessionStore = require('../stores/session_store');
 var SessionApiUtil = require('../util/session_api_util');
+var ReactRouter = require('react-router');
+var hashHistory = ReactRouter.hashHistory;
+var Link = require('react-router').Link;
 
 var LoginForm = React.createClass({
   getInitialState: function () {
@@ -72,7 +75,8 @@ var LoginForm = React.createClass({
       </div>
     );
   }
-
 });
+//https://static.pexels.com/photos/62640/pexels-photo-62640.jpeg
+//https://www.pexels.com/photo/women-resting-laying-down-27335/
 
 module.exports = LoginForm;

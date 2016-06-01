@@ -4,13 +4,15 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: #484848;
-	z-index: 100;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 9000;
 	opacity: 1;
-	-webkit-transition: opacity 800ms ease-in;
-	-moz-transition: opacity 800ms ease-in;
-	transition: opacity 800ms ease-in;
+	-webkit-transition: opacity 1500ms ease-in;
+	-moz-transition: opacity 1500ms ease-in;
+	transition: opacity 1500ms ease-in;
+  pointer-events: none;
 }
+
 
 .login-signup-div {
   border: 1px solid;
@@ -24,6 +26,7 @@
   top: 50%;
   left: 50%;
   margin: -265px 0 0 -225px;
+  pointer-events: auto;
 }
 
 
@@ -59,7 +62,6 @@ input:invalid {
   border-color: #FFB400;
 }
 
-
 .signup-form input {
   border: 1px solid #C4C4C4;
   width: 100%;
@@ -70,4 +72,28 @@ input:invalid {
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-radius: 4px;
+}
+
+.nav {
+  background: white;
+  height: 61px;
+  opacity: 0;
+}
+
+.nav button {
+  padding-left: 19px;
+  opacity: 0;
+  padding-right: 19px;
+  float: right;
+  font-size: 14px;
+  border: 1px solid black;
+  color: white;
+  height: 61px;
+  padding: 19px;
+  margin: auto;
+  border: 1px solid #FF5A5F;
+}
+
+.nav-logo {
+  float: left;
 }
