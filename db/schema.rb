@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601133315) do
+ActiveRecord::Schema.define(version: 20160602181949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "nap_spots", force: :cascade do |t|
+    t.string  "title",       null: false
+    t.text    "description", null: false
+    t.integer "owner_id",    null: false
+    t.string  "category",    null: false
+    t.string  "location",    null: false
+    t.integer "price",       null: false
+    t.string  "image_urls"
+  end
+
+  add_index "nap_spots", ["category"], name: "index_nap_spots_on_category", using: :btree
+  add_index "nap_spots", ["location"], name: "index_nap_spots_on_location", using: :btree
+  add_index "nap_spots", ["owner_id"], name: "index_nap_spots_on_owner_id", using: :btree
+  add_index "nap_spots", ["price"], name: "index_nap_spots_on_price", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string "user_email",      null: false

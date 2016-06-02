@@ -39,6 +39,16 @@ var LoginForm = React.createClass({
     } //add listener to session store for success?
   },
 
+  componentDidMount: function (){
+    SessionStore.addListener(this._handleSuccess);
+  },
+
+  _handleSuccess: function (){
+    if (SessionStore.isUserLoggedIn){
+      hashHistory.push('/');
+    }
+  },
+
   handleClick: function (e){
     if (e.target === e.currentTarget){
       hashHistory.push('/');
@@ -46,7 +56,6 @@ var LoginForm = React.createClass({
   },
 
   render: function (){
-
     return(
       <div className={"login-signup-modal " + this.state.status} onClick={this.handleClick}>
         <div className="login-signup-div">

@@ -38,6 +38,7 @@ var LoginForm = React.createClass({
       lname: e.target.value
     });
   },
+
   handleSubmit: function (e){
     e.preventDefault();
 
@@ -51,18 +52,18 @@ var LoginForm = React.createClass({
     }
   },
 
+  componentDidMount: function (){
+    SessionStore.addListener(this._handleSuccess);
+  },
+
+  _handleSuccess: function (){
+    if (SessionStore.isUserLoggedIn){
+      hashHistory.push('/');
+    }
+  },
+
   handleClick: function (e){
     if (e.target === e.currentTarget){
-      // add modal transitions? make it always hidden?
-      // if (this.state.status === "showing"){
-      //   this.setState({
-      //     status: "hidden"
-      //   });
-      // } else {
-      //   this.setState({
-      //     status: "showing"
-      //   });
-      // }
       hashHistory.push('/');
     }
   },

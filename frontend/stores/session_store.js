@@ -8,6 +8,7 @@ var _currentUser = {};
 var currentUserHasBeenFetched = false;
 
 SessionStore.isUserLoggedIn = function (){
+  // debugger
    return ( _currentUser.id === undefined ?  false : true );
 };
 
@@ -27,10 +28,10 @@ SessionStore.currentUser = function () {
 };
 
 SessionStore.__onDispatch = function (payload) {
+  // debugger
   switch(payload.actionType) {
     case SessionConstants.LOGIN:
       _login(payload.currentUser);
-      
       SessionStore.__emitChange();
       break;
     case SessionConstants.LOGOUT:

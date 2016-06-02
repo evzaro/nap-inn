@@ -37,6 +37,7 @@ NavBar = React.createClass({
   },
 
   render: function (){
+  
     if(SessionStore.isUserLoggedIn()){
       return(
         <nav className="nav">
