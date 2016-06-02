@@ -73,7 +73,7 @@ input:invalid {
 .nav {
   background: white;
   height: 61px;
-  
+
 }
 
 .nav button {
@@ -93,4 +93,8 @@ input:invalid {
 
 .nav-logo {
   float: left;
+  width: 110px;
+  margin-left: 20px;
+  margin-top: 20px;
+  height: auto;
 }

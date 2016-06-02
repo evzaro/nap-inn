@@ -7,7 +7,6 @@ var hashHistory = ReactRouter.hashHistory;
 
 NavBar = React.createClass({
 
-
   pushLogIn: function(){
     hashHistory.push('/login');
   },
@@ -20,9 +19,15 @@ NavBar = React.createClass({
     //if not signed in
     return(
       <nav className="nav">
-        <div className="nav-logo">Logo</div>
+
+        <div className="nav-logo"><img src={JSON.parse(
+            document.getElementById('content').dataset.images).logo}/>
+        </div>
+
         <ul classname="nav-links">
+
           <button onClick={this.pushLogIn}>Log In</button>
+
           <button onClick={this.pushSignUp}>Sign Up</button>
         </ul>
       </nav>

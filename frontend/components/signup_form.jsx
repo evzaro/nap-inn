@@ -2,6 +2,8 @@ var React = require('react');
 var SessionActions = require('../actions/session_actions');
 var SessionStore = require('../stores/session_store');
 var UserApiUtil = require('../util/user_api_util');
+var ReactRouter = require('react-router');
+var hashHistory = ReactRouter.hashHistory;
 
 var LoginForm = React.createClass({
   getInitialState: function () {
