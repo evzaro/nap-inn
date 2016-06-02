@@ -11,7 +11,6 @@ var LoginForm = React.createClass({
     return {
       user_email: "",
       password: "",
-      //status: "showing"
     };
   },
 
@@ -37,21 +36,11 @@ var LoginForm = React.createClass({
 
     if (this.props.location.pathname === "/login") {
       SessionApiUtil.login(formData);
-    }
+    } //add listener to session store for success?
   },
 
   handleClick: function (e){
     if (e.target === e.currentTarget){
-      // add modal transitions? make it always hidden?
-      // if (this.state.status === "showing"){
-      //   this.setState({
-      //     status: "hidden"
-      //   });
-      // } else {
-      //   this.setState({
-      //     status: "showing"
-      //   });
-      // }
       hashHistory.push('/');
     }
   },
@@ -65,7 +54,7 @@ var LoginForm = React.createClass({
             <input type="email" value={this.state.user_email}
               id="user_email" onChange={this.onChangeUserField} placeholder="Email"/>
 
-            <input type="text" value={this.state.password}
+            <input type="password" value={this.state.password}
               id="password" onChange={this.onChangePassField} placeholder="Password" />
             <button onClick={this.handleSubmit}>Log In</button>
           </form>

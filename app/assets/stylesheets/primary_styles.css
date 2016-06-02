@@ -79,6 +79,7 @@ input:invalid {
 }
 
 .nav button {
+  position: relative;
   padding-left: 19px;
   opacity: 1;
   padding-right: 19px;
@@ -90,6 +91,10 @@ input:invalid {
   height: 61px;
   padding: 19px;
   margin: auto;
+}
+
+.nav button:focus {
+  outline:0;
 }
 
 .nav-logo {
@@ -105,5 +110,36 @@ input:invalid {
   float: left;
   position: absolute;
   top: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
+  background: gray;
+}
+
+.nav-links:hover {
+
+}
+
+.profile-dropdown {
+  position: absolute;
+  display: none;
+  top: 100%;
+  right: 18px;
+  width: 280px;
+  background: white;
+  font-size: 14px;
+  color: #525252;
+  border-bottom: 1px solid #525252;
+  border-left: 1px solid #525252;
+  border-right: 1px solid #525252;
+}
+
+.profile-dropdown-parent:hover .profile-dropdown{
+  display: block;
+}
+
+.profile-dropdown > li {
+  border-top: 1px solid #525252;
+  padding: 8px;
+  cursor: pointer;
 }
