@@ -2,16 +2,26 @@ var ServerActions = require('../actions/server_actions');
 
 
 var NapSpotApiUtil = {
-  fetchNapSpots: function(filters){
-    $.get('api/nap_spots', filters, function(nap_spots){
-      ServerActions.receiveAll(nap_spots);
+  fetchNapSpots: function (){
+    $.ajax({
+      type: "GET",
+      url: "api/nap_spots",
+      success: function (data){
+        ServerActions.receiveAll(data);
+      }
     });
   },
-  createNapSpot: function(data){
-    $.post('api/nap_spots', { nap_spot: data }, function(nap_spot) {
-      ServerActions.receiveSingleBench(nap_spot);
+  createNapSpot: function (nap_spot){
+    $.ajax({
+      type: "POST",
+      url: "api/nap_spots",
+      data: {'nap_spot': nap_spot},
+      success: function (nap_spot){
+        ServerActions.receiveSingleNapSpot(nap_spot);
+      }
     });
   },
 };
 
+window.Util = NapSpotApiUtil;
 module.exports = NapSpotApiUtil;

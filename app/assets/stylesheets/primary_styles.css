@@ -112,7 +112,7 @@ input:invalid {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: -1;
   background: gray;
 }
 
@@ -128,10 +128,10 @@ input:invalid {
   width: 280px;
   background: white;
   font-size: 14px;
-  color: #525252;
-  border-bottom: 1px solid #525252;
-  border-left: 1px solid #525252;
-  border-right: 1px solid #525252;
+  color: #484848;
+  border-bottom: 1px solid #484848;
+  border-left: 1px solid #484848;
+  border-right: 1px solid #484848;
 }
 
 .profile-dropdown-parent:hover .profile-dropdown{
@@ -139,7 +139,79 @@ input:invalid {
 }
 
 .profile-dropdown > li {
-  border-top: 1px solid #525252;
+  border-top: 1px solid ##484848;
   padding: 8px;
   cursor: pointer;
+}
+
+.centered-content {
+  background: black;
+  max-width: 900px;
+  margin: auto;
+
+}
+
+.mini-form-window {
+  background: purple;
+  max-width: 550px;
+  padding: 30px;
+  float:left;
+}
+
+.form-navbar {
+  height: 50px;
+  width: 100%;
+  background: green;
+}
+
+.form-navbar li {
+  float: left;
+}
+
+.location-options {
+ max-width: 540px;
+ height: 710px;
+ float: right;
+}
+
+.helper-info{
+  float: right;
+  background: white;
+  padding: 30px;
+}
+
+#countries {
+  display: block;
+  color: #484848;
+  margin: auto;
+  width: 100%;
+  padding: 20px;
+  border: none;
+  height: 62px;
+  border-radius: 2px;
+}
+
+.location-options > input {
+  display: block;
+  color: #484848;
+  margin: auto;
+  width: 100%;
+  padding: 20px;
+  border-radius: 2px;
+}
+
+.location-options label {
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 9px;
+  font-size: 18px;
+}
+
+#city {
+
+}
+
+#state {
+
+
 }
