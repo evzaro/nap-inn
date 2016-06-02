@@ -9,6 +9,7 @@ var UserApiUtil = {
       dataType: 'json',
       data: {user: formData},
       success: function (currentUser) {
+        console.log('UserApiUtil#createAccount success');
         SessionActions.receiveCurrentUser(currentUser);
       },
       error: function (xhr) {

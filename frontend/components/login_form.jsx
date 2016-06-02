@@ -10,7 +10,8 @@ var LoginForm = React.createClass({
   getInitialState: function () {
     return {
       user_email: "",
-      password: ""
+      password: "",
+      //status: "showing"
     };
   },
 
@@ -18,15 +19,6 @@ var LoginForm = React.createClass({
     this.setState({
       user_email: e.target.value
     });
-  },
-
-  handleInput: function (e){
-
-    if (this.state.user_email === "") {
-      this.setState({
-        user_email: String.fromCharCode(e.keyCode)
-      });
-    }
   },
 
   onChangePassField: function (e){
@@ -48,27 +40,33 @@ var LoginForm = React.createClass({
     }
   },
 
+  handleClick: function (e){
+    if (e.target === e.currentTarget){
+      // add modal transitions? make it always hidden?
+      // if (this.state.status === "showing"){
+      //   this.setState({
+      //     status: "hidden"
+      //   });
+      // } else {
+      //   this.setState({
+      //     status: "showing"
+      //   });
+      // }
+      hashHistory.push('/');
+    }
+  },
+
   render: function (){
 
-    var emailVal;
-    var emailType;
-      if (this.state.user_email === ""){
-        emailVal = "Email";
-        emailType = "text";
-      } else {
-        emailVal = this.state.user_email;
-        emailType = "email";
-      }
-
     return(
-      <div className="login-signup-modal">
+      <div className={"login-signup-modal " + this.state.status} onClick={this.handleClick}>
         <div className="login-signup-div">
           <form className="login-form">
-            <input type={emailType} value={emailVal}
-              id="user_email" onChange={this.onChangeUserField} onKeyPress={this.handleInput}/>
+            <input type="email" value={this.state.user_email}
+              id="user_email" onChange={this.onChangeUserField} placeholder="Email"/>
 
             <input type="text" value={this.state.password}
-              id="password" onChange={this.onChangePassField} />
+              id="password" onChange={this.onChangePassField} placeholder="Password" />
             <button onClick={this.handleSubmit}>Log In</button>
           </form>
         </div>
@@ -76,7 +74,6 @@ var LoginForm = React.createClass({
     );
   }
 });
-//https://static.pexels.com/photos/62640/pexels-photo-62640.jpeg
-//https://www.pexels.com/photo/women-resting-laying-down-27335/
+
 
 module.exports = LoginForm;

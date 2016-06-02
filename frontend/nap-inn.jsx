@@ -25,9 +25,7 @@ var App = React.createClass({
     return(
       <div>
         <NavBar/>
-          <Image
-          source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}
-        />
+
         {this.props.children}
       </div>
     );
