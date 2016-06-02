@@ -25,7 +25,9 @@ var App = React.createClass({
     return(
       <div>
         <NavBar/>
-
+          <div className="background"><img src={JSON.parse(
+              document.getElementById('content').dataset.images).background1}/>
+          </div>
         {this.props.children}
       </div>
     );

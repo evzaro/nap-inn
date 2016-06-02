@@ -71,7 +71,9 @@ input:invalid {
 }
 
 .nav {
-  background: white;
+  position: relative;
+  z-index: 2;
+  background: transparent;
   height: 61px;
 
 }
@@ -80,15 +82,14 @@ input:invalid {
   padding-left: 19px;
   opacity: 1;
   padding-right: 19px;
-  background: transparent;
   float: right;
   font-size: 14px;
-  border: 1px solid black;
+  border-style: none;
   color: white;
+  background: transparent;
   height: 61px;
   padding: 19px;
   margin: auto;
-  border: 1px solid #FF5A5F;
 }
 
 .nav-logo {
@@ -97,4 +98,12 @@ input:invalid {
   margin-left: 20px;
   margin-top: 20px;
   height: auto;
+
+}
+
+.background {
+  float: left;
+  position: absolute;
+  top: 0;
+  z-index: 1;
 }

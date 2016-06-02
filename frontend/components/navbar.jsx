@@ -29,6 +29,8 @@ NavBar = React.createClass({
           <button onClick={this.pushLogIn}>Log In</button>
 
           <button onClick={this.pushSignUp}>Sign Up</button>
+
+        <button>Help</button>
         </ul>
       </nav>
     );
