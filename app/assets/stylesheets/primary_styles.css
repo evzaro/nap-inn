@@ -14,13 +14,13 @@
 .login-signup-div {
   border: 1px solid;
   width: 450px;
-  height: 535px;
+  height: auto;
   border: 1px solid #484848;
   background: white;
   border-radius: 4px;
   padding: 32px;
   position: absolute;
-  top: 50%;
+  top: calc(30% + 220px);
   left: 50%;
   margin: -265px 0 0 -225px;
 }
@@ -100,14 +100,14 @@ input:invalid {
   float: left;
   width: 110px;
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 15px;
   height: auto;
-
+  cursor: pointer;
 }
 
 .fixed-nav {
 position: fixed;
-background: red;
+background: #FF5A5F;
 width: 100%;
 }
 
@@ -118,7 +118,7 @@ width: 100%;
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: #F5F5F5;
+  background: white;
 }
 
 .nav-links:hover {
@@ -152,7 +152,6 @@ width: 100%;
 .centered-content {
   max-width: 900px;
   margin: auto;
-
 }
 
 .form-content {
@@ -169,16 +168,36 @@ width: 100%;
 }
 
 .form-navbar {
-  background: blue;
   position: fixed;
   top: 61px;
   height: 50px;
   width: 100%;
+  border-bottom: solid 5px #00a699;
+  border-top: solid 1px #C4C4C4;
+  background: white;
+}
+
+.form-nav-list {
 }
 
 .form-navbar li {
   float: left;
+  color: #484848;
 }
+
+.form-navbar div {
+  float: left;
+  width: inherit;
+  padding:15px 90px 11px 10px;
+  border-right: solid 1px #00a699;
+}
+
+.form-navbar div:hover {
+  background: #C4C4C4;
+
+
+}
+
 
 .location-options {
   color: #484848;
@@ -195,8 +214,8 @@ width: 100%;
   position: fixed;
   margin-left: 544px;
   top: 111px;
-
 }
+
 
 #countries {
   display: block;
@@ -208,6 +227,7 @@ width: 100%;
   border-radius: 2px;
   background: white;
   border: 1px solid #C4C4C4;
+  color: #484848;
 }
 
 .location-options > input {
@@ -240,6 +260,14 @@ width: 100%;
   width: 544px;
   margin-left: -30px;
   bottom: 0;
+}
+
+.helper-content {
+  margin-top: 50px;;
+  padding: 40px;
+  height: 150px;
+  width: 200px;
+  border: 1px solid #C4C4C4;
 
 }
 
@@ -249,5 +277,29 @@ width: 100%;
 
 #state {
 
+}
 
+
+
+.back-btn{
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  border: none;
+  color: #00a699;
+  background: white;
+  font-size: 12px;
+}
+
+.next-btn{
+  position: absolute;
+  top: 30px;
+  left: 329px;
+  width: 185px;
+  height: 42px;
+  border: 1px solid #C4C4C4;
+  background-color: #FF5A5F;
+  color: white;
+  font-size: inherit;
+  border-radius: 4px;
 }

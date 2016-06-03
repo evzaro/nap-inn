@@ -13,7 +13,7 @@ var MasterSpotForm = React.createClass({
       location: ""
     });
   },
-
+  //two steps first is manual second is wih map
   render: function(){
 
     return(

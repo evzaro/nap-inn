@@ -10,6 +10,11 @@ NapInn is an AirBnB inspired web application that will focus on microstays inste
 - [ ] Smooth, bug-free navigation
 - [ ] Adequate seed data to demonstrate the site's features
 - [ ] The minimally necessary features for an AirBnB-inspired site: creation and listing of nap-spots, search functionality paired with Google Maps (searching via location, dates, price, and nap-spot type), nap spot bookings and reviews
+  - [x] Create an account (MVP)
+  - [ ] Log in / Log out, including as a Guest/Demo User (MVP)
+  - [ ] Post, view, edit, and remove nap-spot listings (MVP)
+  - [ ] Search for nap spots via various criteria (MVP)
+  - [ ] Book and review Nap Spots (MVP)
 - [x] Hosting on Heroku
 - [ ] CSS styling that is modern and attractive
 - [ ] A production README, replacing this README

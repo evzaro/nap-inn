@@ -21,23 +21,30 @@ var MasterSpotForm = React.createClass({
     });
   },
 
+  handleLocationSubmit: function(){
+    //BIND
+  },
+
   render: function(){
 
     return(
       <div className="form-content">
         <nav className="form-navbar">
-          <ul>
-            <li>but1</li>
-            <li>but2</li>
-            <li>but3</li>
+          <ul className="form-nav-list clearfix">
+            <li><div>Location</div></li>
+            <li><div>Place Type</div></li>
+            <li><div>Details</div></li>
           </ul>
         </nav>
         <div className = "centered-content clearfix">
           <div className="mini-form-window clearfix">
             <LocationForm/>
-            <div className="form-nav-bottom"></div>
+            <div className="form-nav-bottom">
+              <button className="back-btn">Back</button>
+              <button className="next-btn">Next</button>
+            </div>
           </div>
-            <div className="helper-info">Helper Stuff</div>
+            <div className="helper-info"><div className="helper-content"></div></div>
         </div>
       </div>
     );

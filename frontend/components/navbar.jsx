@@ -31,6 +31,14 @@ NavBar = React.createClass({
     hashHistory.push('/signup');
   },
 
+  pushHost: function (){
+    hashHistory.push('/new');
+  },
+
+  pushHome: function (){
+    hashHistory.push('/');
+  },
+
   _handleLogout: function (){
     SessionApiUtil.logout();
     hashHistory.push('/');
@@ -41,7 +49,7 @@ NavBar = React.createClass({
     if(SessionStore.isUserLoggedIn()){
       return(
         <nav className="nav fixed-nav">
-          <div className="nav-logo"><img src={JSON.parse(
+          <div className="nav-logo" onClick={this.pushHome}><img src={JSON.parse(
               document.getElementById('content').dataset.images).logo}/>
           </div>
           <ul classname="nav-links">
@@ -53,7 +61,7 @@ NavBar = React.createClass({
                 <li onClick={this._handleLogout}>Log Out</li>
               </ul>
             </li>
-            <button>Host</button>
+            <button onClick={this.pushHost}>Host</button>
             <button>Help</button>
           </ul>
         </nav>
@@ -61,7 +69,7 @@ NavBar = React.createClass({
     } else {
       return(
         <nav className="nav">
-          <div className="nav-logo"><img src={JSON.parse(
+          <div className="nav-logo" onClick={this.pushHome}><img src={JSON.parse(
             document.getElementById('content').dataset.images).logo}/>
           </div>
 
