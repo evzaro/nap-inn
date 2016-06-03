@@ -2,27 +2,13 @@ var React = require('react');
 
 module.exports = React.createClass({
 
-  getInitialState: function() {
-    return {
-      country: "United States"
-    };
-  },
-
-  selectCountry: function (e){
-    this.setState({
-      country: e.target.value
-    });
-    debugger
-    this.updateParentForm();
-  },
-
-  updateParentForm: function(){
-    this.props.getValueFromChild(this.state.country);
+  updateParentForm: function(e){
+    this.props.sendValueToParent(e.target.value);
   },
 
   render: function(){
     return(
-      <select id="countries" name="countries" onChange={this.selectCountry}>
+      <select id="countries" name="countries" onChange={this.updateParentForm}>
       <option value="United States">United States</option>
       <option value="Afghanistan">Afghanistan</option>
       <option value="Åland Islands">Åland Islands</option>

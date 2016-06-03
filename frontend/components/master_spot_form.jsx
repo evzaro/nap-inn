@@ -15,7 +15,7 @@ var MasterSpotForm = React.createClass({
     title: "",
     description: "",
     category: "",
-    location: "",
+    location: {},
     price: "",
     image_urls: ""
     });
@@ -38,10 +38,19 @@ var MasterSpotForm = React.createClass({
         </nav>
         <div className = "centered-content clearfix">
           <div className="mini-form-window clearfix">
-            <LocationForm/>
+
+            <LocationForm
+              nextPage={this.handleClickNext}
+              prevPage={this.handleClickPrev}/>
+            
             <div className="form-nav-bottom">
-              <button className="back-btn">Back</button>
-              <button className="next-btn">Next</button>
+
+              <button className="back-btn"
+                onClick={this.handleClickNext}>Back</button>
+
+              <button className="next-btn"
+                onClick={this.handleClickNext}>Next</button>
+
             </div>
           </div>
             <div className="helper-info"><div className="helper-content"></div></div>
