@@ -52,7 +52,8 @@ Make sure git is up to date (git add -A, git commit -m "prepare to push to Herok
 
 ### In the terminal in the root folder of your app:
 -heroku login (and then enter your credentials)
--git remote add heroku [heroku-git-url-here]  (like "git remote add origin")
+-git remote add heroku https://git.heroku.com/napinn.git
+  (like "git remote add origin")
 -heroku buildpacks:set heroku/ruby  (like "bundle install")
 -heroku buildpacks:add --index 1 heroku/nodejs  (like "npm install")
 -git push heroku master
