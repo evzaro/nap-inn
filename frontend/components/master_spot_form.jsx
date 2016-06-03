@@ -35,6 +35,7 @@ var MasterSpotForm = React.createClass({
         <div className = "centered-content clearfix">
           <div className="mini-form-window clearfix">
             <LocationForm/>
+            <div className="form-nav-bottom"></div>
           </div>
             <div className="helper-info">Helper Stuff</div>
         </div>

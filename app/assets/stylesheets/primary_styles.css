@@ -5,7 +5,7 @@
 	bottom: 0;
 	left: 0;
 	background: rgba(0, 0, 0, 0.7);
-	z-index: 9000;
+	z-index: 999;
 	opacity: 1;
   pointer-events: auto;
 }
@@ -154,8 +154,10 @@ input:invalid {
 .mini-form-window {
   background: purple;
   max-width: 550px;
+  height: 900px;
   padding: 30px;
   float:left;
+
 }
 
 .form-navbar {
@@ -175,9 +177,14 @@ input:invalid {
 }
 
 .helper-info{
-  float: right;
   background: white;
   padding: 30px;
+  height: 300px;
+  width: 300px;
+  position: fixed;
+  margin-left: 439px;
+  top: 111px;
+  background: purple;
 }
 
 #countries {
@@ -205,6 +212,15 @@ input:invalid {
   padding-top: 8px;
   padding-bottom: 9px;
   font-size: 18px;
+}
+
+.form-nav-bottom {
+  position: fixed;
+  background: white;
+  height: 100px;
+  width: 439px;
+  margin-left: -30px;
+  bottom: 0;
 }
 
 #city {
