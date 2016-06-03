@@ -17,10 +17,10 @@ var Map = React.createClass({
 
     // NapSpotStore.addListener(this._setMarkers);
 
-    this.map.addListener('idle', this._updatePosParams);
+    // this.map.addListener('idle', this._updatePosParams);
 
     this.markers = {};
-    },
+  },
 
   // _updatePosParams: function(){
   //   var bounds = {

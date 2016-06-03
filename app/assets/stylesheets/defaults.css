@@ -5,7 +5,24 @@ input {
 .map {
   width: 480px;
   height: 340px;
-  
-  float: right;
-  padding: 5px;
+  z-index: 0;
+  float: left;
+}
+
+.map-container {
+  height: 550px;
+  color: #484848;
+}
+
+.map-container h2 {
+ font-size: 24px;
+ padding-top: 30px;
+ padding-bottom: 20px;
+}
+
+.map-container h3 {
+  margin-top: 30px;
+  display: inline-block;
+  font-size: 18px;
+  color: #00a699;
 }

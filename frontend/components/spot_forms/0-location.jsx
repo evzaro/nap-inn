@@ -10,18 +10,33 @@ var LocationForm = React.createClass({
   // add saving? new table? or take away null constraints?
   getInitialState: function(){
     return({
-      location: "",
-      progress: 1
+      location: {
+        country: "",
+        address: "",
+        apt: "",
+        city: "",
+        state: "",
+        zip: "",
+      },
+      progress: 0
     });
   },
   //two steps first is manual second is wih map
+
+  getValueFromChild: function (new_country) {
+    var parent = this;
+    parent.setState({
+      country: new_country
+    });
+  },
+
   render: function(){
     if (this.state.progress === 0){
       return(
         <div className="location-options">
           <h2>Where's your spot located?</h2>
           <label for="country">Country</label>
-          <CountryDropDown id="country"/>
+          <CountryDropDown id="country" getValueFromChild={this.getValueFromChild}/>
           <label for="address">Street Address</label>
           <input type="text" id="address" value="" placeholder="e.g. 123 Main St."/>
           <label for="apt">Apt, Suite, Bldg.</label>
@@ -36,7 +51,7 @@ var LocationForm = React.createClass({
       );
     } else {
         return(
-          <div className="location-options map-container">
+          <div className="map-container clearfix">
             <h2>Where's your spot located?</h2>
             <Map/>
             <h3>Drag pin to change location</h3>
