@@ -18,7 +18,9 @@ var MasterSpotForm = React.createClass({
 
     return(
       <div className="location-options">
-        <CountryDropDown/>
+        <h2>Where's your spot located?</h2>
+        <label for="country">Country</label>
+        <CountryDropDown id="country"/>
         <label for="address">Street Address</label>
         <input type="text" id="address" value="" placeholder="e.g. 123 Main St."/>
         <label for="apt">Apt, Suite, Bldg.</label>

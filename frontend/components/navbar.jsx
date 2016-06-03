@@ -8,7 +8,7 @@ var SessionApiUtil = require('../util/session_api_util');
 NavBar = React.createClass({
   getInitialState: function (){
     return({
-      currentUser: SessionStore.currentUser()
+      currentUser: SessionStore.currentUser(),
     });
   },
 
@@ -37,10 +37,10 @@ NavBar = React.createClass({
   },
 
   render: function (){
-  
+
     if(SessionStore.isUserLoggedIn()){
       return(
-        <nav className="nav">
+        <nav className="nav fixed-nav">
           <div className="nav-logo"><img src={JSON.parse(
               document.getElementById('content').dataset.images).logo}/>
           </div>

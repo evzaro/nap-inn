@@ -24,7 +24,7 @@ var MasterSpotForm = React.createClass({
   render: function(){
 
     return(
-      <div>
+      <div className="form-content">
         <nav className="form-navbar">
           <ul>
             <li>but1</li>

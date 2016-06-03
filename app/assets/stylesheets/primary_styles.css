@@ -1,3 +1,4 @@
+
 .login-signup-modal{
   position: fixed;
 	top: 0;
@@ -58,7 +59,6 @@ input:invalid {
 }
 
 .signup-form input {
-  border: 1px solid #C4C4C4;
   width: 100%;
   height: 40px;
   padding-top: 10px;
@@ -75,7 +75,6 @@ input:invalid {
   z-index: 2;
   background: transparent;
   height: 61px;
-
 }
 
 .nav button {
@@ -106,6 +105,12 @@ input:invalid {
 
 }
 
+.fixed-nav {
+position: fixed;
+background: red;
+width: 100%;
+}
+
 .background {
   float: left;
   position: absolute;
@@ -113,7 +118,7 @@ input:invalid {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: gray;
+  background: #F5F5F5;
 }
 
 .nav-links:hover {
@@ -145,25 +150,30 @@ input:invalid {
 }
 
 .centered-content {
-  background: black;
   max-width: 900px;
   margin: auto;
 
 }
 
+.form-content {
+  background: #F5F5F5;
+}
+
 .mini-form-window {
-  background: purple;
   max-width: 550px;
-  height: 900px;
+  height: 100%;
+  margin-top: 108px;
   padding: 30px;
   float:left;
-
+  background: white;
 }
 
 .form-navbar {
+  background: blue;
+  position: fixed;
+  top: 61px;
   height: 50px;
   width: 100%;
-  background: green;
 }
 
 .form-navbar li {
@@ -171,9 +181,10 @@ input:invalid {
 }
 
 .location-options {
- max-width: 540px;
- height: 710px;
- float: right;
+  color: #484848;
+  width: 484px;
+  height: 900px;
+  float: right;
 }
 
 .helper-info{
@@ -182,25 +193,25 @@ input:invalid {
   height: 300px;
   width: 300px;
   position: fixed;
-  margin-left: 439px;
+  margin-left: 544px;
   top: 111px;
-  background: purple;
+
 }
 
 #countries {
   display: block;
-  color: #484848;
   margin: auto;
   width: 100%;
   padding: 20px;
   border: none;
-  height: 62px;
+  height: 60px;
   border-radius: 2px;
+  background: white;
+  border: 1px solid #C4C4C4;
 }
 
 .location-options > input {
   display: block;
-  color: #484848;
   margin: auto;
   width: 100%;
   padding: 20px;
@@ -209,18 +220,27 @@ input:invalid {
 
 .location-options label {
   display: block;
-  padding-top: 8px;
+  padding-top: 30px;
   padding-bottom: 9px;
   font-size: 18px;
 }
 
+.location-options h2 {
+  font-size: 24px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
 .form-nav-bottom {
+  box-shadow: 0 -1px 0 rgba(0,0,0,0.08);
+  border-top: 1px solid #C4C4C4;
   position: fixed;
   background: white;
   height: 100px;
-  width: 439px;
+  width: 544px;
   margin-left: -30px;
   bottom: 0;
+
 }
 
 #city {
