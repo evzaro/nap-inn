@@ -16,7 +16,6 @@ var LocationForm = React.createClass({
         city: "",
         state: "",
         zip: "",
-        progress: 0
     });
   },
 
@@ -31,7 +30,7 @@ var LocationForm = React.createClass({
   },
 
   render: function(){
-    if (this.state.progress === 0){
+    if (this.props.progress === 0){
       return(
         <div className="location-options">
           <h2>Where's your spot located?</h2>
@@ -58,7 +57,7 @@ var LocationForm = React.createClass({
         </div>
       );
     }
-    else {
+    else if (this.props.progress === 1) {
       return(
         <div className="map-container clearfix">
           <h2>Where's your spot located?</h2>

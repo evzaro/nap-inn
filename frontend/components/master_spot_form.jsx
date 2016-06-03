@@ -21,8 +21,19 @@ var MasterSpotForm = React.createClass({
     });
   },
 
-  handleLocationSubmit: function(){
-    //BIND
+  handleClickNext: function(){
+    this.setState(function(previousState, currentProps) {
+      return {progress: previousState.progress + 1};
+    });
+  },
+
+  handleClickPrev: function(){
+    this.setState(function(previousState, currentProps) {
+      console.log(currentProps);
+      if (previousState.progress > 0) {
+        return {progress: previousState.progress - 1};
+      }
+    });
   },
 
   render: function(){
@@ -39,14 +50,12 @@ var MasterSpotForm = React.createClass({
         <div className = "centered-content clearfix">
           <div className="mini-form-window clearfix">
 
-            <LocationForm
-              nextPage={this.handleClickNext}
-              prevPage={this.handleClickPrev}/>
-            
+            <LocationForm progress={this.state.progress}/>
+
             <div className="form-nav-bottom">
 
               <button className="back-btn"
-                onClick={this.handleClickNext}>Back</button>
+                onClick={this.handleClickPrev}>Back</button>
 
               <button className="next-btn"
                 onClick={this.handleClickNext}>Next</button>
