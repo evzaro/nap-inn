@@ -54,9 +54,9 @@ NavBar = React.createClass({
           </div>
           <ul classname="nav-links">
             <li className="profile-dropdown-parent">
-              <button className="profile-button">Profile</button>
+              <button className="profile-button">{this.state.currentUser.fname}</button>
               <ul className="profile-dropdown">
-                <li>Name</li>
+                <li>Profile</li>
                 <li>Your Naps</li>
                 <li onClick={this._handleLogout}>Log Out</li>
               </ul>

@@ -17,6 +17,7 @@ var MasterSpotForm = React.createClass({
     category: "",
     location: {},
     price: "",
+    capacity: 1,
     image_urls: ""
     });
   },
@@ -53,13 +54,13 @@ var MasterSpotForm = React.createClass({
             <LocationForm progress={this.state.progress}/>
 
             <div className="form-nav-bottom">
+              <div className="bottom-nav-buttons-container">
+                <button className="back-btn"
+                  onClick={this.handleClickPrev}>← Back</button>
 
-              <button className="back-btn"
-                onClick={this.handleClickPrev}>Back</button>
-
-              <button className="next-btn"
-                onClick={this.handleClickNext}>Next</button>
-
+                <button className="next-btn"
+                  onClick={this.handleClickNext}>Next</button>
+              </div>
             </div>
           </div>
             <div className="helper-info"><div className="helper-content"></div></div>

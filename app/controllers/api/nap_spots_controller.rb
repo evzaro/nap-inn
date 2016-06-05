@@ -19,7 +19,7 @@ class Api::NapSpotsController < ApplicationController
   end
 
   def nap_spot_params
-    params.require(:nap_spot).permit(:title, :description, :category, :location, :price, :image_urls)
+    params.require(:nap_spot).permit(:title, :description, :category, :location, :price, :capacity, :image_urls)
   end
 
 end

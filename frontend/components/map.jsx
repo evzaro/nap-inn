@@ -13,13 +13,17 @@ var Map = React.createClass({
 
     };
 
+    var service = new google.maps.places.PlacesService(map);
+    service.textSearch(request, callback);
+
+
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
 
     // NapSpotStore.addListener(this._setMarkers);
 
     // this.map.addListener('idle', this._updatePosParams);
 
-    this.markers = {};
+    // this.markers = {};
   },
 
   // _updatePosParams: function(){

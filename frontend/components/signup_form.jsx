@@ -44,7 +44,9 @@ var LoginForm = React.createClass({
 
 		var formData = {
 			user_email: this.state.user_email,
-			password: this.state.password
+			password: this.state.password,
+      fname: this.state.fname,
+      lname: this.state.lname
 		};
 
     if (this.props.location.pathname === "/signup") {

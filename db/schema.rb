@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602181949) do
+ActiveRecord::Schema.define(version: 20160605191022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160602181949) do
     t.string  "location",    null: false
     t.integer "price",       null: false
     t.string  "image_urls"
+    t.integer "capacity"
   end
 
   add_index "nap_spots", ["category"], name: "index_nap_spots_on_category", using: :btree
@@ -35,6 +36,8 @@ ActiveRecord::Schema.define(version: 20160602181949) do
     t.string "user_email",      null: false
     t.string "password_digest", null: false
     t.string "session_token",   null: false
+    t.string "fname"
+    t.string "lname"
   end
 
   add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree

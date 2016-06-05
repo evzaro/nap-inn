@@ -254,15 +254,12 @@ width: 100%;
 
 
 .form-nav-bottom {
-  box-shadow: 0 -1px 0 rgba(0,0,0,0.08);
-  border-top: 1px solid #C4C4C4;
   position: fixed;
   background: white;
   height: 100px;
   width: 544px;
   margin-left: -30px;
   bottom: 0;
-  z-index: 2;
 }
 
 .helper-content {
@@ -283,7 +280,15 @@ width: 100%;
 
 }
 
+.bottom-nav-buttons-container {
+  box-shadow: 0 -1px 0 rgba(0,0,0,0.08);
+  border-top: 1px solid #C4C4C4;
+  color: black;
+  width: 485px;
+  z-index: 2;
+  margin: auto;
 
+}
 
 .back-btn{
   position: absolute;
