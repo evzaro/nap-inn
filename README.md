@@ -16,7 +16,7 @@ NapInn is an AirBnB inspired web application that will focus on microstays inste
   - [ ] Search for nap spots via various criteria (MVP)
   - [ ] Book and review Nap Spots (MVP)
 - [x] Hosting on Heroku
-- [ ] CSS styling that is modern and attractive
+- [x] CSS styling that is modern and attractive
 - [ ] A production README, replacing this README
 
 <!--(**NB**: check out the [sample production README](https://github.com/appacademy/sample-project-proposal/blob/master/docs/production_readme.md) -- I'll write this later)
@@ -65,13 +65,13 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 **Objective:** Nap-Spots can be created, read, edited and destroyed through
 the API.
 
-- [ ] create `NapSpot` model (location, price, description, owner_id, type, images)
-- [ ] seed the database with a small amount of test data
+- [x] create `NapSpot` model (location, price, description, owner_id, type, images)
+- [x] seed the database with a small amount of test data
 - [ ] CRUD API for Nap-Spots (`NapSpotsController`)
 - [ ] jBuilder views for Nap-Spots
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [x] setup Webpack & Flux scaffold
+- [x] setup `APIUtil` to interact with the API
+- [x] test out API interaction in the console.
 
 
 ### Phase 3: Flux Architecture and Router (1.5 days)
@@ -84,7 +84,7 @@ user interface.
 - implement each napspot component, building out the flux loop as needed.
   - [ ] `NapSpotIndex`
   - [ ] `NapSpotItem`
-  - [ ] `NapSpotForm`
+  - [x] `NapSpotForm` (6/5 now a series of components linking to a single form)
   - [ ] `NapSpotDetail`
 - [ ] merge auth with creation/viewing of nap-spots
 
