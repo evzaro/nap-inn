@@ -1,10 +1,6 @@
 var React = require('react');
-var ClientActions = require('../../actions/client_actions');
-// var ReactRouter = require('react-router');
-// var hashHistory = ReactRouter.hashHistory;
 var CountryDropDown = require('./country_drop_down');
 var Map = require('../map');
-
 
 var LocationForm = React.createClass({
   // add saving? new table? or take away null constraints?
@@ -22,18 +18,26 @@ var LocationForm = React.createClass({
   },
 
   componentDidMount: function(){
-    this.initAutocomplete();
+    var auto = this.initAutocomplete();
   },
+
+  updateMaster: function(){
+    this.props.sendValueToMaster(this.state);
+  },
+
 
   getCountryFromChild: function (new_country) {
     this.setState({country: new_country});
+    this.forceUpdate(this.updateMaster);
   },
 
   handleChange: function(e){
     var newState = {};
     newState[e.target.id] = e.target.value;
     this.setState(newState);
+    this.forceUpdate(this.updateMaster);
   },
+
 
     componentForm: {
       street_number: 'short_name',
@@ -67,6 +71,7 @@ var LocationForm = React.createClass({
           this.setState(newState);
         }
       }
+      this.forceUpdate(this.updateMaster);
     },
 
   render: function(){
@@ -84,23 +89,23 @@ var LocationForm = React.createClass({
         <div className="creation-options">
           <h2>Where's your spot located?</h2>
           <label for="country">Country</label>
-          <CountryDropDown id="country" sendValueToParent={this.getCountryFromChild} startingCountry = {this.state.country}/>
-            <form onChange={this.handleChange} className="position-form">
+          <CountryDropDown id="country" sendValueToParent={this.getCountryFromChild} startingCountry={this.state.country}/>
+            <form className="position-form">
 
             <label for="address">Street Address</label>
-            <input type="text" id="address" value={this.state.street_number + " " + this.state.route} placeholder="e.g. 123 Main St."/>
+            <input type="text" onChange={this.handleChange} id="address" value={this.state.street_number + " " + this.state.route} placeholder="e.g. 123 Main St."/>
 
             <label for="apt">Apt, Suite, Bldg.</label>
-            <input type="text" id="apt" value={this.state.apt} placeholder="e.g. Apt #7"/>
+            <input type="text" onChange={this.handleChange} id="apt" value={this.state.apt} placeholder="e.g. Apt #7"/>
 
             <label for="city">City</label>
-            <input type="text" id="locality" value={this.state.locality} placeholder="e.g. New York"/>
+            <input type="text" onChange={this.handleChange} id="locality" value={this.state.locality} placeholder="e.g. New York"/>
 
             <label for="state">State</label>
-            <input type="text" id="administrative_area_level_1" value={this.state.administrative_area_level_1} placeholder="e.g. NY"/>
+            <input type="text" onChange={this.handleChange} id="administrative_area_level_1" value={this.state.administrative_area_level_1} placeholder="e.g. NY"/>
 
             <label for="zip">ZIP Code</label>
-            <input type="text" id="postal_code" value={this.state.postal_code} placeholder="e.g. 12491"/>
+            <input type="text" onChange={this.handleChange} id="postal_code" value={this.state.postal_code} placeholder="e.g. 12491"/>
 
             </form>
         </div>

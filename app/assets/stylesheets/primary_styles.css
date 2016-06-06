@@ -356,3 +356,24 @@ width: 100%;
   width: 24px;
   float: right;
 }
+
+.house-select {
+  padding: 10px;
+  width: 324px;
+  height: 45px;
+  border-radius: 2px;
+  color: #757575;
+  margin-top: 5px;
+}
+
+.house-select-label {
+  color: #757575;
+}
+
+.category-form-container {
+  height: 700px;
+}
+
+.detail-form-container {
+  height: 550px;
+}

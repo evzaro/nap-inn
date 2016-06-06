@@ -6,6 +6,8 @@ var ReactRouter = require('react-router');
 var hashHistory = ReactRouter.hashHistory;
 var LocationForm = require('./spot_forms/0-location');
 var CategoryForm = require('./spot_forms/3-category');
+var DetailForm =  require('./spot_forms/4-detail');
+var InfoForm =  require('./spot_forms/5-info');
 
 var MasterSpotForm = React.createClass({
   // add saving? new table? or take away null constraints?
@@ -15,9 +17,9 @@ var MasterSpotForm = React.createClass({
     progress: 0,
     title: "",
     description: "",
-    category: "",
+    category: {},
     location: {},
-    price: "",
+    price: 0,
     capacity: 1,
     image_urls: ""
     });
@@ -37,12 +39,32 @@ var MasterSpotForm = React.createClass({
     });
   },
 
+  getLocationFromChild: function (data) {
+    var new_state = {location: data};
+    this.setState(new_state);
+  },
+
+  getCategoryFromChild: function (data) {
+    var new_state = {category: data};
+    this.setState(new_state);
+  },
+
+  getDetailsFromChild: function (data) {
+    var new_state = {price: data.price, capacity: data.capacity};
+    this.setState(new_state);
+  },
+
   render: function(){
+    console.log(this.state.price);
+    console.log(this.state.capacity);
     var currentForm;
     if (this.state.progress < 3){
-      currentForm = <LocationForm progress={this.state.progress}/>;
-    } else {
-      currentForm = <CategoryForm progress={this.state.progress}/>;
+      currentForm = <LocationForm progress={this.state.progress} sendValueToMaster={this.getLocationFromChild}/>;
+    } else if (this.state.progress === 3){
+      currentForm = <CategoryForm progress={this.state.progress} sendValueToMaster={this.getCategoryFromChild}/>;
+    } else if (this.state.progress === 4){
+      currentForm = <DetailForm progress={this.state.progress} sendValueToMaster={this.getDetailsFromChild}/>;
+    } else if (this.state.progress === 5){
     }
     return(
       <div className="form-content">
