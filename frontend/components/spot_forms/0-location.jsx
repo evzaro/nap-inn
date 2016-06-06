@@ -16,7 +16,8 @@ var LocationForm = React.createClass({
       administrative_area_level_1: '',
       country: '',
       postal_code: '',
-      apt: ''
+      apt: '',
+      latlng: {}
     });
   },
 
@@ -44,19 +45,19 @@ var LocationForm = React.createClass({
     },
 
     initAutocomplete: function() {
-      // Create the autocomplete object, restricting the search to geographical
-      // location types.
+
       autocomplete = new google.maps.places.Autocomplete(
           /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
           {types: ['geocode']});
 
-      // When the user selects an address from the dropdown, populate the address
-      // fields in the form.
       autocomplete.addListener('place_changed', this.setAddressState);
     },
 
     setAddressState: function (){
       var place = autocomplete.getPlace();
+      this.setState({
+        latLng: {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()}
+      });
       for (var i = 0; i < place.address_components.length; i++) {
         var addressType = place.address_components[i].types[0];
         if (this.componentForm[addressType]) {
@@ -67,44 +68,20 @@ var LocationForm = React.createClass({
         }
       }
     },
-    //
-    // function fillInAddress() {
-    //   // Get the place details from the autocomplete object.
-    //   var place = autocomplete.getPlace();
-    //
-    //   for (var component in componentForm) {
-    //     document.getElementById(component).value = '';
-    //     document.getElementById(component).disabled = false;
-    //   }
-    //
-    //   // Get each component of the address from the place details
-    //   // and fill the corresponding field on the form.
-    //   for (var i = 0; i < place.address_components.length; i++) {
-    //     var addressType = place.address_components[i].types[0];
-    //     if (componentForm[addressType]) {
-    //       var val = place.address_components[i][componentForm[addressType]];
-    //       document.getElementById(addressType).value = val;
-    //     }
-    //   }
-    // }
-
 
   render: function(){
 
     if (this.props.progress === 0){
       return(
-        <div className="location-options">
+        <div className="creation-options autocomplete-field">
           <h2>Where's your spot located?</h2>
           <input type="text" id="autocomplete" placeholder="Your full address"/>
         </div>
       );
     }
     else if (this.props.progress === 1){
-
-
-
       return(
-        <div className="location-options">
+        <div className="creation-options">
           <h2>Where's your spot located?</h2>
           <label for="country">Country</label>
           <CountryDropDown id="country" sendValueToParent={this.getCountryFromChild} startingCountry = {this.state.country}/>
@@ -133,7 +110,7 @@ var LocationForm = React.createClass({
       return(
         <div className="map-container clearfix">
           <h2>Where's your spot located?</h2>
-          <Map/>
+          <Map newPos={this.state.latLng}/>
           <h3>Drag pin to change location</h3>
         </div>
       );

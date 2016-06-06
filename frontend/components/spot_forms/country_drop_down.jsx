@@ -6,19 +6,19 @@ module.exports = React.createClass({
     return({country: this.props.startingCountry});
   },
 
-  updateParentForm: function(e){
+  updateParentForm: function(){
     this.props.sendValueToParent(this.state.country);
   },
 
   updateState: function(e){
-    this.setState({country:e.target.value});
-    this.updateParentForm(e);
+    this.setState({country: e.target.value});
+    this.updateParentForm();
   },
 
   render: function(){
 
     return(
-      <select value={this.props.startingCountry} id="countries" name="countries" onChange={this.updateState}>
+      <select value={this.state.country} id="countries" name="countries" onChange={this.updateState}>
       <option value="United States">United States</option>
       <option value="Afghanistan">Afghanistan</option>
       <option value="Åland Islands">Åland Islands</option>

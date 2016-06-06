@@ -5,6 +5,7 @@ var ClientActions = require('../actions/client_actions');
 var ReactRouter = require('react-router');
 var hashHistory = ReactRouter.hashHistory;
 var LocationForm = require('./spot_forms/0-location');
+var CategoryForm = require('./spot_forms/3-category');
 
 var MasterSpotForm = React.createClass({
   // add saving? new table? or take away null constraints?
@@ -30,7 +31,6 @@ var MasterSpotForm = React.createClass({
 
   handleClickPrev: function(){
     this.setState(function(previousState, currentProps) {
-      console.log(currentProps);
       if (previousState.progress > 0) {
         return {progress: previousState.progress - 1};
       }
@@ -38,20 +38,25 @@ var MasterSpotForm = React.createClass({
   },
 
   render: function(){
-
+    var currentForm;
+    if (this.state.progress < 3){
+      currentForm = <LocationForm progress={this.state.progress}/>;
+    } else {
+      currentForm = <CategoryForm progress={this.state.progress}/>;
+    }
     return(
       <div className="form-content">
         <nav className="form-navbar">
           <ul className="form-nav-list clearfix">
             <li><div>Location</div></li>
-            <li><div>Place Type</div></li>
+            <li><div>Spot Type</div></li>
             <li><div>Details</div></li>
           </ul>
         </nav>
         <div className = "centered-content clearfix">
           <div className="mini-form-window clearfix">
 
-            <LocationForm progress={this.state.progress}/>
+            {currentForm}
 
             <div className="form-nav-bottom">
               <div className="bottom-nav-buttons-container">

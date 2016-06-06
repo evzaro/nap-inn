@@ -195,12 +195,12 @@ width: 100%;
 
 .form-navbar div:hover {
   background: #C4C4C4;
-
+  cursor: pointer;
 
 }
 
 
-.location-options {
+.creation-options {
   color: #484848;
   width: 484px;
   height: 900px;
@@ -231,7 +231,7 @@ width: 100%;
   color: #484848;
 }
 
-.location-options  input {
+.creation-options  input {
   display: block;
   margin: auto;
   width: 100%;
@@ -239,17 +239,25 @@ width: 100%;
   border-radius: 2px;
 }
 
-.location-options label {
+.creation-options label {
   display: block;
   padding-top: 30px;
   padding-bottom: 9px;
   font-size: 18px;
 }
 
-.location-options h2 {
+.creation-options h2 {
   font-size: 24px;
   padding-top: 30px;
   padding-bottom: 20px;
+}
+
+.autocomplete-field {
+  height: 240px;
+}
+
+#autocomplete {
+  margin-top: 20px;
 }
 
 
@@ -260,6 +268,7 @@ width: 100%;
   width: 544px;
   margin-left: -30px;
   bottom: 0;
+  z-index: 2;
 }
 
 .helper-content {
@@ -285,7 +294,7 @@ width: 100%;
   border-top: 1px solid #C4C4C4;
   color: black;
   width: 485px;
-  z-index: 2;
+  z-index: 3;
   margin: auto;
 
 }
@@ -311,4 +320,39 @@ width: 100%;
   color: white;
   font-size: inherit;
   border-radius: 4px;
+}
+
+.category-form {
+  border-top: 1px solid #C4C4C4;
+  border-right: 1px solid #C4C4C4;
+  border-left: 1px solid #C4C4C4;
+  margin-top: 10px;
+  width: 325px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.radio-option {
+  padding: 10px;
+  width: 324px;
+  border-bottom: 1px solid #C4C4C4;
+  overflow: hidden;
+}
+
+.radio-option label {
+  height: 24px;
+  width: calc(100% - 24px);
+  float: left;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.bottom-radio {
+  overflow: hidden;
+}
+
+.radio-option input {
+  height: 24px;
+  width: 24px;
+  float: right;
 }
