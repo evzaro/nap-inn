@@ -16,6 +16,7 @@ var NapSpotApiUtil = {
       type: "POST",
       url: "api/nap_spots",
       data: {'nap_spot': nap_spot},
+      dataType: 'json',
       success: function (nap_spot){
         ServerActions.receiveSingleNapSpot(nap_spot);
       }

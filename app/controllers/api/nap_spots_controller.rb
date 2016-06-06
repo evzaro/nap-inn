@@ -7,7 +7,7 @@ class Api::NapSpotsController < ApplicationController
 
   def create
     @nap_spot = NapSpot.new(nap_spot_params)
-
+    @nap_spot.owner_id = current_user.id;
     if @nap_spot.save
       render json: @nap_spot
     else

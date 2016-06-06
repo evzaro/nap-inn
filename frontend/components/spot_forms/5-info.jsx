@@ -1,4 +1,5 @@
 var React = require('react');
+var SessionStore = require('../../stores/session_store');
 
 InfoForm = React.createClass({
 
@@ -30,16 +31,18 @@ InfoForm = React.createClass({
   },
 
   render: function(){
+    var titlePlaceHolder;
+
 
     return(
-      <div className="creation-options detail-form-container">
-        <h2>How many people can comfortably nap at your spot?</h2>
+      <div className="creation-options show-form-container">
+        <h2>Name your spot</h2>
         <input type="text" value={this.state.title}
-          onChange={this.handleTitleChange}/>
+          onChange={this.handleTitleChange} placeholder={"e.g "+ SessionStore.currentUser().fname + "'s spot!"}/>
 
-        <h2>How much would you like to charge per hour?</h2>
-        <input type="textarea" value={this.state.description}
-          onChange={this.handleDescriptionChange}/>
+        <h3 className="desc-label">Write a brief description about your spot. What makes it special?</h3>
+        <textarea className="description-input" value={this.state.description}
+          onChange={this.handleDescriptionChange} placeholder="Description"/>
 
       </div>
     );

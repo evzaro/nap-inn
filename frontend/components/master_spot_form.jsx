@@ -6,8 +6,8 @@ var ReactRouter = require('react-router');
 var hashHistory = ReactRouter.hashHistory;
 var LocationForm = require('./spot_forms/0-location');
 var CategoryForm = require('./spot_forms/3-category');
-var DetailForm =  require('./spot_forms/4-detail');
-var InfoForm =  require('./spot_forms/5-info');
+var DetailForm = require('./spot_forms/4-detail');
+var InfoForm = require('./spot_forms/5-info');
 
 var MasterSpotForm = React.createClass({
   // add saving? new table? or take away null constraints?
@@ -28,6 +28,20 @@ var MasterSpotForm = React.createClass({
   handleClickNext: function(){
     this.setState(function(previousState, currentProps) {
       return {progress: previousState.progress + 1};
+    });
+  },
+
+  handleClickSave: function(){
+    //category has extra info being unused
+    
+    ClientActions.createNapSpot({
+      title: this.state.title,
+      description: this.state.description,
+      category: this.state.category.category,
+      location: JSON.stringify(this.state.location),
+      price: this.state.price,
+      capacity: this.state.capacity,
+      image_urls: ""
     });
   },
 
@@ -54,17 +68,27 @@ var MasterSpotForm = React.createClass({
     this.setState(new_state);
   },
 
+  getInfoFromChild: function (data) {
+    var new_state = {title: data.title, description: data.description};
+    this.setState(new_state);
+  },
+
   render: function(){
-    console.log(this.state.price);
-    console.log(this.state.capacity);
+
     var currentForm;
+    var nextButton;
     if (this.state.progress < 3){
+      nextButton = <button className="next-btn" onClick={this.handleClickNext}>Next</button>;
       currentForm = <LocationForm progress={this.state.progress} sendValueToMaster={this.getLocationFromChild}/>;
     } else if (this.state.progress === 3){
+      nextButton = <button className="next-btn" onClick={this.handleClickNext}>Next</button>;
       currentForm = <CategoryForm progress={this.state.progress} sendValueToMaster={this.getCategoryFromChild}/>;
     } else if (this.state.progress === 4){
+      nextButton = <button className="next-btn" onClick={this.handleClickNext}>Next</button>;
       currentForm = <DetailForm progress={this.state.progress} sendValueToMaster={this.getDetailsFromChild}/>;
     } else if (this.state.progress === 5){
+      nextButton = <button className="next-btn" onClick={this.handleClickSave}>Save</button>;
+      currentForm = <InfoForm progress={this.state.progress} sendValueToMaster={this.getInfoFromChild}/>;
     }
     return(
       <div className="form-content">
@@ -85,8 +109,7 @@ var MasterSpotForm = React.createClass({
                 <button className="back-btn"
                   onClick={this.handleClickPrev}>← Back</button>
 
-                <button className="next-btn"
-                  onClick={this.handleClickNext}>Next</button>
+                  {nextButton}
               </div>
             </div>
           </div>

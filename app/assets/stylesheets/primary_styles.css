@@ -377,3 +377,22 @@ width: 100%;
 .detail-form-container {
   height: 550px;
 }
+
+.show-form-container {
+  padding: 10px 5px 10px 10px;
+  height: 450px;
+}
+
+.description-input {
+
+  width: 470px;
+  height: 180px;
+  padding: 20px;
+  border: 1px solid #C4C4C4;
+  border-radius: 2px;
+}
+
+.desc-label {
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
