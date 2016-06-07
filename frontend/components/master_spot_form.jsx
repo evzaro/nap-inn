@@ -33,7 +33,7 @@ var MasterSpotForm = React.createClass({
 
   handleClickSave: function(){
     //category has extra info being unused
-    
+
     ClientActions.createNapSpot({
       title: this.state.title,
       description: this.state.description,
@@ -41,8 +41,9 @@ var MasterSpotForm = React.createClass({
       location: JSON.stringify(this.state.location),
       price: this.state.price,
       capacity: this.state.capacity,
-      image_urls: ""
+      image_urls: this.state.image_urls
     });
+    debugger
   },
 
   handleClickPrev: function(){
@@ -54,39 +55,80 @@ var MasterSpotForm = React.createClass({
   },
 
   getLocationFromChild: function (data) {
-    var new_state = {location: data};
+    var new_state = {
+      location: data
+    };
     this.setState(new_state);
   },
 
   getCategoryFromChild: function (data) {
-    var new_state = {category: data};
+    var new_state = {
+      category: data
+    };
     this.setState(new_state);
   },
 
   getDetailsFromChild: function (data) {
-    var new_state = {price: data.price, capacity: data.capacity};
+    var new_state = {
+      price: data.price,
+      capacity: data.capacity
+    };
     this.setState(new_state);
   },
 
   getInfoFromChild: function (data) {
-    var new_state = {title: data.title, description: data.description};
+    var new_state = {
+      title: data.title,
+      description: data.description,
+      image_urls: data.image_url
+    };
     this.setState(new_state);
+  },
+
+  handleLocationClick: function (){
+    if (this.state.progress > 2){
+      this.setState({
+        progress: 0
+      });
+    }
+  },
+
+  handleTypeClick: function (){
+    if (this.state.progress !== 3){
+      this.setState({
+        progress: 3
+      });
+    }
+  },
+
+  handleDeatilsClick: function (){
+    if (this.state.progress < 4){
+      this.setState({
+        progress: 4
+      });
+    }
   },
 
   render: function(){
 
     var currentForm;
     var nextButton;
+    var progressStatus;
+
     if (this.state.progress < 3){
+      progressStatus = "first";
       nextButton = <button className="next-btn" onClick={this.handleClickNext}>Next</button>;
       currentForm = <LocationForm progress={this.state.progress} sendValueToMaster={this.getLocationFromChild}/>;
     } else if (this.state.progress === 3){
+      progressStatus = "second";
       nextButton = <button className="next-btn" onClick={this.handleClickNext}>Next</button>;
       currentForm = <CategoryForm progress={this.state.progress} sendValueToMaster={this.getCategoryFromChild}/>;
     } else if (this.state.progress === 4){
+      progressStatus = "third";
       nextButton = <button className="next-btn" onClick={this.handleClickNext}>Next</button>;
       currentForm = <DetailForm progress={this.state.progress} sendValueToMaster={this.getDetailsFromChild}/>;
     } else if (this.state.progress === 5){
+      progressStatus = "third";
       nextButton = <button className="next-btn" onClick={this.handleClickSave}>Save</button>;
       currentForm = <InfoForm progress={this.state.progress} sendValueToMaster={this.getInfoFromChild}/>;
     }
@@ -94,9 +136,9 @@ var MasterSpotForm = React.createClass({
       <div className="form-content">
         <nav className="form-navbar">
           <ul className="form-nav-list clearfix">
-            <li><div>Location</div></li>
-            <li><div>Spot Type</div></li>
-            <li><div>Details</div></li>
+            <li><div className={"loc-" + progressStatus} onClick={this.handleLocationClick}>Location</div></li>
+            <li><div className={"type-" + progressStatus}  onClick={this.handleTypeClick}>Spot Type</div></li>
+            <li><div className={"detail-" + progressStatus}  onClick={this.handleDeatilsClick}>Details</div></li>
           </ul>
         </nav>
         <div className = "centered-content clearfix">

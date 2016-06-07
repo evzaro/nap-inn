@@ -14,15 +14,13 @@ DetailForm = React.createClass({
   handleCapacityChange: function (e){
     this.setState({
       capacity: e.target.value
-    });
-    this.forceUpdate(this.updateMaster);
+    }, this.updateMaster);
   },
 
   handlePriceChange: function (e){
     this.setState({
       price: e.target.value
-    });
-    this.forceUpdate(this.updateMaster);
+    }, this.updateMaster);
   },
 
   updateMaster: function(){

@@ -27,17 +27,14 @@ var LocationForm = React.createClass({
 
 
   getCountryFromChild: function (new_country) {
-    this.setState({country: new_country});
-    this.forceUpdate(this.updateMaster);
+    this.setState({country: new_country}, this.updateMaster);
   },
 
   handleChange: function(e){
     var newState = {};
     newState[e.target.id] = e.target.value;
-    this.setState(newState);
-    this.forceUpdate(this.updateMaster);
+    this.setState(newState, this.updateMaster);
   },
-
 
     componentForm: {
       street_number: 'short_name',
