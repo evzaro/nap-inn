@@ -5,12 +5,11 @@ var NavBar = require('./navbar');
 var App = React.createClass({
   render: function(){
     return(
-      <div>
+      <main>
         <NavBar/>
-          <div className="background">
-          </div>
+        
         {this.props.children}
-      </div>
+      </main>
     );
   }
 });

@@ -1,4 +1,6 @@
 
+html, body, main {margin:0;padding:0;height:100%;}
+
 .login-signup-modal{
   position: fixed;
 	top: 0;
@@ -410,12 +412,57 @@ width: 100%;
   background: #C4C4C4;
 }
 
+.index {
+  position: relative;
+}
+
 .index-items {
+  margin-top: 50px;
   float: left;
-  width: 60%
+  width: 60%;
+  height: 500px;
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow-y: scroll
 }
 
 .index-map-container {
+  position: fixed;
   width: 40%;
-  float: right;
+  height: 100%;
+  right: 0;
+}
+
+.index-item-container {
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+
+.index-item-content {
+  position: relative;
+
+}
+
+.index-item-content span {
+  width: 70px;
+  height: 40px;
+  background: rgba(45,45,45,0.9);
+  color: #eee;
+  position: absolute;
+  top: 90px;
+  left: 0px;
+  border-radius: 2px;
+  padding: 0 10px 10px 10px;
+}
+
+.index-item-content h2 {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+.index-item-content h3 {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
 }

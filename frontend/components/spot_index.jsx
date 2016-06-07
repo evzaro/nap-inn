@@ -35,7 +35,7 @@ var SpotIndex = React.createClass({
 
     return (
       <div className="index clearfix">
-        <div className="index-items">
+        <div className="index-items group">
           {index_items}
         </div>
         <div className="index-map-container">

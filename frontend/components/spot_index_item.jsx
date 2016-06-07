@@ -14,7 +14,7 @@ var SpotIndexItem = React.createClass({
           <span>{this.props.spot.price}</span>
           <div></div>
           <h2 className="index-title">{this.props.spot.title}</h2>
-          <h3 className="index-desc">{this.props.spot.category}</h3>
+          <h3 className="index-cat">{this.props.spot.category}</h3>
         </div>
       </div>
     );
