@@ -43,7 +43,6 @@ var MasterSpotForm = React.createClass({
       capacity: this.state.capacity,
       image_urls: this.state.image_urls
     });
-    debugger
   },
 
   handleClickPrev: function(){

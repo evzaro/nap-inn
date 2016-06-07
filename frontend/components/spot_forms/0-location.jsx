@@ -57,7 +57,7 @@ var LocationForm = React.createClass({
     setAddressState: function (){
       var place = autocomplete.getPlace();
       this.setState({
-        latLng: {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()}
+        latlng: {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()}
       });
       for (var i = 0; i < place.address_components.length; i++) {
         var addressType = place.address_components[i].types[0];
@@ -112,7 +112,7 @@ var LocationForm = React.createClass({
       return(
         <div className="map-container clearfix">
           <h2>Where's your spot located?</h2>
-          <Map newPos={this.state.latLng}/>
+          <Map newPos={this.state.latlng}/>
           <h3>Drag pin to change location</h3>
         </div>
       );

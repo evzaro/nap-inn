@@ -2,7 +2,8 @@ class Api::NapSpotsController < ApplicationController
 
   def index
     @nap_spots = NapSpot.all
-    render json: @nap_spots
+    #render json: @nap_spots
+     render "api/nap_spots/index"
   end
 
   def create
@@ -16,6 +17,8 @@ class Api::NapSpotsController < ApplicationController
   end
 
   def show
+    @nap_spot = NapSpot.find_by(id: params[:id])
+    render "api/nap_spots/show"
   end
 
   def nap_spot_params

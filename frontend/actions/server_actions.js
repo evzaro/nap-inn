@@ -2,10 +2,10 @@ var AppDispatcher = require('../dispatcher/dispatcher');
 var NapSpotConstants = require('../constants/nap_spot_constants');
 
 var ServerActions = {
-  receiveAll: function(nap_spots){
+  receiveAll: function(data){
     AppDispatcher.dispatch({
       actionType: NapSpotConstants.SPOTS_RECEIVED,
-      nap_spots: nap_spots
+      nap_spots: data.nap_spots
     });
   },
   receiveSingleNapSpot: function(nap_spot){

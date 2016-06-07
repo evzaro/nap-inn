@@ -14,6 +14,8 @@ var LoginForm = require('./components/login_form');
 var SignupForm = require('./components/signup_form');
 var NavBar = require('./components/navbar');
 var MasterSpotForm = require('./components/master_spot_form');
+var NapSpotIndex = require('./components/spot_index');
+var App = require('./components/app');
 
 //Authentication
 var SessionStore = require('./stores/session_store');
@@ -23,18 +25,18 @@ var SessionApiUtil = require('./util/session_api_util');
 var NapSpotStore = require('./stores/nap_spot_store');
 var NapSpotApiUtil = require('./util/nap_spot_api_util');
 
-var App = React.createClass({
-  render: function(){
-    return(
-      <div>
-        <NavBar/>
-          <div className="background">
-          </div>
-        {this.props.children}
-      </div>
-    );
-  }
-});
+// var App = React.createClass({
+//   render: function(){
+//     return(
+//       <div>
+//         <NavBar/>
+//           <div className="background">
+//           </div>
+//         {this.props.children}
+//       </div>
+//     );
+//   }
+// });
 
 
 var Router = (
@@ -43,6 +45,7 @@ var Router = (
         <Route path="/login" component={LoginForm}/>
         <Route path="/signup" component={SignupForm}/>
         <Route path="/new" component={MasterSpotForm}/>
+        <Route path="/index" component={NapSpotIndex}/>
     </Route>
   </Router>
 );
