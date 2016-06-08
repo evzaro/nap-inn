@@ -417,13 +417,14 @@ width: 100%;
 }
 
 .index-items {
-  margin-top: 50px;
+  margin-top: 60px;
   float: left;
   width: 60%;
   height: 500px;
   padding-left: 15px;
   padding-right: 15px;
-  overflow-y: scroll
+  overflow-y: scroll;
+  background: #F7F7F7;
 }
 
 .index-map-container {
@@ -436,7 +437,7 @@ width: 100%;
 .index-item-container {
   float: left;
   width: 50%;
-  padding: 20px;
+
 }
 
 .index-item-content {
@@ -445,24 +446,46 @@ width: 100%;
 }
 
 .index-item-content span {
-  width: 70px;
+  width: auto;
   height: 40px;
   background: rgba(45,45,45,0.9);
   color: #eee;
   position: absolute;
-  top: 90px;
+  top: 75%;
   left: 0px;
   border-radius: 2px;
-  padding: 0 10px 10px 10px;
+  padding: 10px;
+
 }
 
-.index-item-content h2 {
+.index-item-container h2 {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  font-weight: 600;
+  color: #484848;
   position: absolute;
   bottom: 0px;
   left: 0px;
 }
-.index-item-content h3 {
+.index-item-container h3 {
+
+  padding-left: 10px;
+  color: #757575;
+  font-size: 12px;
+  font-weight: 500;
   position: absolute;
   bottom: 0px;
   left: 0px;
+}
+
+.index-item-img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.crop {
+
+
 }
