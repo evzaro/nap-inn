@@ -1,6 +1,8 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var ReactRouter = require('react-router');
+var Router = ReactRouter.Router;
+var PropTypes = React.PropTypes;
 var hashHistory = ReactRouter.hashHistory;
 var SessionStore = require('../stores/session_store');
 var SessionApiUtil = require('../util/session_api_util');
@@ -45,7 +47,6 @@ NavBar = React.createClass({
   },
 
   render: function (){
-
     if(SessionStore.isUserLoggedIn()){
       return(
         <nav className="nav fixed-nav">

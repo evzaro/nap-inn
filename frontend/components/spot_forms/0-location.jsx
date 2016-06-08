@@ -25,7 +25,6 @@ var LocationForm = React.createClass({
     this.props.sendValueToMaster(this.state);
   },
 
-
   getCountryFromChild: function (new_country) {
     this.setState({country: new_country}, this.updateMaster);
   },

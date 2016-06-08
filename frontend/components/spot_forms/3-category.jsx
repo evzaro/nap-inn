@@ -76,7 +76,7 @@ CategoryForm = React.createClass({
           </label>
         </div>
       </form>
-      <label className="house-select-label">What kind of property is your spot part of?
+      <label className="house-select-label">What kind of property is it in?
       <select id="house-type" name="house_type" className="house-select" onChange={this.handleTypalChange}>
         <option value="1">Apartment</option>
         <option value="2">House</option>

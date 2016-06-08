@@ -40,7 +40,7 @@ var NapSpotApiUtil = require('./util/nap_spot_api_util');
 
 
 var Router = (
-  <Router history={ hashHistory }>
+  <Router history={hashHistory}>
     <Route path="/" component={App}>
         <Route path="/login" component={LoginForm}/>
         <Route path="/signup" component={SignupForm}/>

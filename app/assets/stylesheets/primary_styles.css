@@ -113,6 +113,10 @@ background: #FF5A5F;
 width: 100%;
 }
 
+.splash-nav {
+
+}
+
 .background {
   float: left;
   position: absolute;
@@ -437,11 +441,15 @@ width: 100%;
 .index-item-container {
   float: left;
   width: 50%;
+  position: relative;
+  height: 300px;
+  padding: 20px;
 
 }
 
 .index-item-content {
   position: relative;
+  padding-top: 20px;
 
 }
 
