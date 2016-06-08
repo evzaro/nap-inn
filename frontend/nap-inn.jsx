@@ -16,6 +16,7 @@ var NavBar = require('./components/navbar');
 var MasterSpotForm = require('./components/master_spot_form');
 var NapSpotIndex = require('./components/spot_index');
 var App = require('./components/app');
+var Splash = require('./components/splash');
 
 //Authentication
 var SessionStore = require('./stores/session_store');
@@ -42,10 +43,15 @@ var NapSpotApiUtil = require('./util/nap_spot_api_util');
 var Router = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
-        <Route path="/login" component={LoginForm}/>
-        <Route path="/signup" component={SignupForm}/>
-        <Route path="/new" component={MasterSpotForm}/>
-        <Route path="/index" component={NapSpotIndex}/>
+      <IndexRoute component={Splash}/>
+        <Route path="login" component={LoginForm}>
+          <IndexRoute component={Splash}/>
+        </Route>
+        <Route path="signup" component={SignupForm}>
+          <IndexRoute component={Splash}/>
+        </Route>
+        <Route path="new" component={MasterSpotForm}/>
+        <Route path="index" component={NapSpotIndex}/>
     </Route>
   </Router>
 );

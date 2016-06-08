@@ -5,8 +5,8 @@ class StaticPagesController < ApplicationController
 
   def get_image_paths
   @images = {
-    logo: path_to_asset('napinn-logo-white.png'),
-    background1: path_to_asset('hotel_room.jpeg'),
+    wlogo: path_to_asset('napinn-logo-white.png'),
+    blogo: path_to_asset('napinn-logo-black.png'),
   }
 end
 

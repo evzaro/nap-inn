@@ -11,6 +11,7 @@ NavBar = React.createClass({
   getInitialState: function (){
     return({
       currentUser: SessionStore.currentUser(),
+      status: "splash"
     });
   },
 
@@ -34,10 +35,16 @@ NavBar = React.createClass({
   },
 
   pushHost: function (){
+    this.setState({
+      status: "fixed"
+    });
     hashHistory.push('/new');
   },
 
   pushHome: function (){
+    this.setState({
+      status: "splash"
+    });
     hashHistory.push('/');
   },
 
@@ -47,11 +54,20 @@ NavBar = React.createClass({
   },
 
   render: function (){
+    var logo;
+    if (this.state.status === "splash"){
+      logo = <img src={JSON.parse(
+        document.getElementById('content').dataset.images).wlogo}/>;
+    } else {
+      logo = <img src={JSON.parse(
+        document.getElementById('content').dataset.images).blogo}/>;
+    }
+
     if(SessionStore.isUserLoggedIn()){
       return(
-        <nav className="nav fixed-nav">
-          <div className="nav-logo" onClick={this.pushHome}><img src={JSON.parse(
-              document.getElementById('content').dataset.images).logo}/>
+        <nav className={"nav " + this.state.status}>
+          <div className="nav-logo" onClick={this.pushHome}>
+            {logo}
           </div>
           <ul classname="nav-links">
             <li className="profile-dropdown-parent">
@@ -69,9 +85,9 @@ NavBar = React.createClass({
       );
     } else {
       return(
-        <nav className="nav">
-          <div className="nav-logo" onClick={this.pushHome}><img src={JSON.parse(
-            document.getElementById('content').dataset.images).logo}/>
+        <nav className={"nav " + this.state.status}>
+          <div className="nav-logo" onClick={this.pushHome}>
+            {logo}
           </div>
 
           <ul classname="nav-links">

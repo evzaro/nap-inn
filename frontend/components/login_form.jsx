@@ -57,6 +57,7 @@ var LoginForm = React.createClass({
 
   render: function (){
     return(
+      <div>
       <div className={"login-signup-modal " + this.state.status} onClick={this.handleClick}>
         <div className="login-signup-div">
           <form className="login-form">
@@ -69,6 +70,8 @@ var LoginForm = React.createClass({
           </form>
         </div>
       </div>
+      {this.props.children}
+    </div>
     );
   }
 });
