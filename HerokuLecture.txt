@@ -59,6 +59,7 @@ Make sure git is up to date (git add -A, git commit -m "prepare to push to Herok
 -git push heroku master
 -heroku run bundle exec rake db:migrate
 -heroku run bundle exec rake db:seed
+figaro heroku:set.
 
 
 

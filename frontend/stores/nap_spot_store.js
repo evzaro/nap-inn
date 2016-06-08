@@ -16,7 +16,7 @@ NapSpotStore.__onDispatch = function (payload){
     // payload.nap_spots.forEach(function(spot){
     //   _spots[spot.id] = spot;
     // });
-  
+
     _spots = payload.nap_spots;
       NapSpotStore.__emitChange();
       break;
@@ -29,5 +29,4 @@ NapSpotStore.__onDispatch = function (payload){
   }
 };
 
-window.Store = NapSpotStore;
 module.exports = NapSpotStore;

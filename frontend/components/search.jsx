@@ -3,6 +3,7 @@ var Link = require('react-router').Link;
 var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var PropTypes = React.PropTypes;
+var RouteActions = require('../actions/route_actions');
 var hashHistory = ReactRouter.hashHistory;
 
 var Search = React.createClass({

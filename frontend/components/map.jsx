@@ -5,87 +5,101 @@ var ClientActions = require('../actions/client_actions');
 //add a store for map state
 var Map = React.createClass({
 
-
   componentDidMount: function(){
 
     var mapDOMNode = this.refs.map;
     var mapOptions;
     var lat;
     var lng;
-    var map;
 
     if (this.props.location && this.props.location.pathname === "index"){
       lat = this.props.location.state.geometry.location.lat();
       lng = this.props.location.state.geometry.location.lng();
 
     } else {
-      lat = (this.props.newPos === {}) ? '40.7128' : this.props.newPos.lat;
-      lng = (this.props.newPos === {}) ? '-74.0059' : this.props.newPos.lng;
+      //fix this
+      lat = (this.props.lat === undefined) ? '40.7128' : this.props.lat;
+      lng = (this.props.lng === undefined) ? '-74.0059' : this.props.lng;
     }
-  
+
     mapOptions = {
       center: {lat: lat, lng: lng},
-      zoom: 11
+      zoom: 13
     };
 
-    map = new google.maps.Map(mapDOMNode, mapOptions);
+    this.map = new google.maps.Map(mapDOMNode, mapOptions);
+    this.storeListener = NapSpotStore.addListener(this._setMarkers);
+    this.map.addListener('idle', this._updatePosParams);
 
-
-    // NapSpotStore.addListener(this._setMarkers);
-
-    // this.map.addListener('idle', this._updatePosParams);
-
-    // this.markers = {};
+    this.markers = {};
   },
 
-  // _updatePosParams: function(){
-  //   var bounds = {
-  //     'northEast': {
-  //       'lat': this.map.getBounds().getNorthEast().lat(),
-  //       'lng': this.map.getBounds().getNorthEast().lng()
-  //     },
-  //     'southWest': {
-  //       'lat': this.map.getBounds().getSouthWest().lat(),
-  //       'lng': this.map.getBounds().getSouthWest().lng()
-  //     }
-  //   };
-  //   ClientActions.fetchBenches(bounds);
-  // },
+  componentWillUnmount: function() {
+    this.storeListener.remove();
+  },
 
-  // _setMarkers: function(){
-  //   var map = this.map;
-  //   var benches = BenchStore.all();
-  //   var markers = this.markers;
-  //
-  //
+  _updatePosParams: function(){
+    var bounds = {
+      'northEast': {
+        'lat': this.map.getBounds().getNorthEast().lat(),
+        'lng': this.map.getBounds().getNorthEast().lng()
+      },
+      'southWest': {
+        'lat': this.map.getBounds().getSouthWest().lat(),
+        'lng': this.map.getBounds().getSouthWest().lng()
+      }
+    };
+    ClientActions.fetchNapSpots(bounds);
+  },
 
 
-  //   Object.keys(benches).forEach(function(benchID){
-  //     if (markers[benchID] === undefined){
-  //       markers[benchID] = new google.maps.Marker({
-  //         position: {lat: benches[benchID].lat, lng: benches[benchID].lng},
-  //         map: map,
-  //         animation: google.maps.Animation.DROP,
-  //         icon: icon,
-  //         title: benches[benchID].description
-  //       });
-  //     }
-  //   });
-  //   this._markerCleanUp(benches, markers);
-  // },
-  //
-  // _markerCleanUp: function(benches, markers){
-  //   Object.keys(markers).forEach(function(benchID){
-  //     if (!(Object.keys(benches).includes(benchID))){
-  //       markers[benchID].setMap(null);
-  //       delete markers[benchID];
+  _setMarkers: function(){
+    var map = this.map;
+    var markers = this.markers;
+    var nap_spots = NapSpotStore.all();
+
+    nap_spots.forEach(function(spot){
+      if (markers[spot.id] === undefined){
+        markers[spot.id] = new google.maps.Marker({
+          position: {lat: spot.lat, lng: spot.lng},
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: spot.price
+        });
+      }
+    });
+
+    // nap_spots.forEach(function(spot){
+    //   if ((Object.keys(markers).includes(spot.id))){
+    //
+    //   } else {
+    //
+    //     markers[spot.id].setMap(null);
+    //     delete markers[spot.id];
+    //     console.log(markers);
+    //
+    //   }
+    // });
+  },
+
+  // _markerCleanUp: function(nap_spots, markers){
+  //   Object.keys(markers).forEach(function(id){
+  //     var includesSpot = false;
+  //     nap_spots.forEach(function(spot){
+  //       if (spot.id === id){
+  //         includesSpot = true;
+  //       }
+  //     });
+  //     if (includesSpot === false) {
+  //       markers[id].setMap(null);
+  //       delete markers[id];
   //     }
   //   });
   // },
 
 
   render: function (){
-    debugger
+
     return(
       <div className="map" ref="map">
 

@@ -8,4 +8,10 @@ class NapSpot < ActiveRecord::Base
     class_name: 'User'
   )
 
+  def self.in_bounds(bounds)
+    NapSpot.all.
+      where("lat >= #{bounds['southWest']['lat']} AND lat <= #{bounds['northEast']['lat']}").
+      where("lng >= #{bounds['southWest']['lng']} AND lng <= #{bounds['northEast']['lng']}")
+  end
+
 end

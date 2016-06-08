@@ -3,6 +3,7 @@ var SpotIndexItem = require('./spot_index_item');
 var NapSpotStore = require('../stores/nap_spot_store');
 var ClientActions = require('../actions/client_actions');
 var NapSpotApiUtil = require('../util/nap_spot_api_util');
+var RouteActions = require('../actions/route_actions');
 var Map = require('./map');
 
 
@@ -16,8 +17,12 @@ var SpotIndex = React.createClass({
   },
 
   componentDidMount: function() {
-    NapSpotApiUtil.fetchNapSpots();
-    NapSpotStore.addListener(this.handleChange);
+    RouteActions.changeRoute('/index');
+    this.storeListener = NapSpotStore.addListener(this.handleChange);
+  },
+
+  componentWillUnmount: function() {
+    this.storeListener.remove();
   },
 
   handleChange: function() {

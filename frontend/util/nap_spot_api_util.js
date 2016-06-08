@@ -2,10 +2,11 @@ var ServerActions = require('../actions/server_actions');
 
 
 var NapSpotApiUtil = {
-  fetchNapSpots: function (){
+  fetchNapSpots: function (bounds){
     $.ajax({
       type: "GET",
       url: "api/nap_spots",
+      data: {'bounds': bounds},
       success: function (data){
         ServerActions.receiveAll(data);
       }
@@ -24,5 +25,5 @@ var NapSpotApiUtil = {
   },
 };
 
-window.Util = NapSpotApiUtil;
+
 module.exports = NapSpotApiUtil;

@@ -112,6 +112,7 @@ input:invalid {
   background: white;
   width: 100%;
   color: black;
+  border-bottom: solid 1px #C4C4C4;
 }
 
 .splash {
@@ -204,7 +205,6 @@ input:invalid {
   height: 50px;
   width: 100%;
   border-bottom: solid 5px #00a699;
-  border-top: solid 1px #C4C4C4;
   background: white;
   z-index: 1;
 }
@@ -448,9 +448,9 @@ input:invalid {
   margin-top: 60px;
   float: left;
   width: 60%;
-  height: 500px;
-  padding-left: 15px;
-  padding-right: 15px;
+  height: 700px;
+  padding-left: 5px;
+  padding-right: 5px;
   overflow-y: scroll;
   background: #F7F7F7;
 }
@@ -460,20 +460,25 @@ input:invalid {
   width: 40%;
   height: 100%;
   right: 0;
+  margin-top: 61px;
 }
 
 .index-item-container {
   float: left;
   width: 50%;
   position: relative;
-  height: 300px;
-  padding: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 12px;
+  padding-bottom: 60px;
+
+
+
 
 }
 
 .index-item-content {
-  position: relative;
-  padding-top: 20px;
+
 
 }
 
@@ -483,8 +488,8 @@ input:invalid {
   background: rgba(45,45,45,0.9);
   color: #eee;
   position: absolute;
-  top: 75%;
-  left: 0px;
+  top: 50%;
+  left: 10px;
   border-radius: 2px;
   padding: 10px;
 
@@ -497,8 +502,8 @@ input:invalid {
   font-weight: 600;
   color: #484848;
   position: absolute;
-  bottom: 0px;
-  left: 0px;
+  bottom: 25px;
+  left: 15px;
 }
 .index-item-container h3 {
 
@@ -507,14 +512,13 @@ input:invalid {
   font-size: 12px;
   font-weight: 500;
   position: absolute;
-  bottom: 0px;
-  left: 0px;
+  bottom: 15px;
+  left: 15px;
 }
 
 .index-item-img {
   width: 100%;
   height: auto;
-  overflow: hidden;
 }
 
 .crop {

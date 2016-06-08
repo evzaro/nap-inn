@@ -13,7 +13,8 @@ var LocationForm = React.createClass({
       country: '',
       postal_code: '',
       apt: '',
-      latlng: {}
+      lat: '',
+      lng: '',
     });
   },
 
@@ -56,7 +57,8 @@ var LocationForm = React.createClass({
     setAddressState: function (){
       var place = autocomplete.getPlace();
       this.setState({
-        latlng: {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()}
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng()
       });
       for (var i = 0; i < place.address_components.length; i++) {
         var addressType = place.address_components[i].types[0];
@@ -71,7 +73,6 @@ var LocationForm = React.createClass({
     },
 
   render: function(){
-
     if (this.props.progress === 0){
       return(
         <div className="creation-options autocomplete-field">
@@ -111,7 +112,7 @@ var LocationForm = React.createClass({
       return(
         <div className="map-container clearfix">
           <h2>Where's your spot located?</h2>
-          <Map newPos={this.state.latlng}/>
+          <Map lat={this.state.lat} lng={this.state.lng}/>
           <h3>Drag pin to change location</h3>
         </div>
       );

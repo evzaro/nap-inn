@@ -5,6 +5,8 @@ var Router = ReactRouter.Router;
 var PropTypes = React.PropTypes;
 var hashHistory = ReactRouter.hashHistory;
 var SessionStore = require('../stores/session_store');
+var RouteStore = require('../stores/route_store');
+var RouteActions = require('../actions/route_actions');
 var SessionApiUtil = require('../util/session_api_util');
 
 NavBar = React.createClass({
@@ -16,8 +18,26 @@ NavBar = React.createClass({
   },
 
   componentDidMount: function(){
-    var loginListener = SessionStore.addListener(this._onChange);
+    this.loginListener = SessionStore.addListener(this._onChange);
+    this.routeListener = RouteStore.addListener(this._handleNav);
     SessionApiUtil.fetchCurrentUser();
+  },
+
+  componentWillUnmount: function() {
+    this.loginListener.remove();
+  },
+
+  _handleNav: function(){
+    var route = RouteStore.route();
+    if (route === '/'){
+      this.setState({
+        status: "splash"
+      });
+    } else {
+      this.setState({
+        status: "fixed"
+      });
+    }
   },
 
   _onChange: function(){
@@ -35,16 +55,12 @@ NavBar = React.createClass({
   },
 
   pushHost: function (){
-    this.setState({
-      status: "fixed"
-    });
+    RouteActions.changeRoute('/new');
     hashHistory.push('/new');
   },
 
   pushHome: function (){
-    this.setState({
-      status: "splash"
-    });
+    RouteActions.changeRoute('/');
     hashHistory.push('/');
   },
 

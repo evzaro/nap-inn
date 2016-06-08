@@ -1,9 +1,10 @@
 class Api::NapSpotsController < ApplicationController
 
   def index
-    @nap_spots = NapSpot.all
-    #render json: @nap_spots
+    @nap_spots = NapSpot.in_bounds(params[:bounds])
+
      render "api/nap_spots/index"
+
   end
 
   def create
@@ -22,7 +23,7 @@ class Api::NapSpotsController < ApplicationController
   end
 
   def nap_spot_params
-    params.require(:nap_spot).permit(:title, :description, :category, :location, :price, :capacity, :image_urls)
+    params.require(:nap_spot).permit(:title, :description, :category, :location, :price, :capacity, :image_urls, :lat, :lng)
   end
 
 end

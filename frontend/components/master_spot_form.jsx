@@ -2,6 +2,7 @@ var React = require('react');
 var SessionActions = require('../actions/session_actions');
 var SessionStore = require('../stores/session_store');
 var ClientActions = require('../actions/client_actions');
+var RouteActions = require('../actions/route_actions');
 var ReactRouter = require('react-router');
 var hashHistory = ReactRouter.hashHistory;
 var LocationForm = require('./spot_forms/0-location');
@@ -17,11 +18,13 @@ var MasterSpotForm = React.createClass({
     progress: 0,
     title: "",
     description: "",
-    category: {},
-    location: {},
+    category: "",
+    location: "",
     price: 0,
     capacity: 1,
-    image_urls: ""
+    image_urls: "",
+    lat: 0,
+    lng: 0
     });
   },
 
@@ -29,6 +32,10 @@ var MasterSpotForm = React.createClass({
     this.setState(function(previousState, currentProps) {
       return {progress: previousState.progress + 1};
     });
+  },
+
+  componentDidMount: function() {
+    RouteActions.changeRoute('/new');
   },
 
   handleClickSave: function(){
@@ -41,9 +48,11 @@ var MasterSpotForm = React.createClass({
       location: JSON.stringify(this.state.location),
       price: this.state.price,
       capacity: this.state.capacity,
-      image_urls: this.state.image_urls
+      image_urls: this.state.image_urls,
+      lat: this.state.lat,
+      lng: this.state.lng,
     });
-    
+
   },
 
   handleClickPrev: function(){
@@ -56,7 +65,9 @@ var MasterSpotForm = React.createClass({
 
   getLocationFromChild: function (data) {
     var new_state = {
-      location: data
+      location: data,
+      lat: data.lat,
+      lng: data.lng,
     };
     this.setState(new_state);
   },
@@ -101,7 +112,7 @@ var MasterSpotForm = React.createClass({
     }
   },
 
-  handleDeatilsClick: function (){
+  handleDetailsClick: function (){
     if (this.state.progress < 4){
       this.setState({
         progress: 4
@@ -138,7 +149,7 @@ var MasterSpotForm = React.createClass({
           <ul className="form-nav-list clearfix">
             <li><div className={"loc-" + progressStatus} onClick={this.handleLocationClick}>Location</div></li>
             <li><div className={"type-" + progressStatus}  onClick={this.handleTypeClick}>Spot Type</div></li>
-            <li><div className={"detail-" + progressStatus}  onClick={this.handleDeatilsClick}>Details</div></li>
+            <li><div className={"detail-" + progressStatus}  onClick={this.handleDetailsClick}>Details</div></li>
           </ul>
         </nav>
         <div className = "centered-content clearfix">
