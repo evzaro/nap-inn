@@ -10,7 +10,8 @@ var SpotIndex = React.createClass({
 
   getInitialState: function() {
     return {
-      nap_spots: NapSpotStore.all()
+      nap_spots: NapSpotStore.all(),
+      location: this.props.location
     };
   },
 
@@ -39,7 +40,7 @@ var SpotIndex = React.createClass({
           {index_items}
         </div>
         <div className="index-map-container">
-          <Map/>
+          <Map location={this.state.location}/>
         </div>
       </div>
     );

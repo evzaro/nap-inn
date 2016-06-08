@@ -2,28 +2,35 @@ var React = require('react');
 var NapSpotStore = require('../stores/nap_spot_store');
 var ClientActions = require('../actions/client_actions');
 
-
+//add a store for map state
 var Map = React.createClass({
 
+
   componentDidMount: function(){
+
     var mapDOMNode = this.refs.map;
+    var mapOptions;
+    var lat;
+    var lng;
+    var map;
 
-    var lat = this.props.newPos === undefined ? 40.7128 : this.props.newPos.lat;
-    var lng = this.props.newPos === undefined ? -74.0059 : this.props.newPos.lng;
+    if (this.props.location && this.props.location.pathname === "index"){
+      lat = this.props.location.state.geometry.location.lat();
+      lng = this.props.location.state.geometry.location.lng();
 
-    var mapOptions = {
+    } else {
+      lat = (this.props.newPos === {}) ? '40.7128' : this.props.newPos.lat;
+      lng = (this.props.newPos === {}) ? '-74.0059' : this.props.newPos.lng;
+    }
+  
+    mapOptions = {
       center: {lat: lat, lng: lng},
-      zoom: 15
+      zoom: 11
     };
 
-    var map = new google.maps.Map(mapDOMNode, mapOptions);
+    map = new google.maps.Map(mapDOMNode, mapOptions);
 
-    var marker = new google.maps.Marker({
-    position: {lat: lat, lng: lng},
-    map: map,
-    draggable: true,
-    title: "My Nap Spot"
-    });
+
     // NapSpotStore.addListener(this._setMarkers);
 
     // this.map.addListener('idle', this._updatePosParams);
@@ -78,6 +85,7 @@ var Map = React.createClass({
 
 
   render: function (){
+    debugger
     return(
       <div className="map" ref="map">
 
