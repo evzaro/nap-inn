@@ -19,5 +19,4 @@ RouteStore.__onDispatch = function (payload){
   }
 };
 
-window.Store = RouteStore;
 module.exports = RouteStore;

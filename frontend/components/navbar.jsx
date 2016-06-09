@@ -9,7 +9,7 @@ var RouteStore = require('../stores/route_store');
 var RouteActions = require('../actions/route_actions');
 var SessionApiUtil = require('../util/session_api_util');
 
-NavBar = React.createClass({
+var NavBar = React.createClass({
   getInitialState: function (){
     return({
       currentUser: SessionStore.currentUser(),

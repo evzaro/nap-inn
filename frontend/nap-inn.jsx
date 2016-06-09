@@ -15,6 +15,7 @@ var SignupForm = require('./components/signup_form');
 var NavBar = require('./components/navbar');
 var MasterSpotForm = require('./components/master_spot_form');
 var NapSpotIndex = require('./components/spot_index');
+var NapSpotDetail = require('./components/spot_detail');
 var App = require('./components/app');
 var Splash = require('./components/splash');
 
@@ -52,6 +53,7 @@ var Router = (
         </Route>
         <Route path="new" component={MasterSpotForm}/>
         <Route path="index" component={NapSpotIndex}/>
+        <Route path="detail" component={NapSpotDetail}/>
     </Route>
   </Router>
 );

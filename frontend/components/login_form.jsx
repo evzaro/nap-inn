@@ -27,7 +27,6 @@ var LoginForm = React.createClass({
   },
 
   handleSubmit: function (e){
-    e.preventDefault();
 
 		var formData = {
 			user_email: this.state.user_email,
@@ -41,9 +40,11 @@ var LoginForm = React.createClass({
 
   componentDidMount: function (){
     this.storeListener = SessionStore.addListener(this._handleSuccess);
+    console.log("mounting!");
   },
 
   componentWillUnmount: function() {
+    // debugger
     this.storeListener.remove();
     window.clearInterval(this.interval);
   },
@@ -60,14 +61,18 @@ var LoginForm = React.createClass({
     }
   },
 
-  handleGuest: function (){
+  handleGuest: function (e){
+    e.stopPropagation();
     this.email = ['g','u','e','s','t','@','g','u','e','s','t','.','c','o','m'];
     this.pass = ['p','a','s','s','w','o','r','d'];
     this.currentEmail = "";
     this.currentPass = "";
-      console.log("first part");
-    this.interval = window.setInterval(function(){
-      console.log("ticking");
+
+    this.interval = window.setInterval(this.animate, 100);
+  },
+
+  animate: function (){
+
       if (this.email.length > 0){
         this.currentEmail = this.currentEmail + this.email.shift();
 
@@ -83,15 +88,19 @@ var LoginForm = React.createClass({
       } else {
         this.handleSubmit();
       }
-    }.bind(this), 100);
+  },
+
+  preventDefault: function (e) {
+    e.preventDefault();
   },
 
   render: function (){
+
     return(
       <div>
       <div className={"login-signup-modal " + this.state.status} onClick={this.handleClick}>
         <div className="login-signup-div">
-          <form className="login-form">
+          <form className="login-form" onSubmit={this.preventDefault}>
             <button className="fb-btn"><a href="/auth/facebook">Log in with Facebook</a></button>
             <input type="email" value={this.state.user_email}
               id="user_email" onChange={this.onChangeUserField} placeholder="Email"/>

@@ -74,12 +74,16 @@ var LoginForm = React.createClass({
     }
   },
 
+  preventDefault: function (e) {
+    e.preventDefault();
+  },
+
   render: function (){
     return(
       <div>
       <div className="login-signup-modal" onClick={this.handleClick}>
         <div className="login-signup-div">
-          <form className="signup-form">
+          <form className="signup-form" onSubmit={this.preventDefault}>
             <button className="fb-btn"><a href="/auth/facebook">Sign up with Facebook</a></button>
 
             <input type="text" value={this.state.fname}
