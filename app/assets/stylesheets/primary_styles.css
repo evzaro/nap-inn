@@ -147,7 +147,7 @@ input:invalid {
   display: block;
   margin: 0 auto;
   height: 45px;
-  width: 700px;
+  width: 100%;
   padding-left: 10px;
   padding-right: 100px;
   border: 0;
@@ -550,14 +550,15 @@ input:invalid {
 
 .search-wrapper {
   margin: auto;
-  width: 800px;
+  width: 50%;
+  max-width: 800px;
   position: relative;
 }
 
 .search-wrapper button {
     border: 0;
     position: absolute;
-    right: 49px;
+    right: -1px;
     top: 0px;
     height: 45px;
     font-size: 14px;
@@ -601,4 +602,28 @@ input:invalid {
 .detail {
 
 
+}
+
+.cover-img {
+
+}
+
+.info-and-booking {
+
+}
+
+.location {
+
+}
+
+.detail-icons {
+
+}
+
+.booking-content {
+
+}
+
+.description {
+  
 }
