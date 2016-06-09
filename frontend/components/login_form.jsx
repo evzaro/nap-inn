@@ -59,6 +59,30 @@ var LoginForm = React.createClass({
     }
   },
 
+  handleGuest: function (){
+    this.email = ['g','u','e','s','t','@','g','u','e','s','t','.','c','o','m'];
+    this.pass = ['p','a','s','s','w','o','r','d'];
+    this.currentEmail = "";
+    this.currentPass = "";
+      console.log("first part");
+    window.setInterval(function(){
+      console.log("ticking");
+      if (this.email.length > 0){
+        this.currentEmail = this.currentEmail + this.email.shift();
+
+        this.setState({
+          user_email: this.currentEmail
+        });
+      } else if (this.pass.length > 0) {
+        this.currentPass = this.currentPass + this.pass.shift();
+
+        this.setState({
+          password: this.currentPass
+        });
+      }
+    }.bind(this), 100);
+  },
+
   render: function (){
     return(
       <div>
@@ -71,6 +95,7 @@ var LoginForm = React.createClass({
             <input type="password" value={this.state.password}
               id="password" onChange={this.onChangePassField} placeholder="Password" />
             <button onClick={this.handleSubmit}>Log In</button>
+            <button onClick={this.handleGuest}>Guest</button>
           </form>
         </div>
       </div>

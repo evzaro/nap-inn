@@ -53,6 +53,7 @@ html, body, main {margin:0;padding:0;height:100%;}
   color: white;
   font-size: inherit;
   border-radius: 2px;
+  margin-bottom: 10px;
 }
 .login-signup-div button:hover {
   background: #ff7e82;
