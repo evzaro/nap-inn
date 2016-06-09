@@ -1,6 +1,7 @@
 var React = require('react');
 var NapSpotStore = require('../stores/nap_spot_store');
 var ClientActions = require('../actions/client_actions');
+var RouteStore = require('../stores/route_store');
 
 //add a store for map state
 var Map = React.createClass({
@@ -15,11 +16,9 @@ var Map = React.createClass({
     if (this.props.location && this.props.location.pathname === "index"){
       lat = this.props.location.state.geometry.location.lat();
       lng = this.props.location.state.geometry.location.lng();
-
     } else {
-      //fix this
-      lat = (this.props.lat === undefined) ? '40.7128' : this.props.lat;
-      lng = (this.props.lng === undefined) ? '-74.0059' : this.props.lng;
+      lat = (this.props.lat === "") ? 40.7128 : this.props.lat;
+      lng = (this.props.lng === "") ? -74.0059 : this.props.lng;
     }
 
     mapOptions = {
@@ -28,14 +27,41 @@ var Map = React.createClass({
     };
 
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
-    this.storeListener = NapSpotStore.addListener(this._setMarkers);
-    this.map.addListener('idle', this._updatePosParams);
 
-    this.markers = {};
+    // if (RouteStore.route() === "/index"){
+      // this.storeListener = NapSpotStore.addListener(this._setMarkers);
+      // this.map.addListener('idle', this._updatePosParams);
+      // this.markers = {};
+    // } else {
+        // this.mark = new google.maps.Marker({
+        // position: {lat: lat, lng: lng},
+        // map: this.map,
+        // animation: google.maps.Animation.DROP,
+        // title: "My Spot!"
+      // });
+    // }
+
+    if (this.props.location && this.props.location.pathname === "index"){
+        this.storeListener = NapSpotStore.addListener(this._setMarkers);
+        this.map.addListener('idle', this._updatePosParams);
+        this.markers = {};
+    } else {
+        this.mark = new google.maps.Marker({
+        position: {lat: lat, lng: lng},
+        map: this.map,
+        animation: google.maps.Animation.DROP,
+        title: "My Spot!"
+      });
+    }
   },
 
   componentWillUnmount: function() {
-    this.storeListener.remove();
+    if (this.storeListener){
+      this.storeListener.remove();
+    }
+    if (this.mark){
+       this.mark.setMap(null);
+    }
   },
 
   _updatePosParams: function(){

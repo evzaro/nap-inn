@@ -39,8 +39,10 @@ var Search = React.createClass({
   render: function(){
     return(
       <div className="splash-search autocomplete-field">
+        <div className="search-wrapper">
         <input type="text" id="autocomplete-splash" placeholder="Where to?"/>
         <button onClick={this.handleSubmit}>Search</button>
+        </div>
       </div>
     );
   }
