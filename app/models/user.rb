@@ -27,17 +27,21 @@ class User < ActiveRecord::Base
   		user.valid_password?(password) ? user : nil
   	end
 
-    # def self.find_or_create_by_auth_hash(auth_hash)
-    #   user = User.find_by(twitter_uid: auth_hash[:uid])
-    #
-    #   if user.nil?
-    #     user = User.create!(
-    #       facebook_uid: auth_hash[:uid],
-    #       name: auth_hash[:info][:name]
-    #     )
-    #   end
-    #   user
-    # end
+    def self.find_or_create_by_auth_hash(auth_hash)
+      @user = User.find_by(facebook_uid: auth_hash[:uid])
+
+      if @user.nil?
+        @user = User.create!(
+          facebook_uid: auth_hash[:uid],
+          fname: auth_hash[:info][:name].split(" ")[0],
+          lname: auth_hash[:info][:name].split(" ")[1],
+          user_email: auth_hash[:info][:email],
+          image_url: auth_hash[:info][:image],
+          password: SecureRandom.urlsafe_base64
+        )
+      end
+      @user
+    end
 
   	def valid_password?(password)
   		BCrypt::Password.new(self.password_digest).is_password?(password)

@@ -1,25 +1,38 @@
 class Api::SessionsController < ApplicationController
 
   def create
-    # @user = User.find_by_credentials(
-    #   params[:user][:user_email],
-    #   params[:user][:password]
-    # )
+    @user = User.find_by_credentials(
+      params[:user][:user_email],
+      params[:user][:password]
+    )
 
-    render json: auth_hash
-    # user = User.find_or_create_by_auth_hash(auth_hash)
-    #
-    # if @user
-    #   login(@user)
-    #   render "api/users/show"
-    # else
-    #   render(
-    #     json:{
-    #       base:["Invalid email/password"]
-    #     },
-    #     status: 401
-    #   )
-    # end
+    if @user
+      login(@user)
+      render "api/users/show"
+    else
+      render(
+        json:{
+          base:["Invalid email/password"]
+        },
+        status: 401
+      )
+    end
+  end
+
+  def create_with_fb
+    @user = User.find_or_create_by_auth_hash(auth_hash)
+
+    if @user
+      login(@user)
+      redirect_to root_url
+    else
+      render(
+        json:{
+          base:["Facebook Authentication Failed"]
+        },
+        status: 401
+      )
+    end
   end
 
 	def destroy

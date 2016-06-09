@@ -6,6 +6,12 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 
+  <script type="text/javascript">
+    if (window.location.hash && window.location.hash == '#_=_') {
+        window.location.hash = '';
+    }
+  </script>
+
   <script type="text/javascript" src="http://widget.cloudinary.com/global/all.js"></script>
   <script type="text/javascript">
     window.CLOUDINARY_OPTIONS = {

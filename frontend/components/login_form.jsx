@@ -45,6 +45,7 @@ var LoginForm = React.createClass({
 
   componentWillUnmount: function() {
     this.storeListener.remove();
+    window.clearInterval(this.interval);
   },
 
   _handleSuccess: function (){
@@ -65,7 +66,7 @@ var LoginForm = React.createClass({
     this.currentEmail = "";
     this.currentPass = "";
       console.log("first part");
-    window.setInterval(function(){
+    this.interval = window.setInterval(function(){
       console.log("ticking");
       if (this.email.length > 0){
         this.currentEmail = this.currentEmail + this.email.shift();
@@ -79,6 +80,8 @@ var LoginForm = React.createClass({
         this.setState({
           password: this.currentPass
         });
+      } else {
+        this.handleSubmit();
       }
     }.bind(this), 100);
   },
@@ -89,6 +92,7 @@ var LoginForm = React.createClass({
       <div className={"login-signup-modal " + this.state.status} onClick={this.handleClick}>
         <div className="login-signup-div">
           <form className="login-form">
+            <button id="fb_btn"><a href="/auth/facebook">Log in with Facebook</a></button>
             <input type="email" value={this.state.user_email}
               id="user_email" onChange={this.onChangeUserField} placeholder="Email"/>
 
