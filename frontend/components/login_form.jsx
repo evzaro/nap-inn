@@ -96,6 +96,7 @@ var LoginForm = React.createClass({
               id="password" onChange={this.onChangePassField} placeholder="Password" />
             <button onClick={this.handleSubmit}>Log In</button>
             <button onClick={this.handleGuest}>Guest</button>
+            <a href="/auth/facebook">FB</a>
           </form>
         </div>
       </div>
