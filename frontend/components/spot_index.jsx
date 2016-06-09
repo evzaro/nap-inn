@@ -12,7 +12,9 @@ var SpotIndex = React.createClass({
   getInitialState: function() {
     return {
       nap_spots: NapSpotStore.all(),
-      location: this.props.location
+      // location: this.props.location
+      lat: parseFloat(this.props.params.latlng.split("&")[0]),
+      lng: parseFloat(this.props.params.latlng.split("&")[1])
     };
   },
 
@@ -32,6 +34,7 @@ var SpotIndex = React.createClass({
   },
 
   render: function() {
+  
     var index_items = [];
     if (this.state.nap_spots.length > 0){
        this.state.nap_spots.forEach(function(spot, i){
@@ -45,7 +48,7 @@ var SpotIndex = React.createClass({
           {index_items}
         </div>
         <div className="index-map-container">
-          <Map location={this.state.location}/>
+          <Map lat={this.state.lat} lng={this.state.lng} maptype="index"/>
         </div>
       </div>
     );

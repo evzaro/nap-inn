@@ -13,9 +13,9 @@ var Map = React.createClass({
     var lat;
     var lng;
 
-    if (this.props.location && this.props.location.pathname === "index"){
-      lat = this.props.location.state.geometry.location.lat();
-      lng = this.props.location.state.geometry.location.lng();
+    if (this.props.maptype && this.props.maptype === "index"){
+      lat = this.props.lat;
+      lng = this.props.lng;
     } else {
       lat = (this.props.lat === "") ? 40.7128 : this.props.lat;
       lng = (this.props.lng === "") ? -74.0059 : this.props.lng;
@@ -41,7 +41,7 @@ var Map = React.createClass({
       // });
     // }
 
-    if (this.props.location && this.props.location.pathname === "index"){
+    if (this.props.maptype && this.props.maptype === "index"){
         this.storeListener = NapSpotStore.addListener(this._setMarkers);
         this.map.addListener('idle', this._updatePosParams);
         this.markers = {};

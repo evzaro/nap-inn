@@ -1,4 +1,6 @@
 var React = require('react');
+var ReactRouter = require('react-router');
+var hashHistory = ReactRouter.hashHistory;
 
 
 var SpotIndexItem = React.createClass({
@@ -7,7 +9,7 @@ var SpotIndexItem = React.createClass({
   //title length limit
 
   goToDetail: function() {
-      hashHistory.push({pathname:'detail', state: this.props.spot.id});
+      hashHistory.push({pathname: 'detail/' + this.props.spot.id});
   },
 
   render: function() {

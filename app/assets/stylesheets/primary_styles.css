@@ -119,6 +119,14 @@ input:invalid {
   border-bottom: solid 1px #C4C4C4;
 }
 
+.static {
+  position: relative;
+  background: white;
+  width: 100%;
+  color: black;
+  border-bottom: solid 1px #C4C4C4;
+}
+
 .splash {
   color: white;
   position: absolute;
@@ -590,7 +598,7 @@ input:invalid {
 }
 
 
-.crop {
+.detail {
 
 
 }

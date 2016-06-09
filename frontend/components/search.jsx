@@ -32,7 +32,8 @@ var Search = React.createClass({
   },
 
   handleSubmit: function(){
-    hashHistory.push({pathname:'index', state: this.state.place});
+    // hashHistory.push({pathname:'index', state: this.state.place});
+    hashHistory.push({pathname:'index/' + this.state.place.geometry.location.lat() + "&" + this.state.place.geometry.location.lng()});
 
   },
 

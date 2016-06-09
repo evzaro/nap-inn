@@ -35,7 +35,7 @@ var LoginForm = React.createClass({
 
     if (this.props.location.pathname === "/login") {
       SessionApiUtil.login(formData);
-    } //add listener to session store for success?
+    }
   },
 
   componentDidMount: function (){
@@ -44,7 +44,6 @@ var LoginForm = React.createClass({
   },
 
   componentWillUnmount: function() {
-    // debugger
     this.storeListener.remove();
     window.clearInterval(this.interval);
   },

@@ -52,8 +52,8 @@ var Router = (
           <IndexRoute component={Splash}/>
         </Route>
         <Route path="new" component={MasterSpotForm}/>
-        <Route path="index" component={NapSpotIndex}/>
-        <Route path="detail" component={NapSpotDetail}/>
+        <Route path="index/:latlng" component={NapSpotIndex}/>
+        <Route path="detail/:id" component={NapSpotDetail}/>
     </Route>
   </Router>
 );

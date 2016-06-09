@@ -23,6 +23,15 @@ var NapSpotApiUtil = {
       }
     });
   },
+  fetchNapSpot: function (id){
+    $.ajax({
+      type: "GET",
+      url: "api/nap_spots/" + id,
+      success: function (nap_spot){
+        ServerActions.receiveSingleNapSpot(nap_spot);
+      }
+    });
+  },
 };
 
 

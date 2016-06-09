@@ -33,6 +33,10 @@ var NavBar = React.createClass({
       this.setState({
         status: "splash"
       });
+    } else if (route === "detail" || route === "profile") {
+      this.setState({
+        status: "static"
+      });
     } else {
       this.setState({
         status: "fixed"

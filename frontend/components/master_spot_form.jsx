@@ -35,7 +35,7 @@ var MasterSpotForm = React.createClass({
   },
 
   componentDidMount: function() {
-    RouteActions.changeRoute('/new');
+    RouteActions.changeRoute('new');
   },
 
   handleClickSave: function(){

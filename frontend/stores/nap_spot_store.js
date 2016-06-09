@@ -3,11 +3,16 @@ var NapSpotConstants = require('../constants/nap_spot_constants');
 var Dispatcher = require('../dispatcher/dispatcher');
 
 var _spots = [];
+var _currentSpot = {};
 var NapSpotStore = new Store(Dispatcher);
 
 NapSpotStore.all = function () {
   var clone = _spots;
   return clone;
+};
+
+NapSpotStore.currentSpot = function () {
+  return _currentSpot;
 };
 
 NapSpotStore.__onDispatch = function (payload){
@@ -23,10 +28,11 @@ NapSpotStore.__onDispatch = function (payload){
     case NapSpotConstants.SPOT_RECEIVED:
       // _spots[payload.nap_spot.id] = payload.nap_spot;
       _spots.push(payload.nap_spot);
+      _currentSpot = payload.nap_spot;
       NapSpotStore.__emitChange();
       break;
 
   }
 };
-
+window.Store = NapSpotStore;
 module.exports = NapSpotStore;
