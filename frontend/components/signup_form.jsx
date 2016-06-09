@@ -80,6 +80,7 @@ var LoginForm = React.createClass({
       <div className="login-signup-modal" onClick={this.handleClick}>
         <div className="login-signup-div">
           <form className="signup-form">
+            <button className="fb-btn"><a href="/auth/facebook">Sign up with Facebook</a></button>
 
             <input type="text" value={this.state.fname}
               id="fname" onChange={this.onChangeFname} placeholder="First Name" />
@@ -94,7 +95,7 @@ var LoginForm = React.createClass({
               id="password" onChange={this.onChangePassField} placeholder="Password"/>
 
 
-              <button onClick={this.handleSubmit}>Sign Up</button>
+            <button className="login-signup-btn" onClick={this.handleSubmit}>Sign Up</button>
           </form>
         </div>
       </div>
