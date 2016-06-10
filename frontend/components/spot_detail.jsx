@@ -39,6 +39,7 @@ var SpotDetail = React.createClass({
       date: this.state.date,
       reserved_blocks: this.state.reserved_blocks,
     });
+    this.forceUpdate();
   },
 
   handleChange: function() {
@@ -74,15 +75,22 @@ var SpotDetail = React.createClass({
 
   render: function() {
 
+    for (var i = 1; i < 25; i++) {
+
+      $("#timeSelect option[value=" + i + "]")
+        .removeAttr("disabled");
+    }
+
     var bookings = this.state.bookings;
     if (bookings.length > 0){
       bookings.forEach(function(booking){
-
         if (booking.date === this.state.date){
           var blocks = booking.reserved_blocks.split(",");
           for (var i = 0; i < blocks.length; i++) {
+            $("#timeSelect option[value=" + blocks[i]+ "]")
+              .attr("disabled", "disabled");
 
-            $("#timeSelect option[value=" + blocks[i]+ "]").remove();
+            // $("#timeSelect option[value=" + blocks[i]+ "]").remove();
           }
         }
       }.bind(this));
