@@ -74,7 +74,7 @@ var SpotDetail = React.createClass({
   },
 
   render: function() {
-
+  
     for (var i = 1; i < 25; i++) {
 
       $("#timeSelect option[value=" + i + "]")
@@ -113,7 +113,7 @@ var SpotDetail = React.createClass({
     };
 
     var categoryIcon;
-    if (this.state.spot.category === "hammock"){
+    if (this.state.spot.category === "Hammock"){
       categoryIcon = <img src={JSON.parse(
         document.getElementById('content').dataset.images).hammock}/>;
     } else {
