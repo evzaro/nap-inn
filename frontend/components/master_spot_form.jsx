@@ -122,6 +122,14 @@ var MasterSpotForm = React.createClass({
 
   render: function(){
     var help;
+    var back;
+    if (this.state.progress > 0){
+      back = <button className="back-btn"
+        onClick={this.handleClickPrev}>← Back</button>;
+    } else {
+      back = "";
+    }
+
 
     if (this.state.progress < 3){
       help = <img src={JSON.parse(
@@ -170,8 +178,7 @@ var MasterSpotForm = React.createClass({
 
             <div className="form-nav-bottom">
               <div className="bottom-nav-buttons-container">
-                <button className="back-btn"
-                  onClick={this.handleClickPrev}>← Back</button>
+                {back}
 
                   {nextButton}
               </div>
