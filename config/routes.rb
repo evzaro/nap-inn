@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resource :user, only: [:create, :show]
     resource :session, only: [:create, :destroy, :show]
     resources :nap_spots
+    resources :bookings
   end
 
   get '/auth/facebook/callback', to: 'api/sessions#create_with_fb',

@@ -8,6 +8,13 @@ class NapSpot < ActiveRecord::Base
     class_name: 'User'
   )
 
+  has_many(
+    :bookings,
+    primary_key: :id,
+    foreign_key: :napspot_id,
+    class_name: 'Booking'
+  )
+
   def self.in_bounds(bounds)
     NapSpot.all.
       where("lat >= #{bounds['southWest']['lat']} AND lat <= #{bounds['northEast']['lat']}").

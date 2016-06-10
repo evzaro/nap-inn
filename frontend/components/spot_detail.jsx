@@ -7,7 +7,11 @@ var Picker = require('./picker');
 
 var SpotDetail = React.createClass({
   getInitialState: function() {
-    return({spot: NapSpotStore.currentSpot()});
+    return({
+      spot: NapSpotStore.currentSpot(),
+      date: "",
+      reserved_blocks: "",
+    });
   },
 
   componentDidMount: function() {
@@ -20,9 +24,42 @@ var SpotDetail = React.createClass({
     this.storeListener.remove();
   },
 
+  handleBook: function (e){
+    e.preventDefault();
+
+    ClientActions.createBooking({
+      napspot_id: this.state.spot.id,
+      date: this.state.date,
+      reserved_blocks: this.state.reserved_blocks
+    });
+  },
+
   handleChange: function() {
     this.setState(
       {spot: NapSpotStore.currentSpot()}
+    );
+  },
+
+  // handleDate: function (e){
+  //   this.setState(
+  //     {date: e}
+  //   );
+  // },
+
+  getDateFromChild: function (new_date) {
+    this.setState({date: new_date});
+  },
+
+  handleBlocks: function (e){
+    var options = e.target.options;
+    var value = [];
+    for (var i = 0, l = options.length; i < l; i++) {
+      if (options[i].selected) {
+      value.push(options[i].value);
+      }
+    }
+    this.setState(
+      {reserved_blocks: String(value)}
     );
   },
 
@@ -77,7 +114,38 @@ var SpotDetail = React.createClass({
 
           <div className="booking-content">
             <span className="price-wrapper"><h3>{'$' + this.state.spot.price}</h3></span>
-            <Picker/>
+            <Picker sendToParent={this.getDateFromChild}/>
+            <div className="time-select-container">
+
+              <select multiple={true} onChange={this.handleBlocks}>
+                <option id="1" value="1">Midnight - 1:00am</option>
+                <option id="2" value="2">1:00am - 2:00am</option>
+                <option id="3" value="3">2:00am - 3:00am</option>
+                <option id="4" value="4">3:00am - 4:00am</option>
+                <option id="5" value="5">4:00am - 5:00am</option>
+                <option id="6" value="6">5:00am - 6:00am</option>
+                <option id="7" value="7">6:00am - 7:00am</option>
+                <option id="8" value="8">7:00am - 8:00am</option>
+                <option id="9" value="9">8:00am - 9:00am</option>
+                <option id="10" value="10">9:00am - 10:00am</option>
+                <option id="11" value="11">10:00am - 11:00am</option>
+                <option id="12" value="12">11:00am - Noon</option>
+                <option id="13" value="13">Noon - 1:00pm</option>
+                <option id="14" value="14">1:00pm - 2:00pm</option>
+                <option id="15" value="15">2:00pm - 3:00pm</option>
+                <option id="16" value="16">3:00pm - 4:00pm</option>
+                <option id="17" value="17">4:00pm - 5:00pm</option>
+                <option id="18" value="18">5:00pm - 6:00pm</option>
+                <option id="19" value="19">6:00pm - 7:00pm</option>
+                <option id="20" value="20">7:00pm - 8:00pm</option>
+                <option id="21" value="21">8:00pm - 9:00pm</option>
+                <option id="22" value="22">9:00pm - 10:00pm</option>
+                <option id="23" value="23">10:00pm - 11:00pm</option>
+                <option id="24" value="24">11:00pm - Midnight</option>
+              </select>
+            </div>
+
+            <button onClick={this.handleBook}>Book a Nap</button>
           </div>
         </div>
           <div className="description group">

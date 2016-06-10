@@ -13,6 +13,12 @@ var ServerActions = {
       actionType: NapSpotConstants.SPOT_RECEIVED,
       nap_spot: nap_spot
     });
+  },
+  receiveBookings: function(bookings){
+    AppDispatcher.dispatch({
+      actionType: "BOOKINGS_RECIEVED",
+      bookings: bookings
+    });
   }
 };
 

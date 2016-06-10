@@ -14,7 +14,7 @@ var Picker = React.createClass({
   handleChange: function(date) {
     this.setState({
       startDate: date
-    });
+    }, this.props.sendToParent(date.format('MMMM Do YYYY')));
   },
 
   render: function() {

@@ -34,5 +34,5 @@ NapSpotStore.__onDispatch = function (payload){
 
   }
 };
-window.Store = NapSpotStore;
+
 module.exports = NapSpotStore;

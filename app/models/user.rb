@@ -16,6 +16,13 @@ class User < ActiveRecord::Base
       class_name: 'NapSpot'
     )
 
+    has_many(
+      :bookings,
+      primary_key: :id,
+      foreign_key: :napper_id,
+      class_name: 'Booking'
+    )
+
   	def password=(password)
       @password = password
   		self.password_digest = BCrypt::Password.create(password)
