@@ -1,7 +1,7 @@
 class Api::BookingsController < ApplicationController
 
   def index
-    @bookings = NapSpot.find_by(id: params[:id]).bookings
+    @bookings = NapSpot.find_by(id: params[:napspot_id]).bookings
 
      render json: @bookings
 

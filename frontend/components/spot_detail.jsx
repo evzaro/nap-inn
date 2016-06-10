@@ -1,27 +1,34 @@
 var React = require('react');
 var NapSpotStore = require('../stores/nap_spot_store');
+var BookingsStore = require('../stores/bookings_store');
 var ClientActions = require('../actions/client_actions');
 var NapSpotApiUtil = require('../util/nap_spot_api_util');
+var BookingApiUtil = require('../util/booking_api_util');
 var RouteActions = require('../actions/route_actions');
 var Picker = require('./picker');
+var moment = require('moment');
 
 var SpotDetail = React.createClass({
   getInitialState: function() {
     return({
       spot: NapSpotStore.currentSpot(),
-      date: "",
+      date: moment().format('MMMM Do YYYY'),
       reserved_blocks: "",
+      bookings: BookingsStore.all()
     });
   },
 
   componentDidMount: function() {
     RouteActions.changeRoute('detail');
     NapSpotApiUtil.fetchNapSpot(this.props.params.id);
+    BookingApiUtil.fetchBookings(this.props.params.id);
     this.storeListener = NapSpotStore.addListener(this.handleChange);
+    this.bookListener = BookingsStore.addListener(this.handleBookChange);
   },
 
   componentWillUnmount: function() {
     this.storeListener.remove();
+    this.bookListener.remove();
   },
 
   handleBook: function (e){
@@ -40,11 +47,13 @@ var SpotDetail = React.createClass({
     );
   },
 
-  // handleDate: function (e){
-  //   this.setState(
-  //     {date: e}
-  //   );
-  // },
+  handleBookChange: function(){
+    this.setState(
+      {bookings: BookingsStore.all()}
+    );
+  },
+
+
 
   getDateFromChild: function (new_date) {
     this.setState({date: new_date});
@@ -64,6 +73,21 @@ var SpotDetail = React.createClass({
   },
 
   render: function() {
+
+    var bookings = this.state.bookings;
+    if (bookings.length > 0){
+      bookings.forEach(function(booking){
+
+        if (booking.date === this.state.date){
+          var blocks = booking.reserved_blocks.split(",");
+          for (var i = 0; i < blocks.length; i++) {
+
+            $("#timeSelect option[value=" + blocks[i]+ "]").remove();
+          }
+        }
+      }.bind(this));
+    }
+
     var city = "";
     var state = "";
     var country = "";
@@ -76,7 +100,6 @@ var SpotDetail = React.createClass({
       country = location.country;
     }
 
-    // b_rgb:c8c8c8,c_pad,h_230,w_330 old transform for detail
     var divStyle = {
       backgroundImage: 'url(' + this.state.spot.image_urls + ')'
     };
@@ -117,7 +140,7 @@ var SpotDetail = React.createClass({
             <Picker sendToParent={this.getDateFromChild}/>
             <div className="time-select-container">
 
-              <select multiple={true} onChange={this.handleBlocks}>
+              <select id="timeSelect" multiple={true} onChange={this.handleBlocks}>
                 <option id="1" value="1">Midnight - 1:00am</option>
                 <option id="2" value="2">1:00am - 2:00am</option>
                 <option id="3" value="3">2:00am - 3:00am</option>
