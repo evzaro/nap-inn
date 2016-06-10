@@ -8,5 +8,9 @@ Rails.application.routes.draw do
 
   get '/auth/facebook/callback', to: 'api/sessions#create_with_fb',
   defaults: {format: :json}
+
+  get '/nap_spots/my_nap_spots', to: 'api/nap_spots#user_index',
+  defaults: {format: :json}
+  
   root "static_pages#root"
 end

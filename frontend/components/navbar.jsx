@@ -58,6 +58,10 @@ var NavBar = React.createClass({
     hashHistory.push('/signup');
   },
 
+  myNapSpots: function (){
+    hashHistory.push('/mynapspots');
+  },
+
   pushHost: function (){
     RouteActions.changeRoute('/new');
     hashHistory.push('/new');
@@ -94,7 +98,7 @@ var NavBar = React.createClass({
               <button className="profile-button">{this.state.currentUser.fname}</button>
               <ul className="profile-dropdown">
                 <li>Profile</li>
-                <li>Your NapSpots</li>
+                <li onClick={this.myNapSpots}>Your NapSpots</li>
                 <li onClick={this._handleLogout}>Log Out</li>
               </ul>
             </li>

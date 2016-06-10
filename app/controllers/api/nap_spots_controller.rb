@@ -7,6 +7,11 @@ class Api::NapSpotsController < ApplicationController
 
   end
 
+  def user_index
+    @nap_spots = current_user.nap_spots
+    render "api/nap_spots/index"
+  end
+
   def create
     @nap_spot = NapSpot.new(nap_spot_params)
     @nap_spot.owner_id = current_user.id;
@@ -19,6 +24,12 @@ class Api::NapSpotsController < ApplicationController
 
   def show
     @nap_spot = NapSpot.find_by(id: params[:id])
+    render "api/nap_spots/show"
+  end
+
+  def destroy
+    @nap_spot = NapSpot.find_by(id: params[:id])
+    @nap_spot.destroy
     render "api/nap_spots/show"
   end
 

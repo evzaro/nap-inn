@@ -52,7 +52,7 @@ var MasterSpotForm = React.createClass({
       lat: this.state.lat,
       lng: this.state.lng,
     });
-
+    hashHistory.push('/mynapspots');
   },
 
   handleClickPrev: function(){

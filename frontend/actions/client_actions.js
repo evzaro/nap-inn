@@ -12,7 +12,11 @@ var ClientActions = {
 
    createBooking: function(booking){
      BookingApiUtil.createBooking(booking);
-   }
+   },
+
+   fetchMySpots: function(){
+     NapSpotApiUtil.fetchMySpots();
+   },
 };
 
 module.exports = ClientActions;

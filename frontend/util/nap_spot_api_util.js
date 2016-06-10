@@ -32,6 +32,25 @@ var NapSpotApiUtil = {
       }
     });
   },
+  fetchMySpots: function (){
+    $.ajax({
+      type: "GET",
+      url: '/nap_spots/my_nap_spots',
+      success: function (data){
+        ServerActions.receiveAll(data);
+      }
+    });
+  },
+  destroySpot: function (id){
+    $.ajax({
+      type: "DELETE",
+      url: '/api/nap_spots/' + id,
+      success: function (data){
+
+        ServerActions.removeNapSpot(data);
+      }
+    });
+  },
 };
 
 

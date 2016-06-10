@@ -161,10 +161,15 @@ input:invalid {
   float: left;
   position: absolute;
   top: 0;
+  
+  z-index: -10;
+
   width: 100%;
   height: 100%;
-  z-index: -10;
-  background: transparent;
+  max-height: 650px;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }
 
 .nav-links:hover {
@@ -779,4 +784,75 @@ input:invalid {
 
 .booking-content button:hover {
   background: #ff7e82;
+}
+
+.my-spot-container{
+
+  height: 300px;
+  position: relative;
+}
+
+.my-spot-content{
+
+  position: relative;
+}
+
+.my-spot-container h2{
+  position: absolute;
+  left: 408px;
+  bottom: 262px;
+  font-size: 16px;
+  color: #484848;
+
+}
+.my-spot-container h3{
+  position: absolute;
+  top: 40px;
+  left: 410px;
+  color: #484848;
+}
+
+.my-spot-container button{
+  position: absolute;
+  top: 68px;
+  left: 409px;
+  font-size: 14px;
+  height: 40px;
+  color: #484848;
+  border-radius: 2px;
+  background-color: #FF5A5F;
+  color: white;
+  border: none;
+}
+
+.my-spot-container button:hover {
+  background: #ff7e82;
+}
+
+.my-spots{
+  height: 100%;
+}
+.my-spots-items{
+    height: 100%;
+    padding-top: 61px;
+}
+
+.my-img-wrapper{
+  border: 1px solid #cdcdcd;
+  height: 300px;
+  width: auto;
+  padding: 20px;
+}
+
+.my-img-wrapper img{
+  height: 80%;
+  border: 1px solid #cdcdcd;
+}
+
+.splash-header{
+  font-size: 40px;
+  color: white;
+  width: 100%;
+  position: absolute;
+  margin: 50%;
 }

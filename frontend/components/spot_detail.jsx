@@ -135,7 +135,7 @@ var SpotDetail = React.createClass({
             <h3>{city + ", " + state + ", " + country}</h3>
           </span>
 
-          <div className="detail-icons group">
+          <div className="detail-icons">
             <div className="category-icon">{categoryIcon}<h3>{this.state.spot.category}</h3></div>
 
             <div className="capacity-icon"><img src={JSON.parse(
@@ -179,8 +179,8 @@ var SpotDetail = React.createClass({
             <button onClick={this.handleBook}>Book a Nap</button>
           </div>
         </div>
-          <div className="description group">
-            <div className="desc-items group">
+          <div className="description">
+            <div className="desc-items">
               <h3>About this spot:</h3>
               <p>{this.state.spot.description}</p>
             </div>

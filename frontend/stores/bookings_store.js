@@ -30,5 +30,5 @@ BookingsStore.__onDispatch = function (payload){
 
   }
 };
-window.Store = BookingsStore;
+
 module.exports = BookingsStore;

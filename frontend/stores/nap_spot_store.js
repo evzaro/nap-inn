@@ -31,8 +31,19 @@ NapSpotStore.__onDispatch = function (payload){
       _currentSpot = payload.nap_spot;
       NapSpotStore.__emitChange();
       break;
+    case NapSpotConstants.SPOT_REMOVED:
+      var result = [];
+
+      for (var i = 0; i < _spots.length; i++) {
+        if (_spots[i].id !== payload.nap_spot.id){
+          result.push(_spots[i]);
+        }
+      }
+      _spots = result;
+      NapSpotStore.__emitChange();
+      break;
 
   }
 };
-
+window.Store = NapSpotStore;
 module.exports = NapSpotStore;

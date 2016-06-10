@@ -14,6 +14,12 @@ var ServerActions = {
       nap_spot: nap_spot
     });
   },
+  removeNapSpot: function(nap_spot){
+    AppDispatcher.dispatch({
+      actionType: NapSpotConstants.SPOT_REMOVED,
+      nap_spot: nap_spot
+    });
+  },
   receiveBookings: function(bookings){
     AppDispatcher.dispatch({
       actionType: "BOOKINGS_RECIEVED",
