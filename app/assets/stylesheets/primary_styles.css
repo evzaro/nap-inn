@@ -851,9 +851,9 @@ input:invalid {
 
 .splash-header{
   font-size: 50px;
-  color: black;
-  width: 50%;
+  color: white;
+  width: 58%;
   position: absolute;
   left: 35%;
-  top: 44%;
+  top: 19%;
 }

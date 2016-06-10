@@ -19,7 +19,7 @@ var Splash = React.createClass({
     }
 
     var divStyle = {
-      backgroundImage: "url('http://res.cloudinary.com/dfjm0djds/image/upload/v1465393667/jc8knkzdobgn3zq7f0eh.jpg')"
+      backgroundImage: "url('http://res.cloudinary.com/dfjm0djds/image/upload/v1465575392/background_uzpwdt.jpg')"
     };
 
     return (
@@ -27,7 +27,7 @@ var Splash = React.createClass({
         <Search/>
         <div className="background" style={divStyle}>
           <h1 className="splash-header">{saying}</h1>
-        
+
       </div>
     </div>
     );
