@@ -2,6 +2,8 @@ var React = require('react');
 var NapSpotStore = require('../stores/nap_spot_store');
 var ClientActions = require('../actions/client_actions');
 var RouteStore = require('../stores/route_store');
+var ReactRouter = require('react-router');
+var hashHistory = ReactRouter.hashHistory;
 
 //add a store for map state
 var Map = React.createClass({
@@ -50,7 +52,7 @@ var Map = React.createClass({
         position: {lat: lat, lng: lng},
         map: this.map,
         animation: google.maps.Animation.DROP,
-        title: "My Spot!"
+        title: "My Spot!",
       });
     }
   },
@@ -92,6 +94,9 @@ var Map = React.createClass({
           animation: google.maps.Animation.DROP,
           title: spot.price
         });
+        markers[spot.id].addListener('click', function() {
+            hashHistory.push({pathname: 'detail/' + spot.id});
+          });
       }
     });
 
