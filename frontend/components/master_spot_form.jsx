@@ -121,6 +121,17 @@ var MasterSpotForm = React.createClass({
   },
 
   render: function(){
+    var help;
+
+    if (this.state.progress < 3){
+      help = <img src={JSON.parse(
+      document.getElementById('content').dataset.images).help}/>;
+    } else if (this.state.progress < 5) {
+      help = <img src={JSON.parse(
+      document.getElementById('content').dataset.images).sleep}/>;
+    } else {
+      help = <img id="sample_upload" src={this.state.image_urls}/>;
+    }
 
     var currentForm;
     var nextButton;
@@ -166,7 +177,11 @@ var MasterSpotForm = React.createClass({
               </div>
             </div>
           </div>
-            <div className="helper-info"><div className="helper-content"></div></div>
+            <div className="helper-info">
+              <div className="helper-content">
+                {help}
+              </div>
+            </div>
         </div>
       </div>
     );

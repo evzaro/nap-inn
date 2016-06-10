@@ -10,6 +10,8 @@ class StaticPagesController < ApplicationController
       capacity: path_to_asset('capacity.png'),
       hammock: path_to_asset('hammock.png'),
       bed: path_to_asset('bed.png'),
+      help: path_to_asset('help.png'),
+      sleep: path_to_asset('sleep.png')
     }
 end
 

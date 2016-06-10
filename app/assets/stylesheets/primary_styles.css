@@ -326,10 +326,11 @@ input:invalid {
 }
 
 .helper-content {
+  position: relative;
   margin-top: 50px;;
   padding: 40px;
-  height: 150px;
-  width: 200px;
+  height: 250px;
+  width: 400px;
   background: #FFF;
   border: 1px solid #C4C4C4;
 
@@ -730,4 +731,11 @@ input:invalid {
   margin-left: 138px;
   max-width: 620px;
   height: auto;
+}
+
+#sample_upload{
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
 }

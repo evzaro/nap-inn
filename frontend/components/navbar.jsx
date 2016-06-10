@@ -94,7 +94,7 @@ var NavBar = React.createClass({
               <button className="profile-button">{this.state.currentUser.fname}</button>
               <ul className="profile-dropdown">
                 <li>Profile</li>
-                <li>Your Naps</li>
+                <li>Your NapSpots</li>
                 <li onClick={this._handleLogout}>Log Out</li>
               </ul>
             </li>
