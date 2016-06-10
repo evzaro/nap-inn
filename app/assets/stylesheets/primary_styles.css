@@ -662,7 +662,7 @@ input:invalid {
   position: absolute;
   left: -7px;
   width: 100px;
-
+  color: #757575;
 }
 
 .capacity-icon h3{
@@ -670,8 +670,7 @@ input:invalid {
   bottom: -8px;
   position: absolute;
   right: -33px;
-
-
+  color: #757575;
 }
 
 .capacity-icon {

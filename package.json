@@ -31,6 +31,7 @@
     "babel-preset-react": "^6.5.0",
     "flux": "^2.1.1",
     "moment": "^2.13.0",
+    "rc-time-picker": "^1.1.4",
     "react": "^15.1.0",
     "react-datepicker": "^0.27.0",
     "react-dom": "^15.1.0",

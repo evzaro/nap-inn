@@ -3,6 +3,7 @@ var NapSpotStore = require('../stores/nap_spot_store');
 var ClientActions = require('../actions/client_actions');
 var NapSpotApiUtil = require('../util/nap_spot_api_util');
 var RouteActions = require('../actions/route_actions');
+var Picker = require('./picker');
 
 var SpotDetail = React.createClass({
   getInitialState: function() {
@@ -68,7 +69,7 @@ var SpotDetail = React.createClass({
 
           <div className="detail-icons group">
             <div className="category-icon">{categoryIcon}<h3>{this.state.spot.category}</h3></div>
-            
+
             <div className="capacity-icon"><img src={JSON.parse(
               document.getElementById('content').dataset.images).capacity}/>  <h3>{this.state.spot.capacity + ' Nappers'}</h3></div>
 
@@ -76,6 +77,7 @@ var SpotDetail = React.createClass({
 
           <div className="booking-content">
             <span className="price-wrapper"><h3>{'$' + this.state.spot.price}</h3></span>
+            <Picker/>
           </div>
         </div>
           <div className="description group">
