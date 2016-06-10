@@ -30,7 +30,9 @@
     "babel-loader": "^6.2.4",
     "babel-preset-react": "^6.5.0",
     "flux": "^2.1.1",
+    "moment": "^2.13.0",
     "react": "^15.1.0",
+    "react-datepicker": "^0.27.0",
     "react-dom": "^15.1.0",
     "react-router": "^2.4.1",
     "webpack": "^1.13.1"
