@@ -687,7 +687,7 @@ input:invalid {
   width: 300px;
   float: right;
   position: absolute;
-  right: 25%;
+  right: 0%;
   top: -48px;
   border: 1px solid #757575;
 }
@@ -701,6 +701,16 @@ input:invalid {
   color: white;
   background: rgba(60,63,64,0.9);
 }
+
+.price-wrapper:before {
+  content: 'Per Hour';
+  font-size: 12px;
+  float: right;
+  padding-top: 6px;
+  padding-bottom: 5px;
+}
+
+
 
 .summary {
   height: 175px;
@@ -738,4 +748,35 @@ input:invalid {
   height: 100%;
   top: 0;
   left: 0;
+}
+
+#timeSelect{
+  position: absolute;
+  top: 50px;
+  right: 16px;
+}
+
+.react-datepicker__input-container input {
+  width: 100px;
+  padding: 5px;
+  position: absolute;
+  top: 7px;
+  left: 11px;
+}
+
+.booking-content button {
+  border: 0;
+  width: 270px;
+  height: 41px;
+  top: 141px;
+  position: absolute;
+  font-size: 16px;
+  left: 13px;
+  border-radius: 2px;
+  background-color: #FF5A5F;
+  color: white;
+}
+
+.booking-content button:hover {
+  background: #ff7e82;
 }
