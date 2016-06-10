@@ -18,7 +18,7 @@ createBooking: function (booking){
     data: {'booking': booking},
     dataType: 'json',
     success: function (booking){
-      console.log(booking);
+      ServerActions.receiveBooking(booking);
     }
   });
 },

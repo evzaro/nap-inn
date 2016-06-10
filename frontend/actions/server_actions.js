@@ -19,6 +19,12 @@ var ServerActions = {
       actionType: "BOOKINGS_RECIEVED",
       bookings: bookings
     });
+  },
+  receiveBooking: function(booking){
+    AppDispatcher.dispatch({
+      actionType: "BOOKING_RECIEVED",
+      booking: booking
+    });
   }
 };
 

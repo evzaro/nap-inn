@@ -10,9 +10,6 @@ BookingsStore.all = function () {
   return clone;
 };
 
-BookingsStore.currentSpot = function () {
-  return _currentSpot;
-};
 
 BookingsStore.__onDispatch = function (payload){
   switch(payload.actionType) {
@@ -24,12 +21,12 @@ BookingsStore.__onDispatch = function (payload){
     _bookings = payload.bookings;
       BookingsStore.__emitChange();
       break;
-    // case "BOOKING_RECIEVED":
-    //   // _spots[payload.nap_spot.id] = payload.nap_spot;
-    //   _spots.push(payload.nap_spot);
-    //   _currentSpot = payload.nap_spot;
-    //   BookingsStore.__emitChange();
-    //   break;
+    case "BOOKING_RECIEVED":
+      // _spots[payload.nap_spot.id] = payload.nap_spot;
+      _bookings.push(payload.booking);
+
+      BookingsStore.__emitChange();
+      break;
 
   }
 };
