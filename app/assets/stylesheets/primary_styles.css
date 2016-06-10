@@ -646,21 +646,40 @@ input:invalid {
   height: 60px;
   padding: 5px;
   margin-left: 15%;
-  background: orange;
+
+  position: relative;
 }
 
 .category-icon {
   float: left;
   height: 50px;
   width: 50px;
-  background: blue;
+
+
+}
+
+.category-icon h3{
+  position: absolute;
+  left: -7px;
+  width: 100px;
+
+}
+
+.capacity-icon h3{
+  width: 100px;
+  bottom: -8px;
+  position: absolute;
+  right: -33px;
+
+
 }
 
 .capacity-icon {
   float: right;
   height: 50px;
   width: 50px;
-  background: green;
+
+
 }
 
 .booking-content {
@@ -690,20 +709,26 @@ input:invalid {
 
 .description {
   padding: 15px;
+  padding-left: 10%;
   margin-top: 44px;
   background: #eaefef;
   color: #484848;
   width: 100%;
-  
+
 }
 
 .description h3 {
   float: left;
-  margin-left: 150px;
+  font-weight: bold;
+}
+
+.desc-items {
+  max-width: 1000px;
+  margin: auto;
 }
 
 .description p {
-  margin-left: 25%;
-  max-width: 622px;
+  margin-left: 138px;
+  max-width: 620px;
   height: auto;
 }

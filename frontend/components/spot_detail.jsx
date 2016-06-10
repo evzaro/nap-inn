@@ -43,6 +43,15 @@ var SpotDetail = React.createClass({
       backgroundImage: 'url(' + this.state.spot.image_urls + ')'
     };
 
+    var categoryIcon;
+    if (this.state.spot.category === "hammock"){
+      categoryIcon = <img src={JSON.parse(
+        document.getElementById('content').dataset.images).hammock}/>;
+    } else {
+      categoryIcon = <img src={JSON.parse(
+        document.getElementById('content').dataset.images).bed}/>;
+    }
+
     return (
       <div className="detail">
 
@@ -58,8 +67,11 @@ var SpotDetail = React.createClass({
           </span>
 
           <div className="detail-icons group">
-            <div className="category-icon"><h3>{this.state.spot.category}</h3></div>
-            <div className="capacity-icon"><h3>{this.state.spot.capacity + " Nappers"}</h3></div>
+            <div className="category-icon">{categoryIcon}<h3>{this.state.spot.category}</h3></div>
+            
+            <div className="capacity-icon"><img src={JSON.parse(
+              document.getElementById('content').dataset.images).capacity}/>  <h3>{this.state.spot.capacity + ' Nappers'}</h3></div>
+
           </div>
 
           <div className="booking-content">
@@ -67,9 +79,10 @@ var SpotDetail = React.createClass({
           </div>
         </div>
           <div className="description group">
-            <h3>About this spot:</h3>
-            <p>{this.state.spot.description}</p>
-
+            <div className="desc-items group">
+              <h3>About this spot:</h3>
+              <p>{this.state.spot.description}</p>
+            </div>
           </div>
 
         </div>
