@@ -10,7 +10,7 @@ class Api::BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.napper_id = current_user.id
-    
+
     if @booking.save
       render json: @booking
     else

@@ -30,7 +30,7 @@ var SpotDetail = React.createClass({
     ClientActions.createBooking({
       napspot_id: this.state.spot.id,
       date: this.state.date,
-      reserved_blocks: this.state.reserved_blocks
+      reserved_blocks: this.state.reserved_blocks,
     });
   },
 
