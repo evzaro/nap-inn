@@ -39,14 +39,16 @@ var SpotDetail = React.createClass({
     }
 
     // b_rgb:c8c8c8,c_pad,h_230,w_330 old transform for detail
-    console.log(this.state.spot);
+    var divStyle = {
+      backgroundImage: 'url(' + this.state.spot.image_urls + ')'
+    };
+
     return (
       <div className="detail">
 
-        <div className="cover-img">
-          <img src={this.state.spot.image_urls}/>
+        <div className="cover-img" style={divStyle}>
         </div>
-
+        <div className="summary">
         <div className="info-and-booking">
 
           <h2>{this.state.spot.title}</h2>
@@ -55,17 +57,17 @@ var SpotDetail = React.createClass({
             <h3>{city + ", " + state + ", " + country}</h3>
           </span>
 
-          <div className="detail-icons">
-            <div className="category-icon">{this.state.spot.category}</div>
-            <div className="capacity-icon">{this.state.spot.capacity}</div>
+          <div className="detail-icons group">
+            <div className="category-icon"><h3>{this.state.spot.category}</h3></div>
+            <div className="capacity-icon"><h3>{this.state.spot.capacity + " Nappers"}</h3></div>
           </div>
 
           <div className="booking-content">
-            <span className="price-wrapper"><h3>{this.state.spot.price}</h3></span>
+            <span className="price-wrapper"><h3>{'$' + this.state.spot.price}</h3></span>
           </div>
-
-          <div className="description">
-            <h3>Description</h3>
+        </div>
+          <div className="description group">
+            <h3>About this spot:</h3>
             <p>{this.state.spot.description}</p>
 
           </div>
