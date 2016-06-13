@@ -1,6 +1,6 @@
 NapInn
 
-[napinn.herokuapp.com](napinn.herokuapp.com)
+[napinn.herokuapp.com](https://napinn.herokuapp.com)
 
 NapInn is an AirBnB inspired full-stack web application, foused on micro-stays and naps as opposed to multi-night stays. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Flux architectural framework on the frontend.
 
