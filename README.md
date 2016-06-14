@@ -1,12 +1,12 @@
-NapInn
+#NapInn#
 
 [napinn.herokuapp.com](https://napinn.herokuapp.com)
 
 NapInn is an AirBnB inspired full-stack web application, foused on micro-stays and naps as opposed to multi-night stays. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Flux architectural framework on the frontend.
 
-Features & Implementation
+##Features & Implementation##
 
-Single-Page App
+###Single-Page App###
 
 NapInn is truly a single-page; all content is delivered on one static page, which makes requests to various API routes supplied by the backend. As a result, NapInn is robust, responsive, and secure for end-users. No sensitive user information, such as password hashes, full names, or addresses are ever extant in the frontend. Said architecture is also HIGHLY scalable.
 
@@ -15,28 +15,28 @@ All NapSpots (which users can create at will once logged in), are stored in one 
 NapInn contains custom icons and visually appealing css to provide users with a highly pleasant experience.
 
 
-NapSpot
+###NapSpot###
 
 NapSpots are rendered in an index view, with price, location, and categorical information, and also in a detail view, which fetches associated bookings and additional information such as the description.
 
 NapSpots can be deleted only by their creators, who are able to do so within the 'mynapspots' component.
 
-Booking
+###Booking###
 
 The booking functionality utilizes moment.js, a ubiquitous library used for working with datetime. Users use a datetime picker to create bookings. The picker adds a listener on a bookings store, and disables any potential time slots already booked.
 
 
-Future Directions for the Project
+##Future Directions for the Project##
 
 NapInn is a work in progress. There are a few essential features that still need to be implemented, and then some longer term goals. The next steps for NapInn are as follows.
 
 Features to finish: User Profile, Editing of NapSpots, Featured Listings on Front Page
 
-Filtering
+- **Filtering**
 
 A user will be able to filter their search for any of the saved categories (type, capacity, price, etc.).
 
-Direct Messaging
+- **Direct Messaging**
 
 Nappers and NapSpot owners will be able to chat and make arrangements in real time.
 
