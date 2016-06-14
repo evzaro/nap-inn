@@ -40,4 +40,4 @@ A user will be able to filter their search for any of the saved categories (type
 
 Nappers and NapSpot owners will be able to chat and make arrangements in real time.
 
-Custom Google Maps Markers
+- **Custom Google Maps Markers**
