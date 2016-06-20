@@ -18,22 +18,16 @@ NapSpotStore.currentSpot = function () {
 NapSpotStore.__onDispatch = function (payload){
   switch(payload.actionType) {
     case NapSpotConstants.SPOTS_RECEIVED:
-    // payload.nap_spots.forEach(function(spot){
-    //   _spots[spot.id] = spot;
-    // });
-
     _spots = payload.nap_spots;
       NapSpotStore.__emitChange();
       break;
     case NapSpotConstants.SPOT_RECEIVED:
-      // _spots[payload.nap_spot.id] = payload.nap_spot;
       _spots.push(payload.nap_spot);
       _currentSpot = payload.nap_spot;
       NapSpotStore.__emitChange();
       break;
     case NapSpotConstants.SPOT_REMOVED:
       var result = [];
-
       for (var i = 0; i < _spots.length; i++) {
         if (_spots[i].id !== payload.nap_spot.id){
           result.push(_spots[i]);
@@ -45,5 +39,5 @@ NapSpotStore.__onDispatch = function (payload){
 
   }
 };
-window.Store = NapSpotStore;
+
 module.exports = NapSpotStore;

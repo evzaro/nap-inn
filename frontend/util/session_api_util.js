@@ -13,7 +13,6 @@ var SessionApiUtil = {
       },
       error: function (xhr) {
 			  console.log("Login error in SessionApiUtil#login");
-        //var errors = xhr.responseJSON;
       }
     });
   },
@@ -28,7 +27,6 @@ var SessionApiUtil = {
     },
     error: function (xhr) {
       console.log("Logout error in SessionApiUtil#login");
-      //var errors = xhr.responseJSON;
     }
   });
   },

@@ -5,7 +5,6 @@ var RouteStore = require('../stores/route_store');
 var ReactRouter = require('react-router');
 var hashHistory = ReactRouter.hashHistory;
 
-//add a store for map state
 var Map = React.createClass({
 
   componentDidMount: function(){
@@ -99,35 +98,7 @@ var Map = React.createClass({
           });
       }
     });
-
-    // nap_spots.forEach(function(spot){
-    //   if ((Object.keys(markers).includes(spot.id))){
-    //
-    //   } else {
-    //
-    //     markers[spot.id].setMap(null);
-    //     delete markers[spot.id];
-    //     console.log(markers);
-    //
-    //   }
-    // });
   },
-
-  // _markerCleanUp: function(nap_spots, markers){
-  //   Object.keys(markers).forEach(function(id){
-  //     var includesSpot = false;
-  //     nap_spots.forEach(function(spot){
-  //       if (spot.id === id){
-  //         includesSpot = true;
-  //       }
-  //     });
-  //     if (includesSpot === false) {
-  //       markers[id].setMap(null);
-  //       delete markers[id];
-  //     }
-  //   });
-  // },
-
 
   render: function (){
 

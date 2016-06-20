@@ -11,7 +11,7 @@ var DetailForm = require('./spot_forms/4-detail');
 var InfoForm = require('./spot_forms/5-info');
 
 var MasterSpotForm = React.createClass({
-  // add saving? new table? or take away null constraints?
+
   getInitialState: function(){
     return({
 
@@ -39,7 +39,7 @@ var MasterSpotForm = React.createClass({
   },
 
   handleClickSave: function(){
-    //category has extra info being unused
+  
 
     ClientActions.createNapSpot({
       title: this.state.title,

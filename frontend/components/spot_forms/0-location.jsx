@@ -3,7 +3,7 @@ var CountryDropDown = require('./country_drop_down');
 var Map = require('../map');
 
 var LocationForm = React.createClass({
-  // add saving? new table? or take away null constraints?
+  
   getInitialState: function(){
     return({
       street_number: '',
@@ -48,7 +48,7 @@ var LocationForm = React.createClass({
     initAutocomplete: function() {
 
       autocomplete = new google.maps.places.Autocomplete(
-          /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+          (document.getElementById('autocomplete')),
           {types: ['geocode']});
 
       autocomplete.addListener('place_changed', this.setAddressState);

@@ -19,7 +19,7 @@ var Search = React.createClass({
 
   initAutocomplete: function() {
     autocomplete = new google.maps.places.Autocomplete(
-      /** @type {!HTMLInputElement} */(document.getElementById('autocomplete-splash')),
+      (document.getElementById('autocomplete-splash')),
       {types: ['geocode']});
     autocomplete.addListener('place_changed', this.updateSearch);
   },
@@ -32,7 +32,6 @@ var Search = React.createClass({
   },
 
   handleSubmit: function(){
-    // hashHistory.push({pathname:'index', state: this.state.place});
     hashHistory.push({pathname:'index/' + this.state.place.geometry.location.lat() + "&" + this.state.place.geometry.location.lng()});
 
   },

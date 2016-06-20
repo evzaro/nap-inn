@@ -41,5 +41,5 @@ ErrorStore.__onDispatch = function (payload) {
       break;
   }
 };
-window.ErrorStore = ErrorStore;
+
 module.exports = ErrorStore;

@@ -5,9 +5,6 @@ var hashHistory = ReactRouter.hashHistory;
 
 var SpotIndexItem = React.createClass({
 
-  //markers
-  //title length limit
-
   goToDetail: function() {
       hashHistory.push({pathname: 'detail/' + this.props.spot.id});
   },

@@ -12,7 +12,7 @@ var SpotIndex = React.createClass({
   getInitialState: function() {
     return {
       nap_spots: NapSpotStore.all(),
-      // location: this.props.location
+      
       lat: parseFloat(this.props.params.latlng.split("&")[0]),
       lng: parseFloat(this.props.params.latlng.split("&")[1])
     };
