@@ -74,7 +74,7 @@ var SpotDetail = React.createClass({
   },
 
   render: function() {
-  
+
     for (var i = 1; i < 25; i++) {
 
       $("#timeSelect option[value=" + i + "]")
@@ -89,8 +89,6 @@ var SpotDetail = React.createClass({
           for (var i = 0; i < blocks.length; i++) {
             $("#timeSelect option[value=" + blocks[i]+ "]")
               .attr("disabled", "disabled");
-
-            // $("#timeSelect option[value=" + blocks[i]+ "]").remove();
           }
         }
       }.bind(this));

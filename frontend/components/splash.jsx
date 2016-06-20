@@ -4,9 +4,6 @@ var Search = require('./search');
 
 var Splash = React.createClass({
 
-
-
-
   render: function() {
 
     var saying;
