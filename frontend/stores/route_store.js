@@ -13,7 +13,7 @@ RouteStore.__onDispatch = function (payload){
   switch(payload.actionType) {
     case "CHANGE_ROUTE":
       _route = payload.route;
-      console.log(_route);
+  
       RouteStore.__emitChange();
       break;
   }

@@ -40,7 +40,6 @@ var LoginForm = React.createClass({
 
   componentDidMount: function (){
     this.storeListener = SessionStore.addListener(this._handleSuccess);
-    console.log("mounting!");
   },
 
   componentWillUnmount: function() {

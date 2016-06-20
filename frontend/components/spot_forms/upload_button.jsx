@@ -8,7 +8,7 @@ var UploadButton = React.createClass({
       if(!error){
         this.props.sendImageToParent(results[0].secure_url);
       } else {
-        console.log("image upload failed");
+        
       }
     }.bind(this));
   },
