@@ -52,6 +52,7 @@ var Map = React.createClass({
         map: this.map,
         animation: google.maps.Animation.DROP,
         title: "My Spot!",
+        draggable:true
       });
     }
   },
