@@ -28,7 +28,7 @@ The booking functionality utilizes moment.js, a ubiquitous library used for work
 
 ##Future Directions for the Project##
 
-NapInn is a work in progress. There are a few essential features that still need to be implemented, and then some longer term goals. The next steps for NapInn are as follows.
+NapInn is a work in progress. There are a few essential features that still need to be implemented, and some longer term goals. The next steps for NapInn are as follows.
 
 Features to finish: User Profile, Editing of NapSpots, Featured Listings on Front Page
 
