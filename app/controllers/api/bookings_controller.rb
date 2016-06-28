@@ -7,6 +7,13 @@ class Api::BookingsController < ApplicationController
 
   end
 
+  def user_index
+    @bookings = Booking.find_by(napper_id: params[:napper_id])
+
+     render json: @bookings
+
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @booking.napper_id = current_user.id

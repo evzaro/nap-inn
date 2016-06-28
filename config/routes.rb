@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   get '/nap_spots/my_nap_spots', to: 'api/nap_spots#user_index',
   defaults: {format: :json}
-  
+
+  get '/bookings/my_bookings', to: 'api/bookings#user_index',
+  defaults: {format: :json}
+
   root "static_pages#root"
 end

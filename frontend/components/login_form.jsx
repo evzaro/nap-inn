@@ -66,7 +66,7 @@ var LoginForm = React.createClass({
     this.currentEmail = "";
     this.currentPass = "";
 
-    this.interval = window.setInterval(this.animate, 100);
+    this.interval = window.setInterval(this.animate, 50);
   },
 
   animate: function (){

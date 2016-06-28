@@ -77,6 +77,14 @@ var NavBar = React.createClass({
     hashHistory.push('/');
   },
 
+  handleGuest: function (){
+    var formData = {
+      user_email: "guest@guest.com",
+      password: "password"
+    };
+    SessionApiUtil.login(formData);
+  },
+
   render: function (){
     var logo;
     if (this.state.status === "splash"){
@@ -97,13 +105,13 @@ var NavBar = React.createClass({
             <li className="profile-dropdown-parent">
               <button className="profile-button">{this.state.currentUser.fname}</button>
               <ul className="profile-dropdown">
-                <li>Profile</li>
-                <li onClick={this.myNapSpots}>Your NapSpots</li>
+                <li onClick={this.myBookings}>My Bookings</li>
+                <li onClick={this.myNapSpots}>My NapSpots</li>
                 <li onClick={this._handleLogout}>Log Out</li>
               </ul>
             </li>
             <button onClick={this.pushHost}>Host</button>
-          
+
           </ul>
         </nav>
       );
@@ -117,13 +125,12 @@ var NavBar = React.createClass({
           <ul classname="nav-links">
             <button onClick={this.pushLogIn}>Log In</button>
             <button onClick={this.pushSignUp}>Sign Up</button>
-
+            <button onClick={this.handleGuest}>Guest</button>
           </ul>
         </nav>
       );
     }
   }
 });
-
 
 module.exports = NavBar;
