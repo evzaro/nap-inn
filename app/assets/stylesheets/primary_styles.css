@@ -857,3 +857,17 @@ input:invalid {
   left: 35%;
   top: 19%;
 }
+
+.booking-delete-button {
+  top: 244px !important;
+  left: 140px !important;
+}
+
+.block-container{
+  position: absolute;
+  top: 75px;
+  left: 409px;
+  border: 1px solid #cdcdcd;
+  padding: 5px;
+  color: #484848;
+}

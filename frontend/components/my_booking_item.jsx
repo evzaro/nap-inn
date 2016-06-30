@@ -15,6 +15,9 @@ var MyBookingItem = React.createClass({
   },
 
   render: function() {
+    var blocks = JSON.parse(this.props.booking.reserved_blocks).map(function(block){
+      return(<div className="time-block">{block}</div>);
+    });
 
     return (
       <div className="my-spot-container">
@@ -25,7 +28,8 @@ var MyBookingItem = React.createClass({
         </div>
         <h2 className="index-title">{this.props.booking.title}</h2>
         <h3 className="index-cat">{this.props.booking.date}</h3>
-        <button onClick={this.deleteItem}>Delete Booking</button>
+        <div className="block-container">{blocks}</div>
+        <button className="booking-delete-button" onClick={this.deleteItem}>Delete Booking</button>
       </div>
     );
   }

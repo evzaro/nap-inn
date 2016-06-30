@@ -35,19 +35,19 @@ var MyBookings = React.createClass({
 
   },
 
-  // update: function(){
-  //   this.forceUpdate();
-  // },
+  update: function(){
+    this.forceUpdate();
+  },
 
   render: function() {
 
     var bookings = [];
     if (this.state.bookings !== undefined){
       this.state.bookings.forEach(function(booking, i){
-        bookings.push(<MyBookingItem key={i} booking={booking}/>);
+        bookings.push(<MyBookingItem key={i} booking={booking} update={this.forceUpdate}/>);
       });
     }
-    
+
     return (
       <div className="my-spots clearfix">
         <div className="my-spots-items">
