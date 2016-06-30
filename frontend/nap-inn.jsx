@@ -14,6 +14,7 @@ var MasterSpotForm = require('./components/master_spot_form');
 var NapSpotIndex = require('./components/spot_index');
 var NapSpotDetail = require('./components/spot_detail');
 var MyNapSpots = require('./components/my_spots');
+var MyBookings = require('./components/my_bookings');
 var App = require('./components/app');
 var Splash = require('./components/splash');
 
@@ -37,6 +38,7 @@ var Router = (
         <Route path="index/:latlng" component={NapSpotIndex}/>
         <Route path="detail/:id" component={NapSpotDetail}/>
         <Route path="mynapspots" component={MyNapSpots}/>
+        <Route path="mybookings" component={MyBookings}/>
     </Route>
   </Router>
 );

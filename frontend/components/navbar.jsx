@@ -85,6 +85,10 @@ var NavBar = React.createClass({
     SessionApiUtil.login(formData);
   },
 
+  myBookings: function (){
+    hashHistory.push('/mybookings');
+  },
+
   render: function (){
     var logo;
     if (this.state.status === "splash"){

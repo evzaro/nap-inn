@@ -8,9 +8,9 @@ class Api::BookingsController < ApplicationController
   end
 
   def user_index
-    @bookings = Booking.find_by(napper_id: params[:napper_id])
-
-     render json: @bookings
+    @bookings = Booking.where(napper_id: current_user.id).includes(:napspot)
+     render "api/bookings/my_bookings"
+    # render json: @bookings
 
   end
 
@@ -27,6 +27,12 @@ class Api::BookingsController < ApplicationController
 
   def show
     @booking = Booking.find_by(id: params[:id])
+    render json: @booking
+  end
+
+  def destroy
+    @booking = Booking.find_by(id: params[:id])
+    @booking.destroy
     render json: @booking
   end
 

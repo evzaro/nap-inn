@@ -31,6 +31,12 @@ var ServerActions = {
       actionType: "BOOKING_RECIEVED",
       booking: booking
     });
+  },
+  removeBooking: function(booking){
+    AppDispatcher.dispatch({
+      actionType: "BOOKING_REMOVED",
+      booking: booking
+    });
   }
 };
 

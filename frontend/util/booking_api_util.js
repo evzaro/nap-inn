@@ -12,11 +12,10 @@ fetchBookings: function (napspot_id){
   });
 },
 
-fetchMyBookings: function (napper_id){
+fetchMyBookings: function (){
   $.ajax({
     type: "GET",
-    url: "api/bookings/my_bookings",
-    data: {'napper_id': napper_id},
+    url: "/bookings/my_bookings",
     success: function (data){
       ServerActions.receiveBookings(data);
     }
@@ -34,5 +33,15 @@ createBooking: function (booking){
     }
   });
 },
+
+  destroyBooking: function (id){
+    $.ajax({
+      type: "DELETE",
+      url: '/api/bookings/' + id,
+      success: function (data){
+        ServerActions.removeNapSpot(data);
+      }
+    });
+  }
 
 };
