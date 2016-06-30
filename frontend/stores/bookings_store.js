@@ -15,7 +15,7 @@ BookingsStore.__onDispatch = function (payload){
     case "BOOKINGS_RECIEVED":
     _bookings = payload.bookings;
       BookingsStore.__emitChange();
-      
+
       break;
     case "BOOKING_RECIEVED":
       _bookings.push(payload.booking);
@@ -23,12 +23,12 @@ BookingsStore.__onDispatch = function (payload){
       break;
     case "BOOKING_REMOVED":
     var new_bookings = [];
-      for (var i = 0; i < _bookings.length; i++) {
-        if (_bookings[i] !== payload.booking){
-          new_bookings.push(_bookings[i]);
+      _bookings.bookings.forEach(function(booking){
+        if (booking.id !== payload.booking.id){
+          new_bookings.push(booking);
         }
-      }
-      _bookings = new_bookings;
+      });
+      _bookings = {bookings: new_bookings};
       BookingsStore.__emitChange();
       break;
 

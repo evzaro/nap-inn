@@ -844,6 +844,10 @@ input:invalid {
   padding: 20px;
 }
 
+.my-img-wrapper img:hover{
+  cursor: pointer;
+}
+
 .my-img-wrapper img{
   height: 80%;
   border: 1px solid #cdcdcd;

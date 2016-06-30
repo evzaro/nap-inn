@@ -7,7 +7,7 @@ var BookingApiUtil = require('../util/booking_api_util');
 var MyBookingItem = React.createClass({
 
   goToDetail: function() {
-      hashHistory.push({pathname: 'detail/' + this.props.spot.napspot_id});
+      hashHistory.push({pathname: 'detail/' + this.props.booking.napspot_id});
   },
 
   deleteItem: function(){

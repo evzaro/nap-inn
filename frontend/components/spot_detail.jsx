@@ -5,6 +5,8 @@ var ClientActions = require('../actions/client_actions');
 var NapSpotApiUtil = require('../util/nap_spot_api_util');
 var BookingApiUtil = require('../util/booking_api_util');
 var RouteActions = require('../actions/route_actions');
+var ReactRouter = require('react-router');
+var hashHistory = ReactRouter.hashHistory;
 var Picker = require('./picker');
 var moment = require('moment');
 
@@ -40,6 +42,7 @@ var SpotDetail = React.createClass({
       reserved_blocks: this.state.reserved_blocks,
     });
     this.forceUpdate();
+    hashHistory.push('/mybookings');
   },
 
   handleChange: function() {

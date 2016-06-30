@@ -39,7 +39,7 @@ createBooking: function (booking){
       type: "DELETE",
       url: '/api/bookings/' + id,
       success: function (data){
-        ServerActions.removeNapSpot(data);
+        ServerActions.removeBooking(data);
       }
     });
   }
