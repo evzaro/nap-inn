@@ -47,12 +47,12 @@ var MyBookings = React.createClass({
         bookings.push(<MyBookingItem key={i} booking={booking}/>);
       });
     }
-
+    
     return (
-      <div>
-
-      {bookings}
-
+      <div className="my-spots clearfix">
+        <div className="my-spots-items">
+          {bookings}
+        </div>
       </div>
     );
   }

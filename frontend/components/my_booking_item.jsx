@@ -2,6 +2,7 @@ var React = require('react');
 var ReactRouter = require('react-router');
 var hashHistory = ReactRouter.hashHistory;
 var NapSpotApiUtil = require('../util/nap_spot_api_util');
+var BookingApiUtil = require('../util/booking_api_util');
 
 var MyBookingItem = React.createClass({
 
@@ -21,7 +22,6 @@ var MyBookingItem = React.createClass({
           <div className="my-img-wrapper"><img onClick={this.goToDetail} className="my-spot-img"
             src={this.props.booking.url}/>
           </div>
-
         </div>
         <h2 className="index-title">{this.props.booking.title}</h2>
         <h3 className="index-cat">{this.props.booking.date}</h3>
