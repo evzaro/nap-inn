@@ -43,11 +43,14 @@ var Splash = React.createClass({
         <Search/>
         <div className="background" style={divStyle}>
           <h1 className="splash-header">{saying}</h1>
+          <div className="splash-listings">
+          <div className="featured clearfix">
+            <div id="ny"><h2>Washington, DC</h2><img src="http://res.cloudinary.com/dfjm0djds/image/upload/v1469031215/dcbutton_x7flfi.jpg" alt="DC" /></div>
+            <div id="dc"><h2>New York</h2><img src="http://res.cloudinary.com/dfjm0djds/image/upload/v1469031215/newyorkbutton_eyftpa.jpg" alt="NY" /></div>
+          </div>
+          </div>
         </div>
-        <div className="featured">
-        <div id="ny"></div>
-        <div id="dc"></div>
-        </div>
+
       </div>
     );
   }
