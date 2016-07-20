@@ -11,7 +11,6 @@
 end
 
 
-
 5.times do
   NapSpot.create!(
     title: (Faker::Hipster.word + 'spot'),

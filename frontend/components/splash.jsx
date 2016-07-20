@@ -7,22 +7,6 @@ var NapSpotStore = require('../stores/nap_spot_store');
 
 var Splash = React.createClass({
 
-  // getInitialState: function() {
-  //   return {
-  //     spot: NapSpotStore.currentSpot()
-  //     //nap_spots: NapSpotStore.all()
-  //   };
-  // },
-  //
-  // componentDidMount: function() {
-  //   NapSpotApiUtil.fetchNapSpot(1);
-  //   // RouteActions.changeRoute('index');
-  //   this.storeListener = NapSpotStore.addListener(this._handleChange);
-  //   // BookingApiUtil.fetchMyBookings();
-  //   // //1) fetch my bookings API and assocated nap spot id (my spot item)
-  //   // //2) add booking store listener
-  // },
-
   _handleChange: function(){
     this.setState({
       spot: NapSpotStore.currentSpot()
@@ -40,9 +24,19 @@ var Splash = React.createClass({
       saying = saying2;
     }
 
+    var url;
+    var url1 = 'http://res.cloudinary.com/dfjm0djds/image/upload/v1469028184/sleepsplash3web_oppa4u.jpg';
+    var url2 = 'http://res.cloudinary.com/dfjm0djds/image/upload/v1469028182/sleepsplash1web_avebzi.jpg';
+    if (Math.random() > 0.5){
+      url = url1;
+    } else {
+      url = url2;
+    }
+
     var divStyle = {
-      backgroundImage: "url('http://res.cloudinary.com/dfjm0djds/image/upload/v1465575392/background_uzpwdt.jpg')"
+      backgroundImage: "url(" + url + ")"
     };
+
 
     return (
       <div>

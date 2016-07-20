@@ -7,9 +7,9 @@
 NapInn is an AirBnB inspired web application that will focus on microstays instead of overnight/vacation rentals. NapInn will be built using Ruby on Rails and React.js. By the end of week 9, which runs from the 6th to the 10th of June, NapInn will satisfy at least the following criteria:
 
 - [x] New account creation, login, and demo/guest user functionality
-- [ ] Smooth, bug-free navigation
-- [ ] Adequate seed data to demonstrate the site's features
-- [ ] The minimally necessary features for an AirBnB-inspired site: creation and listing of nap-spots, search functionality paired with Google Maps (searching via location, dates, price, and nap-spot type), nap spot bookings and reviews
+- [x] Smooth, bug-free navigation
+- [x] Adequate seed data to demonstrate the site's features
+- [x] The minimally necessary features for an AirBnB-inspired site: creation and listing of nap-spots, search functionality paired with Google Maps (searching via location, dates, price, and nap-spot type), nap spot bookings and reviews
   - [x] Create an account (MVP)
   - [x] Log in / Log out, including as a Guest/Demo User (MVP)
   - [ ] Post, view, edit, and remove nap-spot listings (MVP)
@@ -17,7 +17,7 @@ NapInn is an AirBnB inspired web application that will focus on microstays inste
   - [x] Book Nap Spots (MVP)
 - [x] Hosting on Heroku
 - [x] CSS styling that is modern and attractive
-- [ ] A production README, replacing this README
+- [x] A production README, replacing this README
 
 <!--(**NB**: check out the [sample production README](https://github.com/appacademy/sample-project-proposal/blob/master/docs/production_readme.md) -- I'll write this later)
  -->
