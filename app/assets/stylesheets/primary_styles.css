@@ -895,6 +895,11 @@ input:invalid {
   height: 200px;
   float: right;
   margin: 5px;
+  cursor: pointer;
+}
+
+.featured > div:hover img {
+  opacity: 0.75;
 }
 
 .featured img {
@@ -908,6 +913,7 @@ input:invalid {
   color: white;
   font-family: inherit;
   font-size: 18px;
+  z-index: 2;
 }
 
 #ny {
