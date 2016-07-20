@@ -44,7 +44,11 @@ var Splash = React.createClass({
         <div className="background" style={divStyle}>
           <h1 className="splash-header">{saying}</h1>
         </div>
-    </div>
+        <div className="featured">
+        <div id="ny"></div>
+        <div id="dc"></div>
+        </div>
+      </div>
     );
   }
 });

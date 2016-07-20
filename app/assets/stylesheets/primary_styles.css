@@ -138,8 +138,8 @@ input:invalid {
 .splash-search {
   padding: 28px;
   width: 100%;
-  position: relative;
-  top: 400px;
+  position: absolute;;
+  top: 55%;
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -808,7 +808,7 @@ input:invalid {
 .my-spot-container h3{
   position: absolute;
   top: 40px;
-  left: 410px;
+  left: 408px;
   color: #484848;
 }
 

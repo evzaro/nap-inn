@@ -105,7 +105,7 @@ var NavBar = React.createClass({
           <div className="nav-logo" onClick={this.pushHome}>
             {logo}
           </div>
-          <ul classname="nav-links">
+          <ul className="nav-links">
             <li className="profile-dropdown-parent">
               <button className="profile-button">{this.state.currentUser.fname}</button>
               <ul className="profile-dropdown">
@@ -126,7 +126,7 @@ var NavBar = React.createClass({
             {logo}
           </div>
 
-          <ul classname="nav-links">
+          <ul className="nav-links">
             <button onClick={this.pushLogIn}>Log In</button>
             <button onClick={this.pushSignUp}>Sign Up</button>
             <button onClick={this.handleGuest}>Guest</button>
