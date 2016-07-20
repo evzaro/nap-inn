@@ -511,7 +511,7 @@ input:invalid {
 }
 
 .index-item-content {
-
+  cursor: pointer;
 
 }
 
