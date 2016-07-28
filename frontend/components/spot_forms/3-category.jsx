@@ -36,42 +36,42 @@ CategoryForm = React.createClass({
       <h2>What kind of spot are you listing?</h2>
       <form className="category-form" onChange={this.handleCategoricalChange}>
         <div className="radio-option clearfix top-radio">
-          <label for="Air Mattress">Air Mattress
+          <label htmlFor="Air Mattress">Air Mattress
             <input type="radio" name="category" value="Air Mattress" id="Air Mattress"/>
           </label>
         </div>
         <div className="radio-option clearfix">
-          <label for="Bed">Bed
+          <label htmlFor="Bed">Bed
             <input type="radio" name="category" value="Bed" id="Bed"/>
           </label>
         </div>
         <div className="radio-option clearfix">
-          <label for="Couch">Couch
+          <label htmlFor="Couch">Couch
             <input type="radio" name="category" value="Couch" id="Couch"/>
           </label>
         </div>
         <div className="radio-option clearfix">
-          <label for="Futon">Futon
+          <label htmlFor="Futon">Futon
             <input type="radio" name="category" value="Futon" id="Futon"/>
           </label>
         </div>
         <div className="radio-option clearfix">
-          <label for="Hammock">Hammock
+          <label htmlFor="Hammock">Hammock
             <input type="radio" name="category" value="Hammock" id="Hammock"/>
           </label>
         </div>
         <div className="radio-option clearfix">
-          <label for="Recliner">Recliner
+          <label htmlFor="Recliner">Recliner
             <input type="radio" name="category" value="Recliner" id="Recliner"/>
           </label>
         </div>
         <div className="radio-option clearfix">
-          <label for="Yoga Mat">Yoga Mat
+          <label htmlFor="Yoga Mat">Yoga Mat
             <input type="radio" name="category" value="Yoga Mat" id="Yoga Mat"/>
           </label>
         </div>
         <div className="radio-option clearfix bottom-radio">
-          <label for="Other">Other
+          <label htmlFor="Other">Other
             <input type="radio" name="category" value="Other" id="Other"/>
           </label>
         </div>

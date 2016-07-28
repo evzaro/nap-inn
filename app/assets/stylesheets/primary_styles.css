@@ -1,5 +1,6 @@
 
 html, body, main {margin:0;padding:0;height:100%;}
+main{background: blue}
 
 .login-signup-modal{
   position: fixed;
@@ -898,7 +899,15 @@ input:invalid {
   cursor: pointer;
 }
 
-.featured > div:hover img {
+.featured > div {
+  height: 200px;
+  float: right;
+  margin: 5px;
+  cursor: pointer;
+}
+
+
+.featured div:hover img {
   opacity: 0.75;
 }
 
@@ -914,6 +923,7 @@ input:invalid {
   font-family: inherit;
   font-size: 18px;
   z-index: 2;
+  cursor: pointer;
 }
 
 #ny {
@@ -922,4 +932,15 @@ input:invalid {
 
 #dc {
   position: relative;
+}
+
+.feature-title {
+  width: 100%
+}
+
+.feature-title h1 {
+  width: 138px;
+  margin: 20px auto;
+  font-size: 20px;
+  color: #484848;
 }

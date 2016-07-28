@@ -3,7 +3,7 @@ var CountryDropDown = require('./country_drop_down');
 var Map = require('../map');
 
 var LocationForm = React.createClass({
-  
+
   getInitialState: function(){
     return({
       street_number: '',
@@ -85,23 +85,23 @@ var LocationForm = React.createClass({
       return(
         <div className="creation-options">
           <h2>Where's your spot located?</h2>
-          <label for="country">Country</label>
+          <label htmlFor="country">Country</label>
           <CountryDropDown id="country" sendValueToParent={this.getCountryFromChild} startingCountry={this.state.country}/>
             <form className="position-form">
 
-            <label for="address">Street Address</label>
+            <label htmlFor="address">Street Address</label>
             <input type="text" onChange={this.handleChange} id="address" value={this.state.street_number + " " + this.state.route} placeholder="e.g. 123 Main St."/>
 
-            <label for="apt">Apt, Suite, Bldg.</label>
+            <label htmlFor="apt">Apt, Suite, Bldg.</label>
             <input type="text" onChange={this.handleChange} id="apt" value={this.state.apt} placeholder="e.g. Apt #7"/>
 
-            <label for="city">City</label>
+            <label htmlFor="city">City</label>
             <input type="text" onChange={this.handleChange} id="locality" value={this.state.locality} placeholder="e.g. New York"/>
 
-            <label for="state">State</label>
+            <label htmlFor="state">State</label>
             <input type="text" onChange={this.handleChange} id="administrative_area_level_1" value={this.state.administrative_area_level_1} placeholder="e.g. NY"/>
 
-            <label for="zip">ZIP Code</label>
+            <label htmlFor="zip">ZIP Code</label>
             <input type="text" onChange={this.handleChange} id="postal_code" value={this.state.postal_code} placeholder="e.g. 12491"/>
 
             </form>
