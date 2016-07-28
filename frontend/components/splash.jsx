@@ -54,16 +54,15 @@ var Splash = React.createClass({
       <div className="splash-body">
         <Search/>
         <div className="background" style={divStyle}>
-          <h1 className="splash-header">{saying}</h1>
-          <div className="splash-listings">
-            <div className="feature-title"><h1>Featured Cities</h1></div>
-            <div className="featured clearfix">
-              <div id="ny" onClick={this.goToDC}><h2>Washington, DC</h2><img src="http://res.cloudinary.com/dfjm0djds/image/upload/v1469031215/dcbutton_x7flfi.jpg" alt="DC" /></div>
-              <div id="dc" onClick={this.goToNY}><h2>New York, NY</h2><img src="http://res.cloudinary.com/dfjm0djds/image/upload/v1469031215/newyorkbutton_eyftpa.jpg" alt="NY" /></div>
-            </div>
+        <div className="splash-listings">
+          <div className="feature-title"><h1>Featured Cities</h1></div>
+          <div className="featured clearfix">
+            <div id="ny" onClick={this.goToDC}><h2>Washington, DC</h2><img src="http://res.cloudinary.com/dfjm0djds/image/upload/v1469031215/dcbutton_x7flfi.jpg" alt="DC" /></div>
+            <div id="dc" onClick={this.goToNY}><h2>New York, NY</h2><img src="http://res.cloudinary.com/dfjm0djds/image/upload/v1469031215/newyorkbutton_eyftpa.jpg" alt="NY" /></div>
           </div>
         </div>
-
+          <h1 className="splash-header">{saying}</h1>
+        </div>
       </div>
     );
   }
