@@ -120,6 +120,8 @@ var SpotDetail = React.createClass({
       categoryIcon = <img src={JSON.parse(
         document.getElementById('content').dataset.images).bed}/>;
     }
+    var capacityIcon = <img src={JSON.parse(
+      document.getElementById('content').dataset.images).capacity}/>;
 
     return (
       <div className="detail">
@@ -138,8 +140,7 @@ var SpotDetail = React.createClass({
           <div className="detail-icons">
             <div className="category-icon">{categoryIcon}<h3>{this.state.spot.category}</h3></div>
 
-            <div className="capacity-icon"><img src={JSON.parse(
-              document.getElementById('content').dataset.images).capacity}/>  <h3>{this.state.spot.capacity + ' Nappers'}</h3></div>
+            <div className="capacity-icon">{capacityIcon}<h3>{this.state.spot.capacity + ' Nappers'}</h3></div>
 
           </div>
 

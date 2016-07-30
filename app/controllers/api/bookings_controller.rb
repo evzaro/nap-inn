@@ -66,7 +66,7 @@ class Api::BookingsController < ApplicationController
       booking.reserved_blocks = time
       booking
     end
-    
+
      render "api/bookings/my_bookings"
     # render json: @bookings
 
