@@ -68,8 +68,7 @@ class Api::BookingsController < ApplicationController
     end
 
      render "api/bookings/my_bookings"
-    # render json: @bookings
-
+     
   end
 
   def create

@@ -15,8 +15,8 @@ var MyBookingItem = React.createClass({
   },
 
   render: function() {
-    var blocks = JSON.parse(this.props.booking.reserved_blocks).map(function(block){
-      return(<div className="time-block">{block}</div>);
+    var blocks = JSON.parse(this.props.booking.reserved_blocks).map(function(block, i){
+      return(<div key={i} className="time-block">{block}</div>);
     });
 
     return (
