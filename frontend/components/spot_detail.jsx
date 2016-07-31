@@ -54,8 +54,6 @@ var SpotDetail = React.createClass({
     );
   },
 
-
-
   getDateFromChild: function (new_date) {
     this.setState({date: new_date});
   },
@@ -90,7 +88,6 @@ var SpotDetail = React.createClass({
             $("#timeSelect option[value=" + blocks[i]+ "]")
               .attr("disabled", "disabled");
 
-            // $("#timeSelect option[value=" + blocks[i]+ "]").remove();
           }
         }
       }.bind(this));
@@ -101,16 +98,19 @@ var SpotDetail = React.createClass({
     var country = "";
     var location;
 
-    if(this.state.spot.location){
+    if (this.state.spot.location){
       location = JSON.parse(this.state.spot.location);
       city = location.locality;
       state = location.administrative_area_level_1;
       country = location.country;
     }
 
-    var divStyle = {
-      backgroundImage: 'url(' + this.state.spot.image_urls + ')'
-    };
+
+    if (this.state.spot.image_urls){
+      var divStyle = {
+        backgroundImage: 'url(' + this.state.spot.image_urls + ')'
+      };
+    }
 
     var categoryIcon;
     if (this.state.spot.category === "Hammock"){
@@ -126,8 +126,7 @@ var SpotDetail = React.createClass({
     return (
       <div className="detail">
 
-        <div className="cover-img" style={divStyle}>
-        </div>
+        <div className="cover-img" style={divStyle}></div>
         <div className="summary">
         <div className="info-and-booking">
 
