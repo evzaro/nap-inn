@@ -4,6 +4,7 @@ var Search = require('./search');
 var MySpotItem = require('./my_spot_item');
 var NapSpotApiUtil = require('../util/nap_spot_api_util');
 var NapSpotStore = require('../stores/nap_spot_store');
+var RouteActions = require('../actions/route_actions');
 
 var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
@@ -15,6 +16,10 @@ var Splash = React.createClass({
     this.setState({
       spot: NapSpotStore.currentSpot()
     });
+  },
+
+  componentDidMount: function(){
+    RouteActions.changeRoute('/');
   },
 
   goToDC: function() {
