@@ -129,7 +129,7 @@ var NavBar = React.createClass({
           <ul className="nav-links">
             <button onClick={this.pushLogIn}>Log In</button>
             <button onClick={this.pushSignUp}>Sign Up</button>
-            <button onClick={this.handleGuest}>Guest</button>
+            <button onClick={this.handleGuest}>Tour</button>
           </ul>
         </nav>
       );

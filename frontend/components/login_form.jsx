@@ -106,7 +106,7 @@ var LoginForm = React.createClass({
             <input type="password" value={this.state.password}
               id="password" onChange={this.onChangePassField} placeholder="Password" />
             <button className="login-signup-btn" onClick={this.handleSubmit}>Log In</button>
-            <button className="login-signup-btn" onClick={this.handleGuest}>Guest</button>
+            <button className="login-signup-btn" onClick={this.handleGuest}>Take a Tour</button>
           </form>
         </div>
       </div>
