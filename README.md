@@ -25,6 +25,7 @@ NapSpots are rendered in an index view, with price, location, and categorical in
 ####Detail View####
 ![](screenshots/detail.png)
 
+
 A series of elegant forms walks users through the process of creating a NapSpot, and allows users to upload an image to represent the NapSpot. A sample of the uploaded image is shown to the user before the NapSpot is saved to the database, allowing a final review before NapSpot creation. Once saved, the image is resized, padded, and optimized.
 
 ####Location Form Sample####
@@ -37,6 +38,7 @@ NapSpots can be deleted only by their creators, who are able to do so within the
 
 Users, whether logged in or not, can search for and browse through NapSpot listings by entering a location in the search field, or by selecting a 'featured city'.
 
+
 ###Booking###
 
 The booking functionality utilizes moment.js, a ubiquitous library used for working with datetime. A datetime picker is used to create bookings. The picker adds a listener on a bookings store, and disables any potential time slots already booked.
@@ -44,6 +46,9 @@ The booking functionality utilizes moment.js, a ubiquitous library used for work
 ###User###
 
 In order to book and create NapSpots, users must sign up or log in, which they can do via custom modal components. Users can create accounts by entering name, email, and password info manually, or by utilizing an existing Facebook account via OmniAuth. When accounts are created manually, the custom backend authentication scheme utilizes Bcrypt to store a secure hash of user passwords.
+
+####Sign Up Modal and Omniauth####
+![](screenshots/modal.png)
 
 
 ##Future Directions for the Project##
