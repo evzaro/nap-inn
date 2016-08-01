@@ -15,7 +15,7 @@ All NapSpots (which users can create at will once logged in), are stored in one 
 NapInn contains custom icons and visually appealing css to provide users with a highly pleasant experience.
 
 
-####NapSpot####
+###NapSpot###
 
 NapSpots are rendered in an index view, with price, location, and categorical information, and also in a detail view, which fetches associated bookings and additional information such as the description.
 
